@@ -21,6 +21,7 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.davidmingay.housecapture
         TARGETED_DEVICE_FAMILY: "1,2"
         CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: HPD3W7U3LM   # David's Apple Developer team (set here so xcodegen regenerations keep it)
     info:
       path: HouseCapture/Info.plist
       properties:
@@ -40,3 +41,16 @@ targets:
         UIStatusBarHidden: false
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown]
+schemes:
+  HouseCapture:
+    build:
+      targets:
+        HouseCapture: all
+    # Release for real scanning (Debug disables Swift optimisation; see README "Capture performance").
+    # Switch the run configuration to Debug in Edit Scheme when you need -selftest/-autotest.
+    run:
+      config: Release
+    profile:
+      config: Release
+    archive:
+      config: Release
