@@ -11,6 +11,9 @@ struct CaptureScreen: View {
   @FocusState private var nameFocused: Bool
   @Environment(\.scenePhase) private var scenePhase
   static let roomSuggestions = ["Living room", "Kitchen", "Dining room", "Office", "Bedroom", "Primary bedroom", "Bathroom", "Hallway", "Basement", "Playroom", "Laundry", "Garage"]
+  static let outdoorSuggestions = ["Back garden", "Front garden", "Border", "Raised bed", "Vegetable bed", "Lawn", "Patio", "Pond", "Greenhouse", "Shed", "Side passage"]
+  private var suggestions: [String] { controller.outdoor ? Self.outdoorSuggestions : Self.roomSuggestions }
+  private var areaWord: String { controller.outdoor ? "area" : "room" }
 
   private var scanning: Bool { controller.phase == .scanning }
 
@@ -114,7 +117,7 @@ struct CaptureScreen: View {
           VStack(alignment: .trailing, spacing: 2) {
             if scanning {
               Text(controller.roomName).font(.headline)
-              Text(controller.meshReady ? "\(controller.coverage.walls.count) walls measured" : "Starting LiDAR…")
+              Text(controller.meshReady ? (controller.outdoor ? siteLine : "\(controller.coverage.walls.count) walls measured") : "Starting LiDAR…")
                 .font(.caption2.weight(.semibold))
                 .foregroundStyle(.secondary)
             }
@@ -198,10 +201,17 @@ struct CaptureScreen: View {
     }
   }
 
+  private var siteLine: String {
+    "GPS \(controller.siteStatus.location ?? "…") · compass \(controller.siteStatus.heading ?? "…")"
+  }
+
   private var betweenRooms: some View {
     panel {
       if controller.rooms.isEmpty {
-        if controller.alignment.method == "relocalized" {
+        if controller.outdoor {
+          Text("Garden scan: walk slowly around one bed or area at a time, 1–3 m from plants, soil and edges. As you move, a triangle mesh appears: **green** has good photo coverage, **red** needs photos. LiDAR reaches about 5 m and dislikes bright sun on foliage, so scan on an overcast day or in shade where you can. Tall trees and hedges will only be captured near the ground.")
+            .font(.subheadline)
+        } else if controller.alignment.method == "relocalized" {
           Text("You're lined up with \(controller.zoneName). The faint green is what you scanned before\(controller.priorPhotoCount > 0 ? "; surfaces its \(controller.priorPhotoCount) photos already cover start out green" : ""). Scan a new room, or rescan one to replace it.")
             .font(.subheadline)
         } else {
@@ -219,15 +229,25 @@ struct CaptureScreen: View {
         Button("Review saved room in 3D") { reviewing = true }.buttonStyle(.borderedProminent)
         Text("Inspect the textured scan before leaving. Use coverage colours in the preview to check gaps.").font(.caption)
         roomList
-        Text("Walk into the next room, then start it. Stay in this session so the rooms line up.")
+        Text(controller.outdoor ? "Move to the next bed or area, then start it. Stay in this session so the areas line up." : "Walk into the next room, then start it. Stay in this session so the rooms line up.")
           .font(.footnote)
           .foregroundStyle(.secondary)
       }
       if controller.requiresFreshScan {
         Text("This scan is saved. Finish this session, then tap Scan a room to continue with a fresh capture.").font(.headline)
       }
-      Text("Which room are you in?").font(.subheadline.weight(.semibold))
-      TextField("Room name", text: $controller.roomName)
+      if !controller.outdoorLocked {
+        Toggle(isOn: $controller.outdoor) {
+          Label("Outdoor scan (garden)", systemImage: "leaf")
+        }
+        .font(.subheadline)
+        Text(controller.outdoor
+             ? "No room layout is measured outdoors. The mesh, photos and depth are saved with your location and compass heading so the garden can be oriented to the sun. \(siteLine)."
+             : "Indoor scans also measure walls, doors and windows.")
+          .font(.caption).foregroundStyle(.secondary)
+      }
+      Text(controller.outdoor ? "Which part of the garden?" : "Which room are you in?").font(.subheadline.weight(.semibold))
+      TextField(controller.outdoor ? "Bed or area name" : "Room name", text: $controller.roomName)
         .textFieldStyle(.roundedBorder)
         .submitLabel(.go)
         .focused($nameFocused)
@@ -246,7 +266,7 @@ struct CaptureScreen: View {
             .controlSize(.small)
             .tint(controller.roomName == name ? .accentColor : .green)
           }
-          ForEach(Self.roomSuggestions.filter { n in !scannedHere(n) && !controller.existingRoomNames.contains { HouseProject.roomKey($0) == HouseProject.roomKey(n) } }, id: \.self) { name in
+          ForEach(suggestions.filter { n in !scannedHere(n) && !controller.existingRoomNames.contains { HouseProject.roomKey($0) == HouseProject.roomKey(n) } }, id: \.self) { name in
             Button(name) { controller.selectedRoomID = nil; controller.roomName = name }
               .buttonStyle(.bordered)
               .controlSize(.small)
@@ -266,7 +286,7 @@ struct CaptureScreen: View {
       Button {
         controller.startRoom()
       } label: {
-        Label(controller.canStartRoom ? "Scan \(controller.roomName)" : "Name the room to start", systemImage: "viewfinder")
+        Label(controller.canStartRoom ? "Scan \(controller.roomName)" : "Name the \(areaWord) to start", systemImage: "viewfinder")
           .frame(maxWidth: .infinity)
       }
       .buttonStyle(.borderedProminent)

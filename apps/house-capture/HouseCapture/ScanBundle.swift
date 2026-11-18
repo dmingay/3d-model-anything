@@ -279,6 +279,11 @@ struct Manifest: Codable {
   var depthFrames: String?
   var depthFrameCount: Int?
   var diagnostics: Diagnostics?
+  /// "indoor" (RoomPlan layout + mesh + photos) or "outdoor" (garden: mesh + photos + depth, no
+  /// RoomPlan, plus `site`). Missing = indoor (bundles from before outdoor mode).
+  var capture: String?
+  /// outdoor sessions: GPS fix and compass orientation of the ARKit world
+  var site: SiteRecord?
 }
 
 /// What the capture session actually did, for debugging bundles after the fact

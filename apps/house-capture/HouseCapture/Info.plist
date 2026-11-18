@@ -30,6 +30,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>3D Model Anything uses the camera and LiDAR scanner to measure your rooms and take reference photos.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Outdoor (garden) scans record where the garden is and which way it faces, so sunlight and local conditions can be worked out later. Indoor scans never ask for location.</string>
 	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>UILaunchScreen</key>

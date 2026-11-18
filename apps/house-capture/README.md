@@ -41,6 +41,37 @@ LiDAR vertices. It chooses sharp, unobstructed views and reuses photos from alig
 sessions. Texture decoding shares a 48-megapixel budget across the house; areas without a
 usable full-triangle photo keep their cached vertex colors.
 
+## Outdoor (garden) scans
+
+Before naming the first area of a session, switch on **Outdoor scan (garden)**. The session
+then runs ARKit alone: no RoomPlan, so no walls, doors, windows or furniture boxes are measured
+and `rooms/room-N.json` is not written. The LiDAR mesh, posed photos and depth frames are the
+product, exactly as for indoor rooms. The choice applies to the whole session and locks once the
+first area starts (the ARSession is configured differently).
+
+What changes in the export (`manifest.json`):
+
+- `capture`: `"outdoor"` (indoor sessions write `"indoor"`; older bundles have no field).
+- `site`: GPS fix (`latitude`, `longitude`, `altitude`, accuracies, `locationAt`), the ARKit
+  `worldAlignment` the session ran with, and the compass estimate of the world's orientation.
+  A fresh outdoor session uses `gravityAndHeading`, so the session's −Z axis is ARKit's estimate
+  of true north. Independently, while scanning, the compass reading is paired with the camera's
+  bearing in the world every half second (`headingSamples`); `worldMinusZBearing` is the circular
+  median of those differences, i.e. the compass bearing of the session's −Z axis, and
+  `headingSpread` says how much the samples disagreed. For `gravityAndHeading` sessions it should
+  be near 0 and serves as a cross-check; for Continue sessions (which keep the saved map's frame)
+  it is the only orientation estimate. Compass accuracy is typically 5–15°, enough for sun-path
+  work; recompute from the samples if a better estimate is needed.
+- Location access is requested only when the toggle is on. Without it, the scan still works and
+  `site.note` says why there is no fix.
+
+Practical limits, from the sensor rather than the app: the LiDAR reaches about 5 m and is
+degraded by bright sunlight on foliage; wind-blown leaves give noisy mesh; tall trees and hedges
+are captured only near the ground. Scan one bed or area at a time, 1–3 m from plants and soil,
+ideally overcast or in shade, and keep the whole garden in one session so areas share a frame.
+The garden-specific rebuild pipeline (plant identification, sun-hours and site layers) lives in
+this fork's `garden` branch and is work in progress; see the repository README.
+
 ## On disk
 
 ```
@@ -49,7 +80,8 @@ Documents/Houses/<house>/
   zones/<area>/worldmap.arworldmap   latest map of the area (NSKeyedArchiver, secure coding)
   zones/<area>/structure.json|usdz   RoomPlan merge of the area's active rooms (preview only)
   sessions/<yyyy-MM-dd HH.mm.ss>/    one session = one scan bundle, house-capture/5:
-    manifest.json          rooms, files, device, alignment, world-map status, diagnostics (rewritten after every room)
+    manifest.json          rooms, files, device, alignment, world-map status, diagnostics (rewritten after every room);
+                         capture ("indoor"/"outdoor") and, outdoors, site (GPS + compass orientation)
     worldmap.arworldmap    the map at the end of the session
     structure.json|usdz    this session's rooms merged by RoomPlan
     rooms/room-N.json      CapturedRoom (RoomPlan's Codable JSON), .usdz, -mesh.usdz (detailed shapes)

@@ -1,4 +1,14 @@
-# 3D Model Anything
+# 3D Model Anything — garden fork
+
+> This is [dmingay's fork](https://github.com/dmingay/3d-model-anything) of
+> [wesbos/3d-model-anything](https://github.com/wesbos/3d-model-anything), working towards a
+> **garden** version: LiDAR + photo scans of beds and borders, plant identification against the
+> RHS-grounded GardenLens plant database, and site layers (sun hours from the scan geometry, soil,
+> elevation, climate). Work happens on the `garden` branch. First step shipped: an **Outdoor scan
+> (garden)** mode in the iPhone app that drops RoomPlan and records GPS + compass orientation in
+> the export (see [the app README](apps/house-capture/README.md#outdoor-garden-scans)). Everything
+> below is the upstream project's documentation and still applies.
+
 
 [![Watch the video: 3D Model Anything](docs/images/thumb-1.png)](https://www.youtube.com/watch?v=JGQCcCzuS88)
 

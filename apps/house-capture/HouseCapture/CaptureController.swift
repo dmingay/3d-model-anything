@@ -75,6 +75,18 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
   @Published private(set) var photoCount = 0
   private let autoPhotos = true
   @Published var highResolutionPhotos = false
+  /// Garden scan: ARKit alone (mesh + photos + depth), no RoomPlan, plus GPS and compass in the
+  /// manifest's `site`. Chosen before the first room; the ARSession is configured differently.
+  @Published var outdoor = false {
+    didSet {
+      guard outdoor != oldValue, !closed else { return }
+      if outdoor { site.start(worldAlignment: sessionRunning ? "gravity" : "gravityAndHeading") } else { site.stop() }
+      diagnostics.log(outdoor ? "outdoor mode on" : "outdoor mode off", since: startedAt)
+    }
+  }
+  var outdoorLocked: Bool { !rooms.isEmpty || phase == .scanning || phase == .finishingRoom }
+  let site = SiteLocator()
+  @Published private(set) var siteStatus = SiteLocator.Status()
   @Published private(set) var trackingIssue: TrackingRecovery.Issue? = .starting
   @Published private(set) var sessionNeedsRestart = false
   @Published private(set) var recordingSaveFailed = false
@@ -227,6 +239,10 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     phase = plan.worldMap == nil ? .betweenRooms : .relocalizing
     super.init()
     roomName = "" // asked for before each room
+    site.onChange = { [weak self] in
+      guard let self else { return }
+      self.siteStatus = self.site.status
+    }
     engine.onStats = { [weak self] stats in
       guard let self else { return }
       if stats.percent >= self.lastProgressPercent + 2 {
@@ -368,6 +384,15 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
       c.sceneReconstruction = .meshWithClassification
     }
     if ARWorldTrackingConfiguration.supportsFrameSemantics(.sceneDepth) { c.frameSemantics.insert(.sceneDepth) }
+    return c
+  }
+
+  /// Outdoor (garden) rooms: ARKit alone with mesh + depth. A fresh session aligns the world's
+  /// −Z to true north (`.gravityAndHeading`); a Continue session keeps the saved map's frame and
+  /// relies on the compass samples in `site` for orientation.
+  private static func outdoorConfiguration(heading: Bool) -> ARWorldTrackingConfiguration {
+    let c = relocalizationConfiguration(map: nil)
+    if heading { c.worldAlignment = .gravityAndHeading }
     return c
   }
 
@@ -645,7 +670,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
   }
   private var memoryPressureUntil: TimeInterval = 0
   var captureBudget: CaptureBudget { CaptureBudget(thermal: ProcessInfo.processInfo.thermalState, photos: roomPhotoCount, memoryPressure: CACurrentMediaTime() < memoryPressureUntil) }
-  var quality: CaptureQuality { CaptureQuality(percent: stats.percent, walls: coverage.walls.count, photos: roomPhotoCount) }
+  var quality: CaptureQuality { CaptureQuality(percent: stats.percent, walls: coverage.walls.count, photos: roomPhotoCount, outdoor: outdoor) }
   var recoveryPhoto: URL? { photos.last.map { bundle.file($0.file) } }
   var reviewSource: PreviewSource? {
     guard let last = rooms.last, let session = house.session(plan.sessionID) else { return nil }
@@ -688,8 +713,18 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     phase = .scanning
     applyGhostOpacity()
     refreshCoverage()
-    diagnostics.log("room \(roomIndex) '\(roomName)' start", since: startedAt)
-    roomSession.run(configuration: RoomCaptureSession.Configuration())
+    diagnostics.log("room \(roomIndex) '\(roomName)' start\(outdoor ? " (outdoor)" : "")", since: startedAt)
+    if outdoor {
+      // ARKit only. The first room of a fresh session starts the world; later rooms (and
+      // Continue sessions) keep the running one so everything stays in a single frame.
+      if !sessionRunning {
+        site.worldAlignment = "gravityAndHeading"
+        arSession.run(Self.outdoorConfiguration(heading: true), options: [.resetTracking, .removeExistingAnchors])
+        diagnostics.log("outdoor session: ARKit worldAlignment gravityAndHeading", since: startedAt)
+      }
+    } else {
+      roomSession.run(configuration: RoomCaptureSession.Configuration())
+    }
     sessionRunning = true
     UIApplication.shared.isIdleTimerDisabled = true
     startTicking()
@@ -711,8 +746,19 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
       preStopMesh = await withCheckedContinuation { c in engine.exportPLY(to: file) { c.resume(returning: $0) } }
       guard !closed, phase == .finishingRoom else { return }
       cameraControl.unlock()
-      roomSession.stop(pauseARSession: false)
+      if outdoor { await finishOutdoorRoom() } else { roomSession.stop(pauseARSession: false) }
     }
+  }
+
+  /// Outdoor rooms end without RoomPlan: the mesh, photos and depth are the record.
+  private func finishOutdoorRoom() async {
+    guard !closed, phase == .finishingRoom else { return }
+    let index = roomIndex
+    let capturedAt = Date()
+    let record = RoomRecord(
+      index: index, name: roomName.trimmingCharacters(in: .whitespaces), file: "", usdz: "",
+      capturedAt: capturedAt, walls: 0, doors: 0, windows: 0, openings: 0, objects: 0)
+    await completeRoom(record: record, index: index, capturedAt: capturedAt)
   }
 
   // MARK: pause / resume
@@ -800,6 +846,13 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
       record.file = "" // no layout for this room; capturedRooms only holds rooms RoomPlan built
       record.usdz = ""
     }
+    await completeRoom(record: record, index: index, capturedAt: capturedAt)
+  }
+
+  /// Everything after the layout (or none, outdoors): mesh export, photo/depth indexes, house.json,
+  /// manifest, world map; then back to between-rooms.
+  private func completeRoom(record: RoomRecord, index: Int, capturedAt: Date) async {
+    var record = record
     let meshFile = "mesh/room-\(index).ply"
     var result = preStopMesh
     if case .success(let r)? = result, r.vertices > 0 {} else {
@@ -884,6 +937,7 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     if !retrying { await saveWorldMap(final: true) }
     stopTicking()
     arSession.pause()
+    site.stop()
     sessionRunning = false
     UIApplication.shared.isIdleTimerDisabled = false
     endedAt = Date()
@@ -955,8 +1009,9 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
   func abandon() {
     closed = true
     stopTicking()
-    if roomSessionCreated, phase == .scanning || phase == .finishingRoom { roomSession.stop() }
+    if roomSessionCreated, !outdoor, phase == .scanning || phase == .finishingRoom { roomSession.stop() }
     arSession.pause()
+    site.stop()
     sessionRunning = false
     UIApplication.shared.isIdleTimerDisabled = false
     try? HouseProject.deleteSession(houseID: house.id, sessionID: plan.sessionID)
@@ -1049,7 +1104,9 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
       photoCount: photos.count,
       depthFrames: depthRecorder.records.isEmpty ? nil : "depth/frames.json",
       depthFrameCount: depthRecorder.records.count,
-      diagnostics: diagnostics
+      diagnostics: diagnostics,
+      capture: outdoor ? "outdoor" : "indoor",
+      site: outdoor ? site.record : nil
     ))
   }
 
@@ -1312,6 +1369,9 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
     if alignment.method == "relocalized", let reference, !reference.isEmpty, !paused, !checkInFlight,
        phase == .betweenRooms || phase == .scanning, now - lastCheckAt > 2.5, case .normal = frame.camera.trackingState {
       runCheck(frame, reference: reference)
+    }
+    if outdoor, phase == .scanning || phase == .betweenRooms {
+      site.sample(camera: pose, tracking: frame.camera.trackingState, timestamp: frame.timestamp)
     }
     guard phase == .scanning else { return }
     if frame.timestamp - lastMeshCheck > 0.5 {

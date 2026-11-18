@@ -86,6 +86,35 @@ The existing `cmp_photo.sh` renders one pair per requested index; make a contact
 when useful. It crops empty render margins for presentation, so use the uncropped model PNG for
 pixel-coordinate measurements.
 
+## Outdoor (garden) sessions
+
+`manifest.capture == "outdoor"` marks a garden session from this fork's app. There is no
+RoomPlan output: `rooms/room-N.json`, `-data.json`, `.usdz` and `structure.json` are absent and
+each room record has an empty `file`. Do not run `bundle_to_room.py` or `bundle_plan.py` on
+these (both read walls); start from `mesh/room-N.ply`, `photos/photos.json` and `depth/` with
+`mesh_probe.py`, `reconstruct_bundle.py --mesh` and `prepare_photos.py`. Take the ground plane
+from the mesh (largest near-horizontal cluster at the lowest height), not from a floor record.
+
+`manifest.site` orients the session on Earth:
+
+```text
+latitude, longitude, altitude, horizontalAccuracy, verticalAccuracy, locationAt   best GPS fix
+worldAlignment        "gravityAndHeading": session −Z ≈ true north (fresh outdoor sessions)
+                      "gravity": arbitrary yaw (Continue sessions); use worldMinusZBearing
+worldMinusZBearing    compass bearing (° clockwise from true north) of the session's −Z axis,
+                      circular median of headingSamples (trueHeading − worldBearing)
+headingSpread         median absolute deviation of those samples, degrees
+headingSamples[]      {t, trueHeading, headingAccuracy, worldBearing}; worldBearing is the
+                      camera forward in session XZ: 0 = −Z, 90 = +X, clockwise from above
+```
+
+To convert a session direction with bearing `b` (same convention as `worldBearing`) to a compass
+bearing: `b + worldMinusZBearing`. For sun-path work, rotate the scene about +Y by
+`−worldMinusZBearing` so −Z points north, then compute solar azimuth/elevation from
+`latitude`/`longitude`. Treat the orientation as ±10° unless `headingSpread` is small and
+`headingSampleCount` is large; the samples are kept so a better estimate can be made later.
+Location pins a private address: strip or coarsen `site` before publishing a garden.
+
 ## Older exports
 
 The bundle converter reads RoomPlan geometry and photo metadata shared by earlier exports.

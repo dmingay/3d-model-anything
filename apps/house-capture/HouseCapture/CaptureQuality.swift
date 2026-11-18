@@ -5,8 +5,15 @@ struct CaptureQuality {
   let percent: Int
   let walls: Int
   let photos: Int
-  var ready: Bool { walls >= 3 && photos >= 8 && percent >= 85 }
+  /// garden scan: no walls to measure, mesh + photos are the product
+  var outdoor = false
+  var ready: Bool { (outdoor || walls >= 3) && photos >= 8 && percent >= 85 }
   var message: String {
+    if outdoor {
+      if photos < 8 { return "Walk slowly around the bed; photos save automatically." }
+      if ready { return "Good photo detail. Save and review for gaps." }
+      return "Keep the phone 1–3 m from plants and soil. Red triangles still need photos."
+    }
     if walls < 3 { return "Measuring the room and saving photos automatically." }
     if photos < 8 { return "Collecting useful viewpoints automatically as you scan." }
     if ready { return "Good photo detail. Save and review for gaps." }

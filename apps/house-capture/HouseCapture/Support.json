@@ -11,6 +11,10 @@
       "body": "Create a house, choose Scan a room, and give the room a name. Allow camera access when prompted. Move slowly around the room in good light, keeping furniture and walls in view. Photos save automatically. Finish room keeps the available scan; you can stop before all surfaces have useful photos. Verify measurements before using them for precision work."
     },
     {
+      "title": "Scan a garden",
+      "body": "Before naming the first area, turn on Outdoor scan (garden). Allow location access if you want the export to record where the garden is and which way it faces; the scan works without it. No walls or room layout are measured outdoors: the LiDAR mesh, photos and depth frames are the result. Scan one bed or area at a time, 1–3 m from plants and soil, ideally on an overcast day or in shade. LiDAR reaches about 5 m and does not capture tall trees or hedges above head height. Keep the whole garden in one session so areas line up."
+    },
+    {
       "title": "Camera access is off",
       "body": "Open Help & privacy → Open app settings and enable Camera. If Camera is restricted, check Screen Time or your device-management policy. Saved scans remain available without camera access."
     },

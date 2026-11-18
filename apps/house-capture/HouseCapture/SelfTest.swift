@@ -44,6 +44,24 @@ final class SelfTest {
   private func roomExperience() throws {
     expect(!CaptureQuality(percent: 99, walls: 0, photos: 0).ready, "finish signal requires measured room and photos")
     expect(CaptureQuality(percent: 88, walls: 4, photos: 20).ready, "finish signal accepts sufficient coverage")
+    expect(CaptureQuality(percent: 88, walls: 0, photos: 20, outdoor: true).ready, "outdoor finish signal needs no walls")
+    expect(!CaptureQuality(percent: 88, walls: 0, photos: 3, outdoor: true).ready, "outdoor finish signal still needs photos")
+    expect(abs(SiteLocator.circularMedian([358, 2, 1, 359, 0]) - 0) < 1e-6 || abs(SiteLocator.circularMedian([358, 2, 1, 359, 0]) - 360) < 1e-6, "circular median handles the north wrap")
+    expect(abs(SiteLocator.circularMedian([90, 92, 88, 270]) - 90) < 1e-6, "circular median ignores an outlier reading")
+    var outdoorFixture = Manifest(createdAt: Date(), device: "iPhone16,1", systemVersion: "26.0", house: "h", session: "s", zone: "z", rooms: [], photos: "photos/photos.json", photoCount: 0)
+    outdoorFixture.capture = "outdoor"
+    outdoorFixture.site = SiteRecord(latitude: 51.3, longitude: -0.56, worldAlignment: "gravityAndHeading", worldMinusZBearing: 3.5, headingSampleCount: 1,
+                                     headingSamples: [.init(t: 1, trueHeading: 10, headingAccuracy: 5, worldBearing: 6.5)], authorization: "when in use")
+    let siteEncoder = JSONEncoder(); siteEncoder.dateEncodingStrategy = .iso8601
+    let siteDecoder = JSONDecoder(); siteDecoder.dateDecodingStrategy = .iso8601
+    let outdoorData = try siteEncoder.encode(outdoorFixture)
+    let outdoorManifest = try? siteDecoder.decode(Manifest.self, from: outdoorData)
+    expect(outdoorManifest?.capture == "outdoor" && outdoorManifest?.site?.worldMinusZBearing == 3.5 && outdoorManifest?.site?.headingSamples.first?.worldBearing == 6.5, "manifest round-trips outdoor capture and site")
+    var legacyDict = try JSONSerialization.jsonObject(with: outdoorData) as! [String: Any]
+    legacyDict["capture"] = nil
+    legacyDict["site"] = nil
+    let legacyManifest = try? siteDecoder.decode(Manifest.self, from: JSONSerialization.data(withJSONObject: legacyDict))
+    expect(legacyManifest != nil && legacyManifest?.capture == nil && legacyManifest?.site == nil, "manifests without capture/site still decode as indoor")
     let observed = CoverageEngine.Stats(meshCovered: 0.82601947, meshArea: 20, targetsCovered: 0.1, ceilingCovered: 0, floorCovered: 0)
     expect(observed.percent == 83, "room photo detail ignores inferred hidden surfaces and ceiling penalty")
     expect(CoverageEngine.Stats(meshCovered: 1, meshArea: 0, targetsCovered: 1).percent == 0, "no observed mesh cannot report photo detail")
