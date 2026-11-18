@@ -7,7 +7,8 @@
     "dev": "vite --config apps/room-viewer/vite.config.ts",
     "build": "tsc && vite build --config apps/room-viewer/vite.config.ts",
     "preview": "vite preview --config apps/room-viewer/vite.config.ts",
-    "textures": "python3 .agents/skills/scan-to-threejs/scripts/fetch_textures.py"
+    "textures": "python3 .agents/skills/scan-to-threejs/scripts/fetch_textures.py",
+    "test": "node --test --experimental-strip-types packages/garden-sun/solar.test.ts"
   },
   "dependencies": {
     "@dimforge/rapier3d-compat": "^0.20.0",

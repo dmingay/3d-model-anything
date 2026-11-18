@@ -21,5 +21,9 @@
     "apps/room-viewer/tools",
     "demos",
     "packages"
+  ],
+  "exclude": [
+    "**/*.test.ts",
+    "node_modules"
   ]
 }

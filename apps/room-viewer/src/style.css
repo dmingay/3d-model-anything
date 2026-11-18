@@ -100,3 +100,12 @@ body.layout-mode .quality-section, body.knolling-mode .quality-section { display
 #camera-copy-status { display: block; font-size: 11px; margin-top: 5px; }
 
 
+
+/* Sun hours (gardens) */
+.sun-row { display: flex; gap: 6px; align-items: stretch; }
+#sun-toggle { flex: 1; border-color: #ffffff12; color: #b7c2ba; font-size: 12px; }
+#sun-toggle.active { background: #3a3f23; color: #f3e9a8; border-color: #f8e45c55; }
+#sun-day { flex: 1; min-width: 0; background: #242c26; border: 1px solid #ffffff16; border-radius: 6px; padding: 6px; }
+.sun-legend { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 10px; color: #8d9c92; }
+.sun-ramp { flex: 1; height: 8px; border-radius: 4px; background: linear-gradient(90deg, #2b2d6b, #2a6f97, #35a07a, #9fd35a, #f8e45c); }
+#sun-status { display: block; margin-top: 8px; font-size: 11px; color: #c9d3cc; min-height: 1em; }

@@ -1,6 +1,7 @@
 import { appURL } from './asset-base';
 import { collectInventory, showKnolling, stopKnolling } from './knolling';
 import { showLayout } from './layout';
+import { SunView, SUN_DAYS } from './sun';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
@@ -60,6 +61,13 @@ orbit.listenToKeyEvents(canvas);
 canvas.setAttribute('aria-label', 'Interactive room. Drag to orbit, scroll to zoom, double-click to focus. Home resets the view.');
 const walk = new PointerLockControls(camera, canvas);
 const pipeline = createPipeline(renderer, scene, camera);
+const sunView = new SunView(renderer);
+const sunSection = document.querySelector<HTMLElement>('#sun-section')!;
+const sunToggle = document.querySelector<HTMLButtonElement>('#sun-toggle')!;
+const sunDay = document.querySelector<HTMLSelectElement>('#sun-day')!;
+const sunStatus = document.querySelector<HTMLOutputElement>('#sun-status')!;
+for (const d of SUN_DAYS) { const o = document.createElement('option'); o.value = d.id; o.textContent = d.label; sunDay.append(o); }
+sunDay.value = new URLSearchParams(location.search).get('sunday') ?? 'jun';
 let dirty = true;
 let pendingFrame = 0;
 function requestFrame() {
@@ -201,6 +209,11 @@ async function loadRoom(id: string, updated?: RoomModule) {
   if (mode !== 'layout' && mode !== 'knolling' && !['layout', 'knolling'].includes(new URLSearchParams(location.search).get('view') ?? '')) await prepareRendering();
   if (request !== roomRequest) { releaseReplaced(); return; }
 
+  sunView.hide();
+  sunToggle.classList.remove('active'); sunToggle.setAttribute('aria-pressed', 'false');
+  sunStatus.textContent = '';
+  sunSection.hidden = !room.sun;
+  if (room.sun && new URLSearchParams(location.search).get('sun') === '1') void setSun(true);
   if (room.layout) showLayout(layoutHost, room.layout, mod.label);
   hud.querySelector<HTMLButtonElement>('[data-mode=layout]')!.disabled = !room.layout;
   if (mode === 'layout' && !room.layout) setMode('orbit');
@@ -310,6 +323,42 @@ async function setSource(next: Source, force = false) {
   activate('source', next);
   invalidate();
 }
+
+// --- Sun hours (gardens) ------------------------------------------------------
+
+let sunBusy = false;
+async function setSun(on: boolean) {
+  if (!room?.sun || sunBusy) return;
+  const url = new URL(location.href);
+  if (!on) {
+    sunView.hide();
+    sunToggle.classList.remove('active'); sunToggle.setAttribute('aria-pressed', 'false');
+    sunStatus.textContent = '';
+    url.searchParams.delete('sun'); history.replaceState(null, '', url);
+    invalidate();
+    return;
+  }
+  sunBusy = true;
+  sunToggle.disabled = true;
+  const owner = room;
+  try {
+    sunStatus.textContent = 'Tracing the sun…';
+    const summary = await sunView.show(owner, sunDay.value, p => { sunStatus.textContent = `Tracing the sun… ${Math.round(p * 100)}%`; });
+    if (room !== owner) { sunView.hide(); return; }
+    sunStatus.textContent = summary;
+    sunToggle.classList.add('active'); sunToggle.setAttribute('aria-pressed', 'true');
+    url.searchParams.set('sun', '1'); url.searchParams.set('sunday', sunDay.value); history.replaceState(null, '', url);
+  } catch (error) {
+    sunStatus.textContent = (error as Error).message;
+    console.error(error);
+  } finally {
+    sunBusy = false;
+    sunToggle.disabled = false;
+    invalidate();
+  }
+}
+sunToggle.addEventListener('click', () => void setSun(!sunView.isActive));
+sunDay.addEventListener('change', () => { if (sunView.isActive) void setSun(true); });
 
 // --- Navigation modes ------------------------------------------------------
 
@@ -497,6 +546,10 @@ canvas.addEventListener('dblclick', event => {
   for (const root of [room.group, reference]) root?.traverseVisible(o => { if ((o as THREE.Mesh).isMesh) meshes.push(o); });
   const hit = raycaster.intersectObjects(meshes, false)[0];
   if (!hit) return;
+  if (sunView.isActive) {
+    const at = sunView.hoursAt(hit.point);
+    if (at) sunStatus.textContent = `${at.hours.toFixed(1)} h of direct sun here · ${at.band}`;
+  }
   const offset = camera.position.clone().sub(hit.point);
   offset.setLength(THREE.MathUtils.clamp(offset.length() * 0.65, 0.6, orbit.maxDistance));
   moveCamera(hit.point.clone().add(offset), hit.point.clone());

@@ -37,6 +37,16 @@
             <button data-source="wireframe" aria-pressed="false">Wireframe</button>
           </div>
         </section>
+        <section class="control-section sun-section" id="sun-section" hidden aria-label="Sun hours">
+          <h2>Sun <span class="section-note">Direct sun per day</span></h2>
+          <div class="sun-row">
+            <button id="sun-toggle" aria-pressed="false" title="Colour the ground by hours of direct sun">Show sun hours</button>
+            <select id="sun-day" aria-label="Day of the year"></select>
+          </div>
+          <div class="sun-legend" aria-hidden="true"><span>shade</span><div class="sun-ramp"></div><span>full sun</span></div>
+          <output id="sun-status" aria-live="polite"></output>
+          <p class="help">Double-click the ground for hours at that spot. Shadows come only from what is in the scene.</p>
+        </section>
         <section class="control-section" id="navigation" aria-label="Camera views">
           <h2>Camera</h2>
           <div class="camera-grid">

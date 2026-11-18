@@ -6,8 +6,20 @@
 > RHS-grounded GardenLens plant database, and site layers (sun hours from the scan geometry, soil,
 > elevation, climate). Work happens on the `garden` branch. First step shipped: an **Outdoor scan
 > (garden)** mode in the iPhone app that drops RoomPlan and records GPS + compass orientation in
-> the export (see [the app README](apps/house-capture/README.md#outdoor-garden-scans)). Everything
-> below is the upstream project's documentation and still applies.
+> the export (see [the app README](apps/house-capture/README.md#outdoor-garden-scans)).
+>
+> Garden tooling so far (all keyless, offline-testable):
+> - `packages/garden-sun/` — solar position (NOAA) and a shadow-map **sun-hours** engine; the viewer
+>   gets a **Sun** panel for any room with a `sun` site (try `?room=garden-synthetic&sun=1`).
+>   `npm test` checks the solar maths against solstice/equinox geometry.
+> - `demos/garden-synthetic/` — a made-up south-facing garden for exercising the sun map.
+> - `tools/garden/site_lookup.py` — elevation, BGS soil parent material, geology, and ten years of
+>   ERA5 frost/rain/temperature for a postcode, coordinates or an outdoor scan's manifest.
+>   Output goes in git-ignored `data/site/`.
+> - Plant ID will use Pl@ntNet (key in the git-ignored `.env` as `PLANTNET_API_KEY`) resolved
+>   against GardenLens. Drop test photos in git-ignored `data/photos-in/`.
+>
+> Everything below is the upstream project's documentation and still applies.
 
 
 [![Watch the video: 3D Model Anything](docs/images/thumb-1.png)](https://www.youtube.com/watch?v=JGQCcCzuS88)

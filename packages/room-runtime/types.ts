@@ -47,6 +47,20 @@ export interface BuiltRoom {
   optimize?(opts?: { static?: boolean }): { meshesBefore: number; meshesAfter: number; batches: number } | void;
   /** posed reference photos (House Capture bundles), in room coordinates */
   photos?: PhotoPose[];
+  /** gardens: where on Earth and which way is north, so the viewer can map sun hours */
+  sun?: SunSite;
+}
+
+/** Site data for sun-hour mapping (outdoor sessions: manifest.site). */
+export interface SunSite {
+  latitude: number;
+  longitude: number;
+  /** compass bearing (° clockwise from north) of this scene's −Z axis; 0 = −Z is north */
+  northBearing: number;
+  /** meshes to colour by sun hours (ground, beds); need enough vertices to read as a map */
+  receivers: THREE.Mesh[];
+  /** everything that casts shadows (usually the whole room group) */
+  occluders: THREE.Object3D[];
 }
 
 /** GTAO tuning (see GTAOPass.updateGtaoMaterial); intensity = blend strength */
