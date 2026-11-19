@@ -60,6 +60,7 @@ def main():
     ap.add_argument('--photo-edge', type=int, default=1280)
     ap.add_argument('--no-photos', action='store_true')
     ap.add_argument('--min-cluster', type=int, default=40, help='drop connected shells smaller than this many triangles')
+    ap.add_argument('--site', help='site_lookup.py --json output; only coarse facts (hardiness, soil, frost, rain) are copied in')
     a = ap.parse_args()
 
     repo = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -147,6 +148,7 @@ def main():
             'heading': round((math.degrees(math.atan2(fwd[0], -fwd[2])) + 360) % 360, 1),
             'pitch': round(math.degrees(math.asin(max(-1, min(1, fwd[1])))), 1),
             'rotateCW': 90 * k, 'blurPixels': p.get('blurPixels'), 'timestamp': p.get('timestamp'),
+            'manual': bool(p.get('manual')), 'pass': p.get('pass') or 'scan',
         }
         out_photos.append(rec)
         if not a.no_photos:
@@ -183,6 +185,19 @@ def main():
         'photos': out_photos,
         'transform': {'sessionToGarden': [round(float(x), 6) for x in T.T.ravel()], 'columnMajor': True},
     }
+    if a.site:
+        L = json.load(open(a.site)).get('layers', {})
+        soil, clim = L.get('soil', {}), L.get('climate', {})
+        garden['siteFacts'] = {
+            'hardinessZone': (clim.get('rhs_hardiness_zone') or '').split(' ')[0] or None,
+            'typicalWinterMinC': clim.get('typical_winter_minimum_c'), 'absoluteMinC': clim.get('absolute_minimum_c'),
+            'lastSpringFrost': (clim.get('last_spring_frost') or {}).get('median'), 'firstAutumnFrost': (clim.get('first_autumn_frost') or {}).get('median'),
+            'annualRainMm': clim.get('annual_rain_mm'),
+            'soilTexture': soil.get('texture'), 'soilGroup': soil.get('group'), 'soilDepth': soil.get('depth'),
+            'calcareous': soil.get('calcareous'), 'parentMaterial': soil.get('parentMaterial'),
+            'elevationM': (L.get('elevation') or {}).get('metres'),
+            'sources': [soil.get('source'), clim.get('source')],
+        }
     ddir = os.path.join(repo, 'data', 'demos', a.garden_id)
     os.makedirs(ddir, exist_ok=True)
     with open(os.path.join(ddir, 'garden.json'), 'w') as f:

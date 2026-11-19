@@ -74,7 +74,13 @@ export interface Plant {
   confidence: 'likely' | 'unsure' | 'guess';
   candidates: (PlantCandidate & { support?: number })[]; status: string; concerns: string[];
 }
-export interface PlantSet { garden: string; photoBase: string; note?: string; plants: Plant[]; proposals: PlantProposal[] }
+/** Coarse site facts for concern flags (no coordinates). */
+export interface SiteFacts {
+  hardinessZone?: string | null; typicalWinterMinC?: number | null; absoluteMinC?: number | null;
+  lastSpringFrost?: string | null; firstAutumnFrost?: string | null; annualRainMm?: number | null;
+  soilTexture?: string | null; soilGroup?: string | null; soilDepth?: string | null; calcareous?: string | null;
+}
+export interface PlantSet { garden: string; photoBase: string; note?: string; site?: SiteFacts; plants: Plant[]; proposals: PlantProposal[] }
 
 export interface SunSite {
   latitude: number;

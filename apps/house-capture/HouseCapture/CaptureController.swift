@@ -1553,7 +1553,9 @@ final class CaptureController: NSObject, ObservableObject, RoomCaptureSessionDel
       manual: manual,
       exposure: shot.exposure,
       blurPixels: manual ? nil : shot.blur * Float(scale),
-      pass: "scan",
+      // outdoors a manual tap is a plant close-up: the ID pipeline weights these over the
+      // wide scan frames
+      pass: outdoor && manual ? "closeup" : "scan",
       highRes: shot.highRes,
       camera: shot.camera
     )

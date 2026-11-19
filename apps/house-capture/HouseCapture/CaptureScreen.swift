@@ -242,7 +242,7 @@ struct CaptureScreen: View {
         }
         .font(.subheadline)
         Text(controller.outdoor
-             ? "No room layout is measured outdoors. The mesh, photos and depth are saved with your location and compass heading so the garden can be oriented to the sun. \(siteLine)."
+             ? "No room layout is measured outdoors. The mesh, photos and depth are saved with your location and compass heading so the garden can be oriented to the sun. After the walk-round, tap the camera on each plant from about half a metre: those close-ups are what the plant identifier reads best. \(siteLine)."
              : "Indoor scans also measure walls, doors and windows.")
           .font(.caption).foregroundStyle(.secondary)
       }
@@ -378,7 +378,7 @@ struct CaptureScreen: View {
     }
     .disabled(!controller.canTakePhoto)
     .opacity(controller.canTakePhoto ? 1 : 0.4)
-    .accessibilityLabel("Take reference photo")
+    .accessibilityLabel(controller.outdoor ? "Take plant close-up" : "Take reference photo")
   }
 
   private func tip(_ text: String) -> some View {

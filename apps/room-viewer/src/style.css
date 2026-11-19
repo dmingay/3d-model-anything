@@ -156,3 +156,7 @@ body.review-mode .source-section,body.review-mode .sun-section,body.review-mode 
 #photo-lightbox{position:absolute;inset:0;background:#000c;display:grid;place-items:center;cursor:zoom-out;z-index:5}
 #photo-lightbox img{max-width:92%;max-height:86%;border-radius:8px;box-shadow:0 12px 40px #000}
 #photo-lightbox p{color:#c9d3cc;font-size:12px;margin:8px 0 0}
+.sheet-sun{color:#8d9c92}
+.sheet-concerns{margin:0 0 8px;padding:0 0 0 16px;font-size:11px;line-height:1.6;color:#e9c46a}
+.sheet-concerns li::marker{color:#e9c46a}
+.sheet-ok{font-size:11px;color:#8fb58a;margin-bottom:8px}

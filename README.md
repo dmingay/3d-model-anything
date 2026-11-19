@@ -29,7 +29,14 @@
 >   **Plants** panel opens a review mode: top-down view, one plant at a time, big photo, merged
 >   candidates with RHS facts, confirm / type your own / not a plant, arrow keys to move on
 >   (`?room=front-garden&review=1`). Decisions persist in the browser and export as JSON.
->   **Photos in 3D** hangs every scan photo at its camera pose (`&photos=1`); click one to view it. Raw API answers are cached under
+>   **Photos in 3D** hangs every scan photo at its camera pose (`&photos=1`); click one to view it.
+>   The sheet also shows **concern flags**: RHS hardiness vs the site's zone, soil and pH vs the BGS
+>   parent material, light vs the June sun hours at the pin (turn the sun map on), and RHS-listed
+>   problems. Flags are things to look at, never a diagnosis. Site facts come from
+>   `garden_bundle.py --site data/site/<place>.json` (coarse values only; no coordinates).
+>   `plant_id.py --crop 0.6` also tries a centre crop of each wide frame and keeps the better
+>   answer; outdoor **close-ups** (the camera button during an outdoor scan, saved with
+>   `pass: "closeup"`) are always identified and weigh double when proposals merge. Raw API answers are cached under
 >   `data/captures-in/<id>/plantnet/` so re-runs cost no quota.
 > - `demos/front-garden/` — the first real garden (Stony Ridge front garden, scanned 19 Nov 2026).
 >   The mesh and photos are local only (git-ignored); regenerate with the two tools above.

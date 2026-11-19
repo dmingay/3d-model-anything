@@ -96,6 +96,7 @@ const plantsView = new PlantsView({
     moveCamera(new THREE.Vector3(point.x, point.y + height, point.z + 0.001), point.clone());
   },
   onSun: on => setSun(on).then(() => sunView.isActive),
+  sunHoursAt: point => sunView.isActive ? sunView.hoursAt(point) ?? undefined : undefined,
   invalidate: () => invalidate(),
 });
 for (const d of SUN_DAYS) { const o = document.createElement('option'); o.value = d.id; o.textContent = d.label; sunDay.append(o); }

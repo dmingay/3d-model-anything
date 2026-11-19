@@ -24,12 +24,12 @@
  },
  "ground": {
   "normal": [
-   -0.0355,
-   0.9993,
-   -0.0117
+   -0.0372,
+   0.9992,
+   -0.0127
   ],
-  "tiltDegrees": 2.14,
-  "inliers": 9048
+  "tiltDegrees": 2.25,
+  "inliers": 8946
  },
  "bounds": {
   "min": [
@@ -44,12 +44,12 @@
   ],
   "p1": [
    -4.66,
-   -0.12,
+   -0.11,
    -6.4
   ],
   "p99": [
    4.48,
-   3.9,
+   3.91,
    6.78
   ]
  },
@@ -78,7 +78,9 @@
    "pitch": -23.6,
    "rotateCW": 90,
    "blurPixels": 0.62640065,
-   "timestamp": 114071.900570166
+   "timestamp": 114071.900570166,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0001.jpg",
@@ -86,7 +88,7 @@
    "index": 1,
    "position": [
     3.478,
-    1.589,
+    1.59,
     3.115
    ],
    "forward": [
@@ -98,7 +100,9 @@
    "pitch": -25.5,
    "rotateCW": 90,
    "blurPixels": 3.5121138,
-   "timestamp": 114074.201529875
+   "timestamp": 114074.201529875,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0002.jpg",
@@ -106,7 +110,7 @@
    "index": 2,
    "position": [
     3.576,
-    1.745,
+    1.746,
     3.166
    ],
    "forward": [
@@ -118,7 +122,9 @@
    "pitch": -8.1,
    "rotateCW": 90,
    "blurPixels": 1.3826096,
-   "timestamp": 114075.718828916
+   "timestamp": 114075.718828916,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0003.jpg",
@@ -126,7 +132,7 @@
    "index": 3,
    "position": [
     3.406,
-    1.849,
+    1.85,
     3.181
    ],
    "forward": [
@@ -138,7 +144,9 @@
    "pitch": 0.9,
    "rotateCW": 90,
    "blurPixels": 1.4716389,
-   "timestamp": 114077.436212916
+   "timestamp": 114077.436212916,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0004.jpg",
@@ -146,7 +154,7 @@
    "index": 4,
    "position": [
     3.234,
-    1.665,
+    1.666,
     3.182
    ],
    "forward": [
@@ -158,7 +166,9 @@
    "pitch": -28.4,
    "rotateCW": 90,
    "blurPixels": 5.1720915,
-   "timestamp": 114079.737173416
+   "timestamp": 114079.737173416,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0005.jpg",
@@ -166,7 +176,7 @@
    "index": 5,
    "position": [
     3.231,
-    1.462,
+    1.463,
     3.171
    ],
    "forward": [
@@ -178,7 +188,9 @@
    "pitch": -50.9,
    "rotateCW": 90,
    "blurPixels": 3.059078,
-   "timestamp": 114080.754263083
+   "timestamp": 114080.754263083,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0006.jpg",
@@ -186,7 +198,7 @@
    "index": 6,
    "position": [
     3.681,
-    1.435,
+    1.436,
     3.177
    ],
    "forward": [
@@ -198,7 +210,9 @@
    "pitch": -49.7,
    "rotateCW": 90,
    "blurPixels": 2.630402,
-   "timestamp": 114082.488317375
+   "timestamp": 114082.488317375,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0007.jpg",
@@ -206,7 +220,7 @@
    "index": 7,
    "position": [
     3.916,
-    1.496,
+    1.497,
     2.954
    ],
    "forward": [
@@ -218,7 +232,9 @@
    "pitch": -47.0,
    "rotateCW": 90,
    "blurPixels": 5.4898515,
-   "timestamp": 114083.522080375
+   "timestamp": 114083.522080375,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0008.jpg",
@@ -226,7 +242,7 @@
    "index": 8,
    "position": [
     4.411,
-    1.543,
+    1.544,
     2.999
    ],
    "forward": [
@@ -238,7 +254,9 @@
    "pitch": -43.2,
    "rotateCW": 90,
    "blurPixels": 4.185832,
-   "timestamp": 114084.522496125
+   "timestamp": 114084.522496125,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0009.jpg",
@@ -258,7 +276,9 @@
    "pitch": -43.6,
    "rotateCW": 90,
    "blurPixels": 3.5787215,
-   "timestamp": 114085.222787208
+   "timestamp": 114085.222787208,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0010.jpg",
@@ -278,7 +298,9 @@
    "pitch": -19.4,
    "rotateCW": 90,
    "blurPixels": 1.3286864,
-   "timestamp": 114086.923494083
+   "timestamp": 114086.923494083,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0011.jpg",
@@ -286,7 +308,7 @@
    "index": 11,
    "position": [
     4.391,
-    1.863,
+    1.864,
     3.275
    ],
    "forward": [
@@ -298,7 +320,9 @@
    "pitch": -9.8,
    "rotateCW": 90,
    "blurPixels": 2.9696531,
-   "timestamp": 114088.240708375
+   "timestamp": 114088.240708375,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0012.jpg",
@@ -306,7 +330,7 @@
    "index": 12,
    "position": [
     3.875,
-    1.677,
+    1.678,
     3.457
    ],
    "forward": [
@@ -318,7 +342,9 @@
    "pitch": -32.7,
    "rotateCW": 90,
    "blurPixels": 3.8371437,
-   "timestamp": 114089.707983333
+   "timestamp": 114089.707983333,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0013.jpg",
@@ -338,7 +364,9 @@
    "pitch": -40.2,
    "rotateCW": 90,
    "blurPixels": 5.6850514,
-   "timestamp": 114090.591683166
+   "timestamp": 114090.591683166,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0014.jpg",
@@ -358,7 +386,9 @@
    "pitch": -16.1,
    "rotateCW": 90,
    "blurPixels": 1.9026407,
-   "timestamp": 114093.326149333
+   "timestamp": 114093.326149333,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0015.jpg",
@@ -366,7 +396,7 @@
    "index": 15,
    "position": [
     2.268,
-    1.564,
+    1.565,
     4.003
    ],
    "forward": [
@@ -378,7 +408,9 @@
    "pitch": -42.6,
    "rotateCW": 90,
    "blurPixels": 2.4560323,
-   "timestamp": 114095.210261666
+   "timestamp": 114095.210261666,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0016.jpg",
@@ -398,7 +430,9 @@
    "pitch": -59.4,
    "rotateCW": 90,
    "blurPixels": 2.3825428,
-   "timestamp": 114097.411172791
+   "timestamp": 114097.411172791,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0017.jpg",
@@ -406,7 +440,7 @@
    "index": 17,
    "position": [
     1.891,
-    1.368,
+    1.369,
     3.879
    ],
    "forward": [
@@ -418,7 +452,9 @@
    "pitch": -68.2,
    "rotateCW": 90,
    "blurPixels": 1.3508047,
-   "timestamp": 114098.811751083
+   "timestamp": 114098.811751083,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0018.jpg",
@@ -438,7 +474,9 @@
    "pitch": -48.4,
    "rotateCW": 90,
    "blurPixels": 1.7148154,
-   "timestamp": 114100.512452833
+   "timestamp": 114100.512452833,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0019.jpg",
@@ -446,7 +484,7 @@
    "index": 19,
    "position": [
     1.929,
-    1.681,
+    1.682,
     4.309
    ],
    "forward": [
@@ -458,7 +496,9 @@
    "pitch": -24.2,
    "rotateCW": 90,
    "blurPixels": 1.7303467,
-   "timestamp": 114103.863833833
+   "timestamp": 114103.863833833,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0020.jpg",
@@ -466,7 +506,7 @@
    "index": 20,
    "position": [
     1.715,
-    1.695,
+    1.696,
     4.257
    ],
    "forward": [
@@ -478,7 +518,9 @@
    "pitch": -22.3,
    "rotateCW": 90,
    "blurPixels": 4.1956596,
-   "timestamp": 114104.997634208
+   "timestamp": 114104.997634208,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0021.jpg",
@@ -486,7 +528,7 @@
    "index": 21,
    "position": [
     1.575,
-    1.746,
+    1.747,
     4.142
    ],
    "forward": [
@@ -498,7 +540,9 @@
    "pitch": -13.4,
    "rotateCW": 90,
    "blurPixels": 2.8176649,
-   "timestamp": 114105.981372791
+   "timestamp": 114105.981372791,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0022.jpg",
@@ -506,7 +550,7 @@
    "index": 22,
    "position": [
     1.236,
-    1.638,
+    1.639,
     3.84
    ],
    "forward": [
@@ -518,7 +562,9 @@
    "pitch": -33.3,
    "rotateCW": 90,
    "blurPixels": 3.4481072,
-   "timestamp": 114107.865482083
+   "timestamp": 114107.865482083,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0023.jpg",
@@ -526,7 +572,7 @@
    "index": 23,
    "position": [
     0.923,
-    1.574,
+    1.575,
     4.112
    ],
    "forward": [
@@ -538,7 +584,9 @@
    "pitch": -49.3,
    "rotateCW": 90,
    "blurPixels": 5.267979,
-   "timestamp": 114108.915914416
+   "timestamp": 114108.915914416,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0024.jpg",
@@ -558,7 +606,9 @@
    "pitch": -51.9,
    "rotateCW": 90,
    "blurPixels": 2.1852045,
-   "timestamp": 114110.049714625
+   "timestamp": 114110.049714625,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0025.jpg",
@@ -566,7 +616,7 @@
    "index": 25,
    "position": [
     1.345,
-    1.569,
+    1.57,
     4.482
    ],
    "forward": [
@@ -578,7 +628,9 @@
    "pitch": -34.0,
    "rotateCW": 90,
    "blurPixels": 1.5581418,
-   "timestamp": 114111.95049675
+   "timestamp": 114111.95049675,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0026.jpg",
@@ -586,7 +638,7 @@
    "index": 26,
    "position": [
     1.399,
-    1.627,
+    1.628,
     4.433
    ],
    "forward": [
@@ -598,7 +650,9 @@
    "pitch": -20.2,
    "rotateCW": 90,
    "blurPixels": 1.4858172,
-   "timestamp": 114113.017602291
+   "timestamp": 114113.017602291,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0027.jpg",
@@ -606,7 +660,7 @@
    "index": 27,
    "position": [
     1.42,
-    1.675,
+    1.676,
     4.399
    ],
    "forward": [
@@ -618,7 +672,9 @@
    "pitch": -5.7,
    "rotateCW": 90,
    "blurPixels": 1.3387558,
-   "timestamp": 114114.051360875
+   "timestamp": 114114.051360875,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0028.jpg",
@@ -638,7 +694,9 @@
    "pitch": -24.2,
    "rotateCW": 90,
    "blurPixels": 1.3379452,
-   "timestamp": 114116.052183333
+   "timestamp": 114116.052183333,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0029.jpg",
@@ -646,7 +704,7 @@
    "index": 29,
    "position": [
     0.878,
-    1.539,
+    1.54,
     3.723
    ],
    "forward": [
@@ -658,7 +716,9 @@
    "pitch": -34.9,
    "rotateCW": 90,
    "blurPixels": 5.673701,
-   "timestamp": 114117.669514833
+   "timestamp": 114117.669514833,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0030.jpg",
@@ -678,7 +738,9 @@
    "pitch": -11.6,
    "rotateCW": 90,
    "blurPixels": 2.958514,
-   "timestamp": 114118.636578791
+   "timestamp": 114118.636578791,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0031.jpg",
@@ -686,7 +748,7 @@
    "index": 31,
    "position": [
     1.043,
-    1.583,
+    1.584,
     3.407
    ],
    "forward": [
@@ -698,7 +760,9 @@
    "pitch": -31.3,
    "rotateCW": 90,
    "blurPixels": 4.911524,
-   "timestamp": 114119.303519583
+   "timestamp": 114119.303519583,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0032.jpg",
@@ -718,7 +782,9 @@
    "pitch": -49.7,
    "rotateCW": 90,
    "blurPixels": 2.0861726,
-   "timestamp": 114121.904588833
+   "timestamp": 114121.904588833,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0033.jpg",
@@ -726,7 +792,7 @@
    "index": 33,
    "position": [
     0.728,
-    1.632,
+    1.633,
     2.374
    ],
    "forward": [
@@ -738,7 +804,9 @@
    "pitch": -24.3,
    "rotateCW": 90,
    "blurPixels": 5.8538933,
-   "timestamp": 114123.021714833
+   "timestamp": 114123.021714833,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0034.jpg",
@@ -746,7 +814,7 @@
    "index": 34,
    "position": [
     0.702,
-    1.802,
+    1.803,
     2.516
    ],
    "forward": [
@@ -758,7 +826,9 @@
    "pitch": -1.9,
    "rotateCW": 90,
    "blurPixels": 2.705636,
-   "timestamp": 114124.088820041
+   "timestamp": 114124.088820041,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0035.jpg",
@@ -778,7 +848,9 @@
    "pitch": -6.7,
    "rotateCW": 90,
    "blurPixels": 4.94789,
-   "timestamp": 114125.305986541
+   "timestamp": 114125.305986541,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0036.jpg",
@@ -786,7 +858,7 @@
    "index": 36,
    "position": [
     0.375,
-    1.744,
+    1.745,
     3.37
    ],
    "forward": [
@@ -798,7 +870,9 @@
    "pitch": -14.1,
    "rotateCW": 90,
    "blurPixels": 0.19548236,
-   "timestamp": 114127.390176041
+   "timestamp": 114127.390176041,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0037.jpg",
@@ -818,7 +892,9 @@
    "pitch": 0.5,
    "rotateCW": 90,
    "blurPixels": 2.063956,
-   "timestamp": 114128.473954375
+   "timestamp": 114128.473954375,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0038.jpg",
@@ -826,7 +902,7 @@
    "index": 38,
    "position": [
     0.326,
-    1.978,
+    1.979,
     3.21
    ],
    "forward": [
@@ -838,7 +914,9 @@
    "pitch": 3.3,
    "rotateCW": 90,
    "blurPixels": 3.2350855,
-   "timestamp": 114129.774488291
+   "timestamp": 114129.774488291,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0039.jpg",
@@ -858,7 +936,9 @@
    "pitch": -17.3,
    "rotateCW": 90,
    "blurPixels": 2.0052888,
-   "timestamp": 114133.209231833
+   "timestamp": 114133.209231833,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0040.jpg",
@@ -866,7 +946,7 @@
    "index": 40,
    "position": [
     0.76,
-    1.708,
+    1.709,
     2.037
    ],
    "forward": [
@@ -878,7 +958,9 @@
    "pitch": -16.0,
    "rotateCW": 90,
    "blurPixels": 2.6755266,
-   "timestamp": 114134.576459666
+   "timestamp": 114134.576459666,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0041.jpg",
@@ -886,7 +968,7 @@
    "index": 41,
    "position": [
     0.966,
-    1.542,
+    1.543,
     1.769
    ],
    "forward": [
@@ -898,7 +980,9 @@
    "pitch": -31.0,
    "rotateCW": 90,
    "blurPixels": 3.7189038,
-   "timestamp": 114135.876993541
+   "timestamp": 114135.876993541,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0042.jpg",
@@ -906,7 +990,7 @@
    "index": 42,
    "position": [
     1.299,
-    1.532,
+    1.533,
     1.498
    ],
    "forward": [
@@ -918,7 +1002,9 @@
    "pitch": -33.7,
    "rotateCW": 90,
    "blurPixels": 3.8410149,
-   "timestamp": 114136.744016208
+   "timestamp": 114136.744016208,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0043.jpg",
@@ -926,7 +1012,7 @@
    "index": 43,
    "position": [
     1.525,
-    1.483,
+    1.484,
     0.96
    ],
    "forward": [
@@ -938,7 +1024,9 @@
    "pitch": -35.0,
    "rotateCW": 90,
    "blurPixels": 3.7358277,
-   "timestamp": 114138.161264833
+   "timestamp": 114138.161264833,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0044.jpg",
@@ -958,7 +1046,9 @@
    "pitch": -39.8,
    "rotateCW": 90,
    "blurPixels": 3.5612545,
-   "timestamp": 114139.3284105
+   "timestamp": 114139.3284105,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0045.jpg",
@@ -966,7 +1056,7 @@
    "index": 45,
    "position": [
     1.256,
-    1.484,
+    1.485,
     0.26
    ],
    "forward": [
@@ -978,7 +1068,9 @@
    "pitch": -37.6,
    "rotateCW": 90,
    "blurPixels": 3.060398,
-   "timestamp": 114140.245453333
+   "timestamp": 114140.245453333,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0046.jpg",
@@ -986,7 +1078,7 @@
    "index": 46,
    "position": [
     0.99,
-    1.451,
+    1.452,
     0.067
    ],
    "forward": [
@@ -998,7 +1090,9 @@
    "pitch": -39.1,
    "rotateCW": 90,
    "blurPixels": 4.7896104,
-   "timestamp": 114141.012434791
+   "timestamp": 114141.012434791,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0047.jpg",
@@ -1018,7 +1112,9 @@
    "pitch": -17.9,
    "rotateCW": 90,
    "blurPixels": 1.3031787,
-   "timestamp": 114142.913214833
+   "timestamp": 114142.913214833,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0048.jpg",
@@ -1038,7 +1134,9 @@
    "pitch": -1.5,
    "rotateCW": 90,
    "blurPixels": 1.4383502,
-   "timestamp": 114144.380483625
+   "timestamp": 114144.380483625,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0049.jpg",
@@ -1058,7 +1156,9 @@
    "pitch": -12.9,
    "rotateCW": 90,
    "blurPixels": 3.7933412,
-   "timestamp": 114145.914446208
+   "timestamp": 114145.914446208,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0050.jpg",
@@ -1078,7 +1178,9 @@
    "pitch": -30.1,
    "rotateCW": 90,
    "blurPixels": 1.8448911,
-   "timestamp": 114148.365451958
+   "timestamp": 114148.365451958,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0051.jpg",
@@ -1098,7 +1200,9 @@
    "pitch": -21.1,
    "rotateCW": 90,
    "blurPixels": 5.749308,
-   "timestamp": 114149.916088
+   "timestamp": 114149.916088,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0052.jpg",
@@ -1106,7 +1210,7 @@
    "index": 52,
    "position": [
     -0.091,
-    1.517,
+    1.518,
     -0.803
    ],
    "forward": [
@@ -1118,7 +1222,9 @@
    "pitch": -22.6,
    "rotateCW": 90,
    "blurPixels": 2.3894346,
-   "timestamp": 114150.999866166
+   "timestamp": 114150.999866166,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0053.jpg",
@@ -1138,7 +1244,9 @@
    "pitch": -26.0,
    "rotateCW": 90,
    "blurPixels": 0.97979,
-   "timestamp": 114152.433788166
+   "timestamp": 114152.433788166,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0054.jpg",
@@ -1146,7 +1254,7 @@
    "index": 54,
    "position": [
     -0.154,
-    1.181,
+    1.182,
     -0.92
    ],
    "forward": [
@@ -1158,7 +1266,9 @@
    "pitch": -56.3,
    "rotateCW": 90,
    "blurPixels": 4.048624,
-   "timestamp": 114154.351242125
+   "timestamp": 114154.351242125,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0055.jpg",
@@ -1166,7 +1276,7 @@
    "index": 55,
    "position": [
     -0.015,
-    1.014,
+    1.015,
     -0.782
    ],
    "forward": [
@@ -1178,7 +1288,9 @@
    "pitch": -65.8,
    "rotateCW": 90,
    "blurPixels": 0.9993941,
-   "timestamp": 114155.468367166
+   "timestamp": 114155.468367166,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0056.jpg",
@@ -1198,7 +1310,9 @@
    "pitch": -51.5,
    "rotateCW": 90,
    "blurPixels": 3.6097784,
-   "timestamp": 114157.335800541
+   "timestamp": 114157.335800541,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0057.jpg",
@@ -1218,7 +1332,9 @@
    "pitch": -20.1,
    "rotateCW": 90,
    "blurPixels": 2.631273,
-   "timestamp": 114159.069845208
+   "timestamp": 114159.069845208,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0058.jpg",
@@ -1238,7 +1354,9 @@
    "pitch": -27.6,
    "rotateCW": 90,
    "blurPixels": 1.4351168,
-   "timestamp": 114160.036908625
+   "timestamp": 114160.036908625,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0059.jpg",
@@ -1246,7 +1364,7 @@
    "index": 59,
    "position": [
     0.129,
-    1.443,
+    1.444,
     -1.692
    ],
    "forward": [
@@ -1258,7 +1376,9 @@
    "pitch": -36.1,
    "rotateCW": 90,
    "blurPixels": 1.4700096,
-   "timestamp": 114161.754279666
+   "timestamp": 114161.754279666,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0060.jpg",
@@ -1266,7 +1386,7 @@
    "index": 60,
    "position": [
     0.149,
-    1.672,
+    1.673,
     -1.741
    ],
    "forward": [
@@ -1278,7 +1398,9 @@
    "pitch": -5.1,
    "rotateCW": 90,
    "blurPixels": 1.5341122,
-   "timestamp": 114163.271568375
+   "timestamp": 114163.271568375,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0061.jpg",
@@ -1286,7 +1408,7 @@
    "index": 61,
    "position": [
     0.03,
-    1.687,
+    1.688,
     -1.628
    ],
    "forward": [
@@ -1298,7 +1420,9 @@
    "pitch": -6.5,
    "rotateCW": 90,
    "blurPixels": 1.4780409,
-   "timestamp": 114164.505407416
+   "timestamp": 114164.505407416,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0062.jpg",
@@ -1306,7 +1430,7 @@
    "index": 62,
    "position": [
     -0.133,
-    1.69,
+    1.691,
     -1.31
    ],
    "forward": [
@@ -1318,7 +1442,9 @@
    "pitch": -3.2,
    "rotateCW": 90,
    "blurPixels": 2.3590126,
-   "timestamp": 114165.822614333
+   "timestamp": 114165.822614333,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0063.jpg",
@@ -1338,7 +1464,9 @@
    "pitch": -9.3,
    "rotateCW": 90,
    "blurPixels": 1.9349924,
-   "timestamp": 114167.389923875
+   "timestamp": 114167.389923875,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0064.jpg",
@@ -1346,7 +1474,7 @@
    "index": 64,
    "position": [
     -0.089,
-    1.803,
+    1.804,
     -1.344
    ],
    "forward": [
@@ -1358,7 +1486,9 @@
    "pitch": 4.0,
    "rotateCW": 90,
    "blurPixels": 1.5507404,
-   "timestamp": 114169.390744875
+   "timestamp": 114169.390744875,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0065.jpg",
@@ -1378,7 +1508,9 @@
    "pitch": -19.4,
    "rotateCW": 90,
    "blurPixels": 2.5924187,
-   "timestamp": 114171.374892458
+   "timestamp": 114171.374892458,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0066.jpg",
@@ -1398,7 +1530,9 @@
    "pitch": -23.5,
    "rotateCW": 90,
    "blurPixels": 3.3295884,
-   "timestamp": 114172.542037875
+   "timestamp": 114172.542037875,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0067.jpg",
@@ -1418,7 +1552,9 @@
    "pitch": -31.0,
    "rotateCW": 90,
    "blurPixels": 3.6887045,
-   "timestamp": 114173.859244958
+   "timestamp": 114173.859244958,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0068.jpg",
@@ -1426,7 +1562,7 @@
    "index": 68,
    "position": [
     -0.324,
-    1.546,
+    1.547,
     -3.335
    ],
    "forward": [
@@ -1438,7 +1574,9 @@
    "pitch": -23.0,
    "rotateCW": 90,
    "blurPixels": 4.525976,
-   "timestamp": 114174.792961583
+   "timestamp": 114174.792961583,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0069.jpg",
@@ -1446,7 +1584,7 @@
    "index": 69,
    "position": [
     -0.624,
-    1.686,
+    1.687,
     -3.589
    ],
    "forward": [
@@ -1458,7 +1596,9 @@
    "pitch": -9.6,
    "rotateCW": 90,
    "blurPixels": 2.739194,
-   "timestamp": 114176.226883541
+   "timestamp": 114176.226883541,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0070.jpg",
@@ -1466,7 +1606,7 @@
    "index": 70,
    "position": [
     -0.64,
-    1.825,
+    1.826,
     -3.563
    ],
    "forward": [
@@ -1478,7 +1618,9 @@
    "pitch": -5.8,
    "rotateCW": 90,
    "blurPixels": 3.940487,
-   "timestamp": 114177.127253166
+   "timestamp": 114177.127253166,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0071.jpg",
@@ -1486,7 +1628,7 @@
    "index": 71,
    "position": [
     -0.755,
-    1.664,
+    1.665,
     -3.877
    ],
    "forward": [
@@ -1498,7 +1640,9 @@
    "pitch": -11.0,
    "rotateCW": 90,
    "blurPixels": 3.1627736,
-   "timestamp": 114178.177684583
+   "timestamp": 114178.177684583,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0072.jpg",
@@ -1506,7 +1650,7 @@
    "index": 72,
    "position": [
     -1.054,
-    1.487,
+    1.488,
     -4.155
    ],
    "forward": [
@@ -1518,7 +1662,9 @@
    "pitch": -29.4,
    "rotateCW": 90,
    "blurPixels": 3.4556036,
-   "timestamp": 114179.928403708
+   "timestamp": 114179.928403708,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0073.jpg",
@@ -1526,7 +1672,7 @@
    "index": 73,
    "position": [
     -1.253,
-    1.497,
+    1.498,
     -4.441
    ],
    "forward": [
@@ -1538,7 +1684,9 @@
    "pitch": -28.9,
    "rotateCW": 90,
    "blurPixels": 3.330758,
-   "timestamp": 114180.795426416
+   "timestamp": 114180.795426416,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0074.jpg",
@@ -1546,7 +1694,7 @@
    "index": 74,
    "position": [
     -1.378,
-    1.651,
+    1.652,
     -4.567
    ],
    "forward": [
@@ -1558,7 +1706,9 @@
    "pitch": -3.8,
    "rotateCW": 90,
    "blurPixels": 1.0130227,
-   "timestamp": 114182.529471875
+   "timestamp": 114182.529471875,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0075.jpg",
@@ -1578,7 +1728,9 @@
    "pitch": -37.7,
    "rotateCW": 90,
    "blurPixels": 1.7117225,
-   "timestamp": 114184.380232375
+   "timestamp": 114184.380232375,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0076.jpg",
@@ -1586,7 +1738,7 @@
    "index": 76,
    "position": [
     -1.532,
-    1.716,
+    1.717,
     -4.811
    ],
    "forward": [
@@ -1598,7 +1750,9 @@
    "pitch": 3.0,
    "rotateCW": 90,
    "blurPixels": 2.1920109,
-   "timestamp": 114186.080930833
+   "timestamp": 114186.080930833,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0077.jpg",
@@ -1606,7 +1760,7 @@
    "index": 77,
    "position": [
     -1.369,
-    1.765,
+    1.766,
     -4.482
    ],
    "forward": [
@@ -1618,7 +1772,9 @@
    "pitch": 4.6,
    "rotateCW": 90,
    "blurPixels": 5.813721,
-   "timestamp": 114187.814976583
+   "timestamp": 114187.814976583,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0078.jpg",
@@ -1638,7 +1794,9 @@
    "pitch": 1.0,
    "rotateCW": 90,
    "blurPixels": 1.7430842,
-   "timestamp": 114189.248899291
+   "timestamp": 114189.248899291,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0079.jpg",
@@ -1646,7 +1804,7 @@
    "index": 79,
    "position": [
     -1.173,
-    1.463,
+    1.464,
     -4.273
    ],
    "forward": [
@@ -1658,7 +1816,9 @@
    "pitch": -26.8,
    "rotateCW": 90,
    "blurPixels": 2.6909575,
-   "timestamp": 114189.982534208
+   "timestamp": 114189.982534208,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0080.jpg",
@@ -1666,7 +1826,7 @@
    "index": 80,
    "position": [
     -1.296,
-    1.253,
+    1.254,
     -4.924
    ],
    "forward": [
@@ -1678,7 +1838,9 @@
    "pitch": -53.0,
    "rotateCW": 90,
    "blurPixels": 1.1931963,
-   "timestamp": 114193.717402208
+   "timestamp": 114193.717402208,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0081.jpg",
@@ -1686,7 +1848,7 @@
    "index": 81,
    "position": [
     -0.412,
-    1.298,
+    1.299,
     -3.494
    ],
    "forward": [
@@ -1698,7 +1860,9 @@
    "pitch": -42.8,
    "rotateCW": 90,
    "blurPixels": 2.3389065,
-   "timestamp": 114197.46894275
+   "timestamp": 114197.46894275,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0082.jpg",
@@ -1706,7 +1870,7 @@
    "index": 82,
    "position": [
     -0.385,
-    1.266,
+    1.267,
     -3.16
    ],
    "forward": [
@@ -1718,7 +1882,9 @@
    "pitch": -47.1,
    "rotateCW": 90,
    "blurPixels": 4.5918465,
-   "timestamp": 114198.335965291
+   "timestamp": 114198.335965291,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0083.jpg",
@@ -1726,7 +1892,7 @@
    "index": 83,
    "position": [
     -0.129,
-    1.375,
+    1.376,
     -2.605
    ],
    "forward": [
@@ -1738,7 +1904,9 @@
    "pitch": -35.7,
    "rotateCW": 90,
    "blurPixels": 5.135686,
-   "timestamp": 114199.453090791
+   "timestamp": 114199.453090791,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0084.jpg",
@@ -1758,7 +1926,9 @@
    "pitch": -29.4,
    "rotateCW": 90,
    "blurPixels": 2.7786663,
-   "timestamp": 114200.08668425
+   "timestamp": 114200.08668425,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0085.jpg",
@@ -1766,7 +1936,7 @@
    "index": 85,
    "position": [
     -0.116,
-    1.183,
+    1.184,
     -1.799
    ],
    "forward": [
@@ -1778,7 +1948,9 @@
    "pitch": -27.2,
    "rotateCW": 90,
    "blurPixels": 5.9222026,
-   "timestamp": 114201.187136166
+   "timestamp": 114201.187136166,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0086.jpg",
@@ -1798,7 +1970,9 @@
    "pitch": -30.6,
    "rotateCW": 90,
    "blurPixels": 4.0155478,
-   "timestamp": 114203.921591375
+   "timestamp": 114203.921591375,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0087.jpg",
@@ -1818,7 +1992,9 @@
    "pitch": -33.6,
    "rotateCW": 90,
    "blurPixels": 3.4151428,
-   "timestamp": 114204.671899125
+   "timestamp": 114204.671899125,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0088.jpg",
@@ -1826,7 +2002,7 @@
    "index": 88,
    "position": [
     1.036,
-    1.39,
+    1.391,
     -0.036
    ],
    "forward": [
@@ -1838,7 +2014,9 @@
    "pitch": -31.7,
    "rotateCW": 90,
    "blurPixels": 5.1545153,
-   "timestamp": 114205.305492333
+   "timestamp": 114205.305492333,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0089.jpg",
@@ -1846,7 +2024,7 @@
    "index": 89,
    "position": [
     1.387,
-    1.432,
+    1.433,
     0.471
    ],
    "forward": [
@@ -1858,7 +2036,9 @@
    "pitch": -32.6,
    "rotateCW": 90,
    "blurPixels": 4.6643267,
-   "timestamp": 114206.222535416
+   "timestamp": 114206.222535416,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0090.jpg",
@@ -1878,7 +2058,9 @@
    "pitch": -32.1,
    "rotateCW": 90,
    "blurPixels": 5.227813,
-   "timestamp": 114207.889886166
+   "timestamp": 114207.889886166,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0091.jpg",
@@ -1886,7 +2068,7 @@
    "index": 91,
    "position": [
     1.358,
-    1.395,
+    1.396,
     1.647
    ],
    "forward": [
@@ -1898,7 +2080,9 @@
    "pitch": -41.2,
    "rotateCW": 90,
    "blurPixels": 5.938784,
-   "timestamp": 114208.773582083
+   "timestamp": 114208.773582083,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0092.jpg",
@@ -1918,7 +2102,9 @@
    "pitch": -44.4,
    "rotateCW": 90,
    "blurPixels": 5.4983854,
-   "timestamp": 114209.440522333
+   "timestamp": 114209.440522333,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0093.jpg",
@@ -1926,7 +2112,7 @@
    "index": 93,
    "position": [
     0.531,
-    1.502,
+    1.503,
     2.604
    ],
    "forward": [
@@ -1938,7 +2124,9 @@
    "pitch": -32.1,
    "rotateCW": 90,
    "blurPixels": 4.89468,
-   "timestamp": 114210.824423458
+   "timestamp": 114210.824423458,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0094.jpg",
@@ -1946,7 +2134,7 @@
    "index": 94,
    "position": [
     0.021,
-    1.619,
+    1.62,
     2.778
    ],
    "forward": [
@@ -1958,7 +2146,9 @@
    "pitch": -21.7,
    "rotateCW": 90,
    "blurPixels": 5.9369593,
-   "timestamp": 114212.141630208
+   "timestamp": 114212.141630208,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0095.jpg",
@@ -1966,7 +2156,7 @@
    "index": 95,
    "position": [
     -0.036,
-    1.824,
+    1.825,
     3.062
    ],
    "forward": [
@@ -1978,7 +2168,9 @@
    "pitch": -4.8,
    "rotateCW": 90,
    "blurPixels": 0.38166443,
-   "timestamp": 114213.658918958
+   "timestamp": 114213.658918958,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0096.jpg",
@@ -1986,7 +2178,7 @@
    "index": 96,
    "position": [
     0.153,
-    1.97,
+    1.971,
     3.165
    ],
    "forward": [
@@ -1998,7 +2190,9 @@
    "pitch": 0.8,
    "rotateCW": 90,
    "blurPixels": 5.8963385,
-   "timestamp": 114215.059493
+   "timestamp": 114215.059493,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0097.jpg",
@@ -2018,7 +2212,9 @@
    "pitch": -4.9,
    "rotateCW": 90,
    "blurPixels": 4.0787587,
-   "timestamp": 114216.076576416
+   "timestamp": 114216.076576416,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0098.jpg",
@@ -2026,7 +2222,7 @@
    "index": 98,
    "position": [
     1.303,
-    1.765,
+    1.766,
     3.292
    ],
    "forward": [
@@ -2038,7 +2234,9 @@
    "pitch": -21.5,
    "rotateCW": 90,
    "blurPixels": 3.059799,
-   "timestamp": 114217.360435958
+   "timestamp": 114217.360435958,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0099.jpg",
@@ -2046,7 +2244,7 @@
    "index": 99,
    "position": [
     1.949,
-    1.627,
+    1.628,
     3.906
    ],
    "forward": [
@@ -2058,7 +2256,9 @@
    "pitch": -19.6,
    "rotateCW": 90,
    "blurPixels": 3.446956,
-   "timestamp": 114219.561338416
+   "timestamp": 114219.561338416,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0100.jpg",
@@ -2066,7 +2266,7 @@
    "index": 100,
    "position": [
     1.338,
-    1.591,
+    1.592,
     4.152
    ],
    "forward": [
@@ -2078,7 +2278,9 @@
    "pitch": -36.0,
    "rotateCW": 90,
    "blurPixels": 2.4773662,
-   "timestamp": 114225.080267333
+   "timestamp": 114225.080267333,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0101.jpg",
@@ -2086,7 +2288,7 @@
    "index": 101,
    "position": [
     1.242,
-    1.664,
+    1.665,
     3.947
    ],
    "forward": [
@@ -2098,7 +2300,9 @@
    "pitch": -26.1,
    "rotateCW": 90,
    "blurPixels": 1.3677353,
-   "timestamp": 114226.347453791
+   "timestamp": 114226.347453791,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0102.jpg",
@@ -2118,7 +2322,9 @@
    "pitch": -32.9,
    "rotateCW": 90,
    "blurPixels": 2.5379913,
-   "timestamp": 114228.598377458
+   "timestamp": 114228.598377458,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0103.jpg",
@@ -2138,7 +2344,9 @@
    "pitch": -33.3,
    "rotateCW": 90,
    "blurPixels": 3.9642365,
-   "timestamp": 114229.632135125
+   "timestamp": 114229.632135125,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0104.jpg",
@@ -2158,7 +2366,9 @@
    "pitch": -33.2,
    "rotateCW": 90,
    "blurPixels": 3.3982103,
-   "timestamp": 114230.465810375
+   "timestamp": 114230.465810375,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0105.jpg",
@@ -2166,7 +2376,7 @@
    "index": 105,
    "position": [
     1.395,
-    1.58,
+    1.581,
     2.613
    ],
    "forward": [
@@ -2178,7 +2388,9 @@
    "pitch": -31.1,
    "rotateCW": 90,
    "blurPixels": 1.6976968,
-   "timestamp": 114232.366589333
+   "timestamp": 114232.366589333,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0106.jpg",
@@ -2186,7 +2398,7 @@
    "index": 106,
    "position": [
     1.237,
-    1.552,
+    1.553,
     2.396
    ],
    "forward": [
@@ -2198,7 +2410,9 @@
    "pitch": -31.8,
    "rotateCW": 90,
    "blurPixels": 3.6919367,
-   "timestamp": 114233.683795416
+   "timestamp": 114233.683795416,
+   "manual": false,
+   "pass": "scan"
   },
   {
    "file": "photos/0107.jpg",
@@ -2206,7 +2420,7 @@
    "index": 107,
    "position": [
     0.484,
-    1.597,
+    1.598,
     2.577
    ],
    "forward": [
@@ -2218,7 +2432,9 @@
    "pitch": -22.0,
    "rotateCW": 90,
    "blurPixels": 4.509877,
-   "timestamp": 114237.235249625
+   "timestamp": 114237.235249625,
+   "manual": false,
+   "pass": "scan"
   }
  ],
  "transform": {
@@ -2236,10 +2452,28 @@
    0.995602,
    0.0,
    3.431376,
-   1.614858,
+   1.615466,
    3.123686,
    1.0
   ],
   "columnMajor": true
+ },
+ "siteFacts": {
+  "hardinessZone": "H4",
+  "typicalWinterMinC": -5.3,
+  "absoluteMinC": -8.8,
+  "lastSpringFrost": "12 Apr",
+  "firstAutumnFrost": "22 Nov",
+  "annualRainMm": 756,
+  "soilTexture": "SAND TO SANDY LOAM",
+  "soilGroup": "LIGHT TO MEDIUM",
+  "soilDepth": "DEEP",
+  "calcareous": "NONE",
+  "parentMaterial": "PREQUATERNARY MARINE/ESTUARINE SAND",
+  "elevationM": 59.0,
+  "sources": [
+   "BGS Soil Parent Material Model 1:50k via UKSO (OGL)",
+   "Open-Meteo ERA5-Land reanalysis (~9 km grid; a garden's frost pocket or wall can differ by weeks)"
+  ]
  }
 }

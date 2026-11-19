@@ -72,6 +72,10 @@ ideally overcast or in shade, and keep the whole garden in one session so areas 
 The garden-specific rebuild pipeline (plant identification, sun-hours and site layers) lives in
 this fork's `garden` branch and is work in progress; see the repository README.
 
+**Plant close-ups.** After the walk-round, tap the camera button on each plant from about half
+a metre. Outdoors a manual photo is saved with `pass: "closeup"` in `photos/photos.json`; the
+plant identifier always reads those and weights them over the wide scan frames.
+
 ## On disk
 
 ```

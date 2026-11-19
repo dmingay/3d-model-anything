@@ -16,7 +16,40 @@ interface Hosts {
   onReview: (on: boolean) => void;
   onFocus: (point: THREE.Vector3) => void;
   onSun: (on: boolean) => Promise<boolean>;
+  /** June sun hours at a point, when the sun map has been computed */
+  sunHoursAt: (point: THREE.Vector3) => { hours: number; band: string } | undefined;
   invalidate: () => void;
+}
+
+/**
+ * Concern flags: where what the RHS says a plant wants disagrees with what the site and the scan
+ * say it has. Things to look at, never a diagnosis.
+ */
+export function concernsFor(candidate: Plant['candidates'][number], site: PlantSet['site'] | undefined, sun?: { hours: number; band: string }): string[] {
+  const f = candidate.rhs?.facts;
+  if (!f) return [];
+  const out: string[] = [];
+  const zone = (z?: string | null) => { const m = /H(\d)/.exec(z ?? ''); return m ? Number(m[1]) : undefined; };
+  const need = zone(f.hardiness), have = zone(site?.hardinessZone);
+  if (need !== undefined && have !== undefined) {
+    if (need < have - 1) out.push(`Tender here: RHS ${f.hardiness}, site ${site!.hardinessZone} (typical winter low ${site?.typicalWinterMinC ?? '?'} °C)`);
+    else if (need === have - 1) out.push(`Borderline hardy: RHS ${f.hardiness} against a ${site!.hardinessZone} site — shelter or fleece in hard winters`);
+  }
+  if (f.soil && site?.soilTexture) {
+    const sandy = /sand/i.test(site.soilTexture);
+    if (sandy && !/sand/i.test(f.soil)) out.push(`Soil: RHS lists ${f.soil}; this site is ${site.soilTexture.toLowerCase()}`);
+  }
+  if (f.ph && site?.calcareous === 'NONE' && /alkaline/i.test(f.ph) && !/acid|neutral/i.test(f.ph)) out.push('Wants alkaline soil; the parent material here is non-calcareous sand');
+  if (f.moisture && site?.soilTexture && /sand/i.test(site.soilTexture) && /poorly/i.test(f.moisture) && !/well/i.test(f.moisture)) out.push('Wants poorly drained ground; sandy soil here drains fast');
+  if (sun && f.aspect) {
+    const a = f.aspect.toLowerCase();
+    const wantsSun = a.includes('full sun') && !a.includes('shade');
+    const wantsShade = a.includes('shade') && !a.includes('full sun');
+    if (wantsSun && sun.hours < 3) out.push(`Light: RHS says full sun, this spot gets about ${sun.hours.toFixed(0)} h in June`);
+    if (wantsShade && sun.hours >= 6) out.push(`Light: RHS says shade, this spot gets about ${sun.hours.toFixed(0)} h in June`);
+  }
+  if (f.problems) out.push(`RHS lists problems: ${f.problems}`);
+  return out;
 }
 
 const PIN_COLORS: Record<string, string> = { likely: '#c2d7a9', unsure: '#e9c46a', guess: '#9aa39c', confirmed: '#f3e9a8', override: '#9fd3ff', rejected: '#555b57' };
@@ -162,6 +195,10 @@ export class PlantsView {
       : d?.status === 'rejected' ? 'Marked as not a plant'
       : p.confidence === 'likely' ? `Likely (${pct}%) — confirm, or pick another` : p.confidence === 'unsure' ? `Unsure (${pct}%) — which is it?` : `A guess (${pct}%) — it probably needs your name`;
     const facts = rhs ? [rhs.hardiness && `Hardiness ${rhs.hardiness}`, rhs.aspect && rhs.aspect.split(';')[0], rhs.soil && `Soil: ${rhs.soil}`, rhs.size && `Size ${rhs.size}`].filter(Boolean).join(' · ') : (chosen.rhs === null ? 'No RHS page for this name' : '');
+    const sun = this.hosts.sunHoursAt(new THREE.Vector3(...p.position));
+    const concerns = d?.status === 'rejected' ? [] : concernsFor(chosen, set.site, sun);
+    const sunLine = sun ? `About ${sun.hours.toFixed(1)} h of direct sun here in June (${sun.band})` : 'Turn on the sun map for the light check';
+    const concernHtml = concerns.length ? `<ul class="sheet-concerns">${concerns.map(c => `<li>${c}</li>`).join('')}</ul>` : `<div class="sheet-ok">No concerns against the site facts${rhs ? '' : ' (no RHS facts to check)'}</div>`;
     const title = d?.status === 'override' ? `${d.name}` : (chosen.common ? `${chosen.common}<i>${chosen.scientific}</i>` : `<i>${chosen.scientific}</i>`);
     const photos = p.photos.map(f => `${this.hosts.photoBase}${set.photoBase}${f}`);
     const sheet = this.hosts.sheet;
@@ -174,7 +211,8 @@ export class PlantsView {
       <div class="sheet-body">
         <div class="sheet-title">${title}</div>
         <div class="sheet-status ${d?.status ?? ''}">${statusText}</div>
-        <div class="sheet-facts">${facts}</div>
+        <div class="sheet-facts">${facts}${facts ? '<br>' : ''}<span class="sheet-sun">${sunLine}</span></div>
+        ${concernHtml}
         <div class="sheet-cands"></div>
         <div class="sheet-actions"><input type="text" placeholder="Or type what it is…" aria-label="Your identification"><button data-act="override">Set</button><button data-act="reject" title="Not a plant (Backspace)">Not a plant</button></div>
         <div class="sheet-nav">
@@ -285,7 +323,12 @@ export class PlantsView {
     if (!this.set) return;
     const out = {
       garden: this.set.garden, exportedAt: new Date().toISOString(), note: this.set.note,
-      plants: this.order.map(p => ({ ...p, decision: this.decisions[p.id] ?? null })),
+      site: this.set.site,
+      plants: this.order.map(p => {
+        const d = this.decisions[p.id];
+        const chosen = d?.status === 'confirmed' ? p.candidates.find(c => c.scientific === d.scientific) ?? p.candidates[0] : p.candidates[0];
+        return { ...p, decision: d ?? null, concerns: d?.status === 'rejected' ? [] : concernsFor(chosen, this.set!.site, this.hosts.sunHoursAt(new THREE.Vector3(...p.position))) };
+      }),
     };
     const blob = new Blob([JSON.stringify(out, null, 1)], { type: 'application/json' });
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `${this.set.garden}-plants.json`; a.click();

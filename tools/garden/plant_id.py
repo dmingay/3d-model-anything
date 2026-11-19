@@ -31,14 +31,24 @@ def load_env():
                 os.environ.setdefault(k, v.strip().strip('"'))
 
 
-def identify(photo_path, cache_path, key):
+def identify(photo_path, cache_path, key, crop=0.0):
+    """Pl@ntNet answer for a photo, or for its centre crop (fraction of each side kept)."""
     if os.path.exists(cache_path) and os.path.getsize(cache_path) > 0:
         return json.load(open(cache_path))
-    import requests
-    with open(photo_path, 'rb') as f:
-        r = requests.post(API, params={'api-key': key, 'nb-results': 6, 'lang': 'en'},
-                          files=[('images', (os.path.basename(photo_path), f, 'image/jpeg'))],
-                          data={'organs': 'auto'}, timeout=90)
+    import io, requests
+    from PIL import Image
+    if crop:
+        with Image.open(photo_path) as im:
+            w, h = im.size
+            cw, ch = int(w * crop), int(h * crop)
+            buf = io.BytesIO()
+            im.crop(((w - cw) // 2, (h - ch) // 2, (w + cw) // 2, (h + ch) // 2)).save(buf, 'JPEG', quality=90)
+            payload = buf.getvalue()
+    else:
+        payload = open(photo_path, 'rb').read()
+    r = requests.post(API, params={'api-key': key, 'nb-results': 6, 'lang': 'en'},
+                      files=[('images', (os.path.basename(photo_path), payload, 'image/jpeg'))],
+                      data={'organs': 'auto'}, timeout=90)
     data = r.json()
     if r.status_code == 200:
         os.makedirs(os.path.dirname(cache_path), exist_ok=True)
@@ -106,10 +116,11 @@ def group_plants(proposals, radius=1.5):
     for i, pl in enumerate(plants):
         merged = {}
         for pid in pl['proposals']:
+            w = 2 if by_id[pid].get('closeup') else 1
             for c in by_id[pid]['candidates']:
                 m = merged.setdefault(c['scientific'], {**c, 'score': 0.0, 'support': 0})
                 m['score'] = max(m['score'], c['score'])
-                m['support'] += 1
+                m['support'] += w
         cands = sorted(merged.values(), key=lambda c: -(c['score'] + 0.05 * (c['support'] - 1)))[:6]
         for pid in pl['proposals']:
             by_id[pid]['plant'] = f'plant-{i + 1:02d}'
@@ -125,6 +136,7 @@ def main():
     ap.add_argument('--every', type=int, default=3, help='use every Nth photo')
     ap.add_argument('--limit', type=int, default=0)
     ap.add_argument('--no-api', action='store_true', help='cached answers only')
+    ap.add_argument('--crop', type=float, default=0.0, help='also try a centre crop (e.g. 0.6) and keep whichever answer scores higher')
     a = ap.parse_args()
     load_env()
     key = os.environ.get('PLANTNET_API_KEY')
@@ -138,7 +150,8 @@ def main():
     scene = o3d.t.geometry.RaycastingScene()
     scene.add_triangles(o3d.t.geometry.TriangleMesh.from_legacy(mesh))
 
-    photos = [p for p in garden['photos'] if p['index'] % a.every == 0]
+    # every Nth wide scan frame, plus every close-up / manual photo (those are the good ones)
+    photos = [p for p in garden['photos'] if p['index'] % a.every == 0 or p.get('manual') or p.get('pass') == 'closeup']
     if a.limit:
         photos = photos[:a.limit]
     proposals, names, remaining = [], [], None
@@ -150,6 +163,13 @@ def main():
             print('PLANTNET_API_KEY missing and no cache for', p['file'], file=sys.stderr)
             continue
         data = identify(os.path.join(web, p['file']), cache, key)
+        used = 'full'
+        if a.crop and not (p.get('manual') or p.get('pass') == 'closeup'):
+            ccache = cache.replace('.json', f'-c{int(a.crop * 100)}.json')
+            if not (a.no_api and not os.path.exists(ccache)):
+                cdata = identify(os.path.join(web, p['file']), ccache, key, crop=a.crop)
+                if (cdata.get('results') or [{'score': 0}])[0]['score'] > (data.get('results') or [{'score': 0}])[0]['score']:
+                    data, used = cdata, f'crop{int(a.crop * 100)}'
         results = data.get('results') or []
         if not results:
             continue
@@ -170,9 +190,10 @@ def main():
             names.append(sp['scientificNameWithoutAuthor'])
         proposals.append({'id': f"p{p['index']:04d}", 'photo': p['file'], 'photoIndex': p['index'],
                           'position': point, 'cameraPosition': p['position'], 'heading': p['heading'], 'hitDistance': round(t, 2),
-                          'organs': [o.get('organ') for o in data.get('predictedOrgans', [])][:2],
+                          'organs': [o.get('organ') for o in data.get('predictedOrgans', [])][:2], 'input': used,
+                          'closeup': bool(p.get('manual') or p.get('pass') == 'closeup'),
                           'confidence': band(cands[0]['score']), 'candidates': cands, 'status': 'proposed', 'concerns': []})
-        print(f"{p['file']}  {cands[0]['score']:.2f}  {cands[0]['scientific']}  ({band(cands[0]['score'])})")
+        print(f"{p['file']}  {cands[0]['score']:.2f}  {cands[0]['scientific']}  ({band(cands[0]['score'])}, {used})")
         time.sleep(0.2)
 
     rhs = resolve_rhs(names)

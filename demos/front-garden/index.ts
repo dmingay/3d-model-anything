@@ -68,7 +68,7 @@ export const frontGarden: RoomModule = {
       loadReference: async () => scan.clone(),
       referenceAvailable: false, referenceKind: 'scan',
       scanPhotos: { base: 'gardens/front-garden/', photos: garden.photos.map(p => ({ file: p.file, position: p.position, forward: p.forward, index: p.index })) },
-      plants: { garden: plants.garden, photoBase: 'gardens/front-garden/', note: plants.note, plants: plants.plants as PlantSet['plants'], proposals: plants.proposals as PlantSet['proposals'] },
+      plants: { garden: plants.garden, photoBase: 'gardens/front-garden/', note: plants.note, site: (garden as { siteFacts?: PlantSet['site'] }).siteFacts, plants: plants.plants as PlantSet['plants'], proposals: plants.proposals as PlantSet['proposals'] },
       sun: {
         latitude: garden.site.latitude ?? 51.31, longitude: garden.site.longitude ?? -0.58,
         northBearing: garden.site.northBearing ?? 0,
