@@ -17,3 +17,8 @@ apps/house-capture/release/screenshots/
 HouseCapture.xcodeproj/
 data/photos-in/
 data/site/
+data/captures-in/
+data/web-assets/gardens/*/photos/
+data/web-assets/gardens/*/scan.glb
+data/web-assets/gardens/*/scan.ply
+.venv/

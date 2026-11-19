@@ -1,0 +1,155 @@
+#!/usr/bin/env python3
+"""Propose plant identities for a scanned garden's posed photos.
+
+usage: .venv/bin/python tools/garden/plant_id.py <garden-id> [--every 3] [--limit N] [--no-api]
+
+For each selected photo of data/web-assets/gardens/<id>/photos/ this
+  1. asks Pl@ntNet (key in .env as PLANTNET_API_KEY; raw answers cached in
+     data/captures-in/<id>/plantnet/NNNN.json so re-runs cost no quota),
+  2. resolves each candidate's scientific name against the GardenLens RHS plant DB
+     (~/gardenlens-backend plantdb resolver) for hardiness / soil / aspect / problems,
+  3. drops a 3D pin where the photo's central ray meets the scan mesh,
+and writes data/demos/<id>/plants.json: a list of *proposals*. Nothing here is a
+verdict — the viewer's Plants panel asks the gardener to confirm, pick another
+candidate, type a name, or reject. Confidence bands: likely ≥ 0.5, unsure 0.2–0.5,
+guess < 0.2 (Pl@ntNet top score on a wide bed photo; close-ups score far higher).
+"""
+import argparse, glob, json, os, subprocess, sys, time
+import numpy as np
+
+REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+GARDENLENS = os.path.expanduser('~/gardenlens-backend')
+API = 'https://my-api.plantnet.org/v2/identify/all'
+
+
+def load_env():
+    p = os.path.join(REPO, '.env')
+    if os.path.exists(p):
+        for line in open(p):
+            if '=' in line and not line.strip().startswith('#'):
+                k, v = line.strip().split('=', 1)
+                os.environ.setdefault(k, v.strip().strip('"'))
+
+
+def identify(photo_path, cache_path, key):
+    if os.path.exists(cache_path) and os.path.getsize(cache_path) > 0:
+        return json.load(open(cache_path))
+    import requests
+    with open(photo_path, 'rb') as f:
+        r = requests.post(API, params={'api-key': key, 'nb-results': 6, 'lang': 'en'},
+                          files=[('images', (os.path.basename(photo_path), f, 'image/jpeg'))],
+                          data={'organs': 'auto'}, timeout=90)
+    data = r.json()
+    if r.status_code == 200:
+        os.makedirs(os.path.dirname(cache_path), exist_ok=True)
+        json.dump(data, open(cache_path, 'w'))
+    else:
+        print(f'  pl@ntnet {r.status_code}: {data.get("message")}', file=sys.stderr)
+    return data
+
+
+def resolve_rhs(names):
+    """Resolve scientific names through the GardenLens plant DB in its own venv."""
+    py = os.path.join(GARDENLENS, '.venv', 'bin', 'python')
+    if not os.path.exists(py):
+        print('GardenLens resolver not available; RHS facts skipped', file=sys.stderr)
+        return {}
+    helper = r'''
+import json, sys
+from plantdb.resolver import Resolver
+r = Resolver(); out = {}
+for q in json.load(sys.stdin):
+    ms = r.resolve(q, limit=1)
+    if not ms: out[q] = None; continue
+    m = ms[0]
+    f = {k: m.facts.get(k) for k in ("common","hardiness","soil","aspect","moisture","ph","size","pruning_group","problems","genus","species")}
+    out[q] = {"botanical": m.botanical, "url": m.url, "exact": m.score == 1.0, "score": round(m.score, 3), "via": m.via_alias, "facts": f}
+json.dump(out, sys.stdout)
+'''
+    p = subprocess.run([py, '-c', helper], input=json.dumps(sorted(set(names))), capture_output=True, text=True, cwd=GARDENLENS)
+    if p.returncode != 0:
+        print('resolver failed:', p.stderr[-800:], file=sys.stderr)
+        return {}
+    return json.loads(p.stdout)
+
+
+def band(score):
+    return 'likely' if score >= 0.5 else 'unsure' if score >= 0.2 else 'guess'
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('garden_id')
+    ap.add_argument('--every', type=int, default=3, help='use every Nth photo')
+    ap.add_argument('--limit', type=int, default=0)
+    ap.add_argument('--no-api', action='store_true', help='cached answers only')
+    a = ap.parse_args()
+    load_env()
+    key = os.environ.get('PLANTNET_API_KEY')
+    garden = json.load(open(os.path.join(REPO, 'data', 'demos', a.garden_id, 'garden.json')))
+    web = os.path.join(REPO, 'data', 'web-assets', 'gardens', a.garden_id)
+    cache_dir = os.path.join(REPO, 'data', 'captures-in', a.garden_id, 'plantnet')
+
+    # scan mesh for pin placement
+    import open3d as o3d
+    mesh = o3d.io.read_triangle_mesh(os.path.join(REPO, 'data', 'web-assets', garden['mesh'].get('toolFile') or garden['mesh']['file']))
+    scene = o3d.t.geometry.RaycastingScene()
+    scene.add_triangles(o3d.t.geometry.TriangleMesh.from_legacy(mesh))
+
+    photos = [p for p in garden['photos'] if p['index'] % a.every == 0]
+    if a.limit:
+        photos = photos[:a.limit]
+    proposals, names, remaining = [], [], None
+    for p in photos:
+        cache = os.path.join(cache_dir, f"{p['index']:04d}.json")
+        if a.no_api and not os.path.exists(cache):
+            continue
+        if not key and not os.path.exists(cache):
+            print('PLANTNET_API_KEY missing and no cache for', p['file'], file=sys.stderr)
+            continue
+        data = identify(os.path.join(web, p['file']), cache, key)
+        results = data.get('results') or []
+        if not results:
+            continue
+        remaining = data.get('remainingIdentificationRequests', remaining)
+        pos, fwd = np.array(p['position']), np.array(p['forward'])
+        ray = o3d.core.Tensor([[*pos, *fwd]], dtype=o3d.core.Dtype.Float32)
+        hit = scene.cast_rays(ray)
+        t = float(hit['t_hit'].numpy()[0])
+        if not np.isfinite(t) or t > 6:
+            t = 1.5
+        point = (pos + fwd * t).round(3).tolist()
+        cands = []
+        for r in results[:5]:
+            sp = r['species']
+            cands.append({'score': round(r['score'], 3), 'scientific': sp['scientificNameWithoutAuthor'],
+                          'common': (sp.get('commonNames') or [None])[0], 'genus': sp['genus']['scientificNameWithoutAuthor'],
+                          'family': sp['family']['scientificNameWithoutAuthor'], 'gbif': (r.get('gbif') or {}).get('id')})
+            names.append(sp['scientificNameWithoutAuthor'])
+        proposals.append({'id': f"p{p['index']:04d}", 'photo': p['file'], 'photoIndex': p['index'],
+                          'position': point, 'cameraPosition': p['position'], 'heading': p['heading'], 'hitDistance': round(t, 2),
+                          'organs': [o.get('organ') for o in data.get('predictedOrgans', [])][:2],
+                          'confidence': band(cands[0]['score']), 'candidates': cands, 'status': 'proposed', 'concerns': []})
+        print(f"{p['file']}  {cands[0]['score']:.2f}  {cands[0]['scientific']}  ({band(cands[0]['score'])})")
+        time.sleep(0.2)
+
+    rhs = resolve_rhs(names)
+    for pr in proposals:
+        for c in pr['candidates']:
+            c['rhs'] = rhs.get(c['scientific'])
+    out = {'garden': a.garden_id, 'format': 'garden-plants/1', 'generatedAt': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+           'source': {'identifier': 'Pl@ntNet v2 (project all, organs auto)', 'facts': 'RHS plant DB via GardenLens resolver'},
+           'note': 'Proposals only. Confirm, override or reject in the viewer; concerns are flags to look at, never a diagnosis.',
+           'remainingIdentificationRequests': remaining, 'proposals': proposals}
+    path = os.path.join(REPO, 'data', 'demos', a.garden_id, 'plants.json')
+    json.dump(out, open(path, 'w'), indent=1)
+    by = {}
+    for pr in proposals:
+        by.setdefault(pr['candidates'][0]['scientific'], []).append(pr['candidates'][0]['score'])
+    print(f"\n{len(proposals)} proposals → {path}; RHS matched {sum(1 for v in rhs.values() if v)}/{len(rhs)} names")
+    for k, v in sorted(by.items(), key=lambda kv: -max(kv[1])):
+        print(f'  {max(v):.2f} ×{len(v)}  {k}' + (f"  → RHS {rhs[k]['botanical']} {rhs[k]['facts'].get('hardiness') or ''}" if rhs.get(k) else '  (no RHS page)'))
+
+
+if __name__ == '__main__':
+    main()

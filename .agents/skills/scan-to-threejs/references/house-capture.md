@@ -94,6 +94,8 @@ each room record has an empty `file`. Do not run `bundle_to_room.py` or `bundle_
 these (both read walls); start from `mesh/room-N.ply`, `photos/photos.json` and `depth/` with
 `mesh_probe.py`, `reconstruct_bundle.py --mesh` and `prepare_photos.py`. Take the ground plane
 from the mesh (largest near-horizontal cluster at the lowest height), not from a floor record.
+`tools/garden/garden_bundle.py <bundle> <id>` does all of this and emits a viewer-ready garden
+(garden frame: ground y=0, −Z true north); `tools/garden/plant_id.py <id>` adds plant proposals.
 
 `manifest.site` orients the session on Earth:
 

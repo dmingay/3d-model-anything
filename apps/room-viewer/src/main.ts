@@ -2,6 +2,7 @@ import { appURL } from './asset-base';
 import { collectInventory, showKnolling, stopKnolling } from './knolling';
 import { showLayout } from './layout';
 import { SunView, SUN_DAYS } from './sun';
+import { PlantsView } from './plants';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
@@ -66,6 +67,15 @@ const sunSection = document.querySelector<HTMLElement>('#sun-section')!;
 const sunToggle = document.querySelector<HTMLButtonElement>('#sun-toggle')!;
 const sunDay = document.querySelector<HTMLSelectElement>('#sun-day')!;
 const sunStatus = document.querySelector<HTMLOutputElement>('#sun-status')!;
+const plantsSection = document.querySelector<HTMLElement>('#plants-section')!;
+const plantsView = new PlantsView({
+  list: document.querySelector<HTMLElement>('#plants-list')!,
+  count: document.querySelector<HTMLElement>('#plants-count')!,
+  toggle: document.querySelector<HTMLButtonElement>('#plants-toggle')!,
+  exportButton: document.querySelector<HTMLButtonElement>('#plants-export')!,
+  photoBase: import.meta.env.BASE_URL,
+  onFocus: (point, from) => moveCamera(from, point),
+});
 for (const d of SUN_DAYS) { const o = document.createElement('option'); o.value = d.id; o.textContent = d.label; sunDay.append(o); }
 sunDay.value = new URLSearchParams(location.search).get('sunday') ?? 'jun';
 let dirty = true;
@@ -213,6 +223,9 @@ async function loadRoom(id: string, updated?: RoomModule) {
   sunToggle.classList.remove('active'); sunToggle.setAttribute('aria-pressed', 'false');
   sunStatus.textContent = '';
   sunSection.hidden = !room.sun;
+  plantsView.hide();
+  plantsSection.hidden = !room.plants;
+  if (room.plants) plantsView.show(room);
   if (room.sun && new URLSearchParams(location.search).get('sun') === '1') void setSun(true);
   if (room.layout) showLayout(layoutHost, room.layout, mod.label);
   hud.querySelector<HTMLButtonElement>('[data-mode=layout]')!.disabled = !room.layout;
@@ -544,6 +557,7 @@ canvas.addEventListener('dblclick', event => {
   raycaster.setFromCamera(new THREE.Vector2((event.clientX - rect.left) / rect.width * 2 - 1, -(event.clientY - rect.top) / rect.height * 2 + 1), camera);
   const meshes: THREE.Object3D[] = [];
   for (const root of [room.group, reference]) root?.traverseVisible(o => { if ((o as THREE.Mesh).isMesh) meshes.push(o); });
+  if (plantsView.pick(raycaster)) return;
   const hit = raycaster.intersectObjects(meshes, false)[0];
   if (!hit) return;
   if (sunView.isActive) {

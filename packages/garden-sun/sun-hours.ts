@@ -89,6 +89,11 @@ export async function computeSunHours(renderer: THREE.WebGLRenderer, target: THR
   const north = THREE.MathUtils.degToRad(opts.northBearing ?? 0);
   const prevTarget = renderer.getRenderTarget();
   const prevOverride = depthScene.overrideMaterial;
+  // packed depth lives in the colour buffer: clear it to white (= far plane) so receiver
+  // vertices no occluder covers read as lit, whatever the renderer's own clear colour is
+  const prevClear = renderer.getClearColor(new THREE.Color());
+  const prevClearAlpha = renderer.getClearAlpha();
+  renderer.setClearColor(0xffffff, 1);
   depthScene.overrideMaterial = depthMaterial;
   const clipPos = new THREE.Vector3();
   const sunDir = new THREE.Vector3();
@@ -131,6 +136,7 @@ export async function computeSunHours(renderer: THREE.WebGLRenderer, target: THR
     for (const { o, parent } of stash) { depthScene.remove(o); parent?.add(o); }
     depthScene.overrideMaterial = prevOverride;
     renderer.setRenderTarget(prevTarget);
+    renderer.setClearColor(prevClear, prevClearAlpha);
     rt.dispose();
     depthMaterial.dispose();
   }

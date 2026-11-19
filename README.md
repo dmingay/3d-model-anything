@@ -16,8 +16,20 @@
 > - `tools/garden/site_lookup.py` — elevation, BGS soil parent material, geology, and ten years of
 >   ERA5 frost/rain/temperature for a postcode, coordinates or an outdoor scan's manifest.
 >   Output goes in git-ignored `data/site/`.
-> - Plant ID will use Pl@ntNet (key in the git-ignored `.env` as `PLANTNET_API_KEY`) resolved
->   against GardenLens. Drop test photos in git-ignored `data/photos-in/`.
+> - `tools/garden/garden_bundle.py` — converts an **outdoor** capture bundle (no RoomPlan walls)
+>   into a garden demo: cleans the LiDAR mesh, fits the ground plane, rotates the scene so −Z is
+>   true north, writes `data/web-assets/gardens/<id>/scan.glb` + upright posed photos and
+>   `data/demos/<id>/garden.json` (site rounded to ~1 km). Needs the Python 3.12 venv:
+>   `uv venv --python 3.12 .venv && uv pip install --python .venv/bin/python numpy open3d pillow requests`
+>   (Open3D also wants `brew install libusb`).
+> - `tools/garden/plant_id.py` — Pl@ntNet (key in the git-ignored `.env` as `PLANTNET_API_KEY`)
+>   on the scan's posed photos, each candidate resolved against the GardenLens RHS plant DB,
+>   pinned in 3D where the photo's central ray meets the mesh → `data/demos/<id>/plants.json`.
+>   The viewer's **Plants** panel shows every ID as a proposal to confirm, override or reject;
+>   decisions persist in the browser and export as JSON. Raw API answers are cached under
+>   `data/captures-in/<id>/plantnet/` so re-runs cost no quota.
+> - `demos/front-garden/` — the first real garden (Stony Ridge front garden, scanned 19 Nov 2026).
+>   The mesh and photos are local only (git-ignored); regenerate with the two tools above.
 >
 > Everything below is the upstream project's documentation and still applies.
 

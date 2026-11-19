@@ -49,9 +49,25 @@ export interface BuiltRoom {
   photos?: PhotoPose[];
   /** gardens: where on Earth and which way is north, so the viewer can map sun hours */
   sun?: SunSite;
+  /** plant-ID proposals for the gardener to confirm (garden scans) */
+  plants?: PlantSet;
 }
 
 /** Site data for sun-hour mapping (outdoor sessions: manifest.site). */
+/** A plant identity proposed from one posed photo; the gardener confirms, overrides or rejects it. */
+export interface PlantCandidate {
+  score: number; scientific: string; common?: string | null; genus?: string; family?: string; gbif?: string | null;
+  rhs?: { botanical: string; url: string; exact: boolean; facts: Record<string, string | null> } | null;
+}
+export interface PlantProposal {
+  id: string; photo: string; photoIndex: number;
+  /** garden-frame point the photo's central ray hits */
+  position: number[]; cameraPosition: number[]; heading: number;
+  confidence: 'likely' | 'unsure' | 'guess';
+  candidates: PlantCandidate[]; status: string; concerns: string[];
+}
+export interface PlantSet { garden: string; photoBase: string; note?: string; proposals: PlantProposal[] }
+
 export interface SunSite {
   latitude: number;
   longitude: number;

@@ -47,6 +47,15 @@
           <output id="sun-status" aria-live="polite"></output>
           <p class="help">Double-click the ground for hours at that spot. Shadows come only from what is in the scene.</p>
         </section>
+        <section class="control-section plants-section" id="plants-section" hidden aria-label="Plants">
+          <h2>Plants <span class="section-note" id="plants-count"></span></h2>
+          <div class="plants-row">
+            <button id="plants-toggle" aria-pressed="true" title="Show numbered pins where each photo was taken">Pins on</button>
+            <button id="plants-export" title="Download the proposals with your decisions as JSON">Export</button>
+          </div>
+          <p class="help plants-note">Each card is a proposal from one photo, not a verdict. Tap a name to confirm it, type your own, or mark it as not a plant.</p>
+          <div id="plants-list" class="plants-list"></div>
+        </section>
         <section class="control-section" id="navigation" aria-label="Camera views">
           <h2>Camera</h2>
           <div class="camera-grid">
