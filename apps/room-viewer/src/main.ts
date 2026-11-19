@@ -3,6 +3,7 @@ import { collectInventory, showKnolling, stopKnolling } from './knolling';
 import { showLayout } from './layout';
 import { SunView, SUN_DAYS } from './sun';
 import { PlantsView } from './plants';
+import { PhotosView } from './photos';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
@@ -67,14 +68,35 @@ const sunSection = document.querySelector<HTMLElement>('#sun-section')!;
 const sunToggle = document.querySelector<HTMLButtonElement>('#sun-toggle')!;
 const sunDay = document.querySelector<HTMLSelectElement>('#sun-day')!;
 const sunStatus = document.querySelector<HTMLOutputElement>('#sun-status')!;
+const photosView = new PhotosView({
+  toggle: document.querySelector<HTMLButtonElement>('#photos-toggle')!,
+  lightbox: document.querySelector<HTMLElement>('#photo-lightbox')!,
+  photoBase: import.meta.env.BASE_URL,
+  invalidate: () => invalidate(),
+});
 const plantsSection = document.querySelector<HTMLElement>('#plants-section')!;
 const plantsView = new PlantsView({
-  list: document.querySelector<HTMLElement>('#plants-list')!,
   count: document.querySelector<HTMLElement>('#plants-count')!,
   toggle: document.querySelector<HTMLButtonElement>('#plants-toggle')!,
   exportButton: document.querySelector<HTMLButtonElement>('#plants-export')!,
+  reviewButton: document.querySelector<HTMLButtonElement>('#plants-review')!,
+  review: document.querySelector<HTMLElement>('#plant-review')!,
+  sheet: document.querySelector<HTMLElement>('#plant-sheet')!,
+  progress: document.querySelector<HTMLElement>('#review-progress')!,
+  closeButton: document.querySelector<HTMLButtonElement>('#review-close')!,
+  sunButton: document.querySelector<HTMLButtonElement>('#review-sun')!,
   photoBase: import.meta.env.BASE_URL,
-  onFocus: (point, from) => moveCamera(from, point),
+  onReview: on => {
+    document.body.classList.toggle('review-mode', on);
+    if (on) { if (mode !== 'orbit') setMode('orbit'); preset('top'); }
+  },
+  onFocus: point => {
+    // stay overhead, slide across to the plant
+    const height = Math.max(9, camera.position.y - orbit.target.y);
+    moveCamera(new THREE.Vector3(point.x, point.y + height, point.z + 0.001), point.clone());
+  },
+  onSun: on => setSun(on).then(() => sunView.isActive),
+  invalidate: () => invalidate(),
 });
 for (const d of SUN_DAYS) { const o = document.createElement('option'); o.value = d.id; o.textContent = d.label; sunDay.append(o); }
 sunDay.value = new URLSearchParams(location.search).get('sunday') ?? 'jun';
@@ -223,9 +245,10 @@ async function loadRoom(id: string, updated?: RoomModule) {
   sunToggle.classList.remove('active'); sunToggle.setAttribute('aria-pressed', 'false');
   sunStatus.textContent = '';
   sunSection.hidden = !room.sun;
-  plantsView.hide();
-  plantsSection.hidden = !room.plants;
-  if (room.plants) plantsView.show(room);
+  plantsView.hide(); photosView.hide();
+  plantsSection.hidden = !room.plants && !room.scanPhotos;
+  if (room.scanPhotos) photosView.show(room, new URLSearchParams(location.search).get('photos') === '1');
+  if (room.plants) { plantsView.show(room); if (new URLSearchParams(location.search).get('review') === '1') plantsView.startReview(); }
   if (room.sun && new URLSearchParams(location.search).get('sun') === '1') void setSun(true);
   if (room.layout) showLayout(layoutHost, room.layout, mod.label);
   hud.querySelector<HTMLButtonElement>('[data-mode=layout]')!.disabled = !room.layout;
@@ -551,13 +574,23 @@ navigation.querySelector<HTMLButtonElement>('[data-zoom=out]')!.addEventListener
 orbit.addEventListener('start', () => { transition = undefined; lastMotion = performance.now(); requestFrame(); });
 canvas.addEventListener('pointerdown', () => canvas.focus({ preventScroll: true }));
 const raycaster = new THREE.Raycaster();
+let pressAt: { x: number; y: number } | undefined;
+canvas.addEventListener('pointerdown', e => { pressAt = { x: e.clientX, y: e.clientY }; });
+canvas.addEventListener('pointerup', event => {
+  if (!room || mode !== 'orbit' || !pressAt) return;
+  const moved = Math.hypot(event.clientX - pressAt.x, event.clientY - pressAt.y); pressAt = undefined;
+  if (moved > 6) return;
+  const rect = canvas.getBoundingClientRect();
+  raycaster.setFromCamera(new THREE.Vector2((event.clientX - rect.left) / rect.width * 2 - 1, -(event.clientY - rect.top) / rect.height * 2 + 1), camera);
+  if (!plantsView.pick(raycaster)) photosView.pick(raycaster);
+});
 canvas.addEventListener('dblclick', event => {
   if (!room || mode !== 'orbit') return;
   const rect = canvas.getBoundingClientRect();
   raycaster.setFromCamera(new THREE.Vector2((event.clientX - rect.left) / rect.width * 2 - 1, -(event.clientY - rect.top) / rect.height * 2 + 1), camera);
   const meshes: THREE.Object3D[] = [];
   for (const root of [room.group, reference]) root?.traverseVisible(o => { if ((o as THREE.Mesh).isMesh) meshes.push(o); });
-  if (plantsView.pick(raycaster)) return;
+  if (plantsView.pick(raycaster) || photosView.pick(raycaster)) return;
   const hit = raycaster.intersectObjects(meshes, false)[0];
   if (!hit) return;
   if (sunView.isActive) {

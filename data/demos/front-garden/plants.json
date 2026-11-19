@@ -1,13 +1,3616 @@
 {
  "garden": "front-garden",
  "format": "garden-plants/1",
- "generatedAt": "2026-11-19T09:30:52Z",
+ "generatedAt": "2026-11-19T12:45:30Z",
  "source": {
   "identifier": "Pl@ntNet v2 (project all, organs auto)",
   "facts": "RHS plant DB via GardenLens resolver"
  },
  "note": "Proposals only. Confirm, override or reject in the viewer; concerns are flags to look at, never a diagnosis.",
  "remainingIdentificationRequests": 463,
+ "plants": [
+  {
+   "id": "plant-01",
+   "position": [
+    0.406,
+    0.076,
+    4.226
+   ],
+   "proposals": [
+    "p0018"
+   ],
+   "photos": [
+    "photos/0018.jpg"
+   ],
+   "confidence": "likely",
+   "candidates": [
+    {
+     "score": 0.768,
+     "scientific": "Carex pendula",
+     "common": "Pendulous sedge",
+     "genus": "Carex",
+     "family": "Cyperaceae",
+     "gbif": "2722051",
+     "rhs": {
+      "botanical": "Carex pendula",
+      "url": "https://www.rhs.org.uk/plants/3094/carex-pendula/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "carex pendula",
+      "facts": {
+       "common": "Carex pendula",
+       "hardiness": "H6",
+       "soil": "Clay, Loam, Chalk, Sand",
+       "aspect": "East\u2013facing or North\u2013facing or South\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Poorly\u2013drained or Moist but well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "0.5-1 metres; 1-1.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "carex",
+       "species": "carex pendula"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.027,
+     "scientific": "Carex riparia",
+     "common": "Greater pond sedge",
+     "genus": "Carex",
+     "family": "Cyperaceae",
+     "gbif": "2718117",
+     "rhs": {
+      "botanical": "Carex riparia",
+      "url": "https://www.rhs.org.uk/plants/74342/carex-riparia/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "carex riparia",
+      "facts": {
+       "common": "Carex riparia",
+       "hardiness": "H5",
+       "soil": "Clay, Loam",
+       "aspect": "South\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Poorly\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1-1.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "carex",
+       "species": "carex riparia"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.017,
+     "scientific": "Carex pseudocyperus",
+     "common": "Cyperus Sedge",
+     "genus": "Carex",
+     "family": "Cyperaceae",
+     "gbif": "2722760",
+     "rhs": {
+      "botanical": "Carex pseudocyperus",
+      "url": "https://www.rhs.org.uk/plants/3095/carex-pseudocyperus/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "carex pseudocyperus",
+      "facts": {
+       "common": "Carex pseudocyperus",
+       "hardiness": "H6",
+       "soil": "Clay, Loam",
+       "aspect": "West\u2013facing or East\u2013facing or South\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Poorly\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "0.5-1 metres; 1-1.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "carex",
+       "species": "carex pseudocyperus"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.012,
+     "scientific": "Carex elata",
+     "common": "Tufted sedge",
+     "genus": "Carex",
+     "family": "Cyperaceae",
+     "gbif": "2724729",
+     "rhs": {
+      "botanical": "Carex elata",
+      "url": "https://www.rhs.org.uk/plants/3078/carex-elata/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "carex elata",
+      "facts": {
+       "common": "Carex elata",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "carex",
+       "species": "carex elata"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.006,
+     "scientific": "Hakonechloa macra",
+     "common": "Japanese forest grass",
+     "genus": "Hakonechloa",
+     "family": "Poaceae",
+     "gbif": "4125185",
+     "rhs": {
+      "botanical": "Hakonechloa macra",
+      "url": "https://www.rhs.org.uk/plants/33668/hakonechloa-macra/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "hakonechloa macra",
+      "facts": {
+       "common": "Hakonechloa macra",
+       "hardiness": "H7",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "West\u2013facing or South\u2013facing or North\u2013facing or East\u2013facing; Exposed or Sheltered; Full shade, Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "0.1-0.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "hakonechloa",
+       "species": "hakonechloa macra"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-02",
+   "position": [
+    -0.339,
+    0.009,
+    -0.159
+   ],
+   "proposals": [
+    "p0054"
+   ],
+   "photos": [
+    "photos/0054.jpg"
+   ],
+   "confidence": "likely",
+   "candidates": [
+    {
+     "score": 0.651,
+     "scientific": "Iris foetidissima",
+     "common": "Stinking iris",
+     "genus": "Iris",
+     "family": "Iridaceae",
+     "gbif": "5298765",
+     "rhs": {
+      "botanical": "Iris foetidissima",
+      "url": "https://www.rhs.org.uk/plants/9250/iris-foetidissima/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "iris foetidissima",
+      "facts": {
+       "common": "Iris foetidissima",
+       "hardiness": "H6",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "North\u2013facing or East\u2013facing or South\u2013facing or West\u2013facing; Exposed or Sheltered; Full shade, Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "0.1-0.5 metres; 0.5-1 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "iris",
+       "species": "iris foetidissima"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.035,
+     "scientific": "Phormium tenax",
+     "common": "New Zealand Flax",
+     "genus": "Phormium",
+     "family": "Asphodelaceae",
+     "gbif": "2778511",
+     "rhs": {
+      "botanical": "Phormium tenax",
+      "url": "https://www.rhs.org.uk/plants/12791/phormium-tenax/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "phormium tenax",
+      "facts": {
+       "common": "Phormium tenax",
+       "hardiness": "H5",
+       "soil": "Loam, Sand",
+       "aspect": "South\u2013facing or North\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1.5-2.5 metres; 2.5-4 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "phormium",
+       "species": "phormium tenax"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.029,
+     "scientific": "Aristea ecklonii",
+     "common": "Blue corn lily",
+     "genus": "Aristea",
+     "family": "Iridaceae",
+     "gbif": "2744906",
+     "rhs": {
+      "botanical": "Aristea ecklonii",
+      "url": "https://www.rhs.org.uk/plants/1572/aristea-ecklonii/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "aristea ecklonii",
+      "facts": {
+       "common": "Aristea ecklonii",
+       "hardiness": "H3",
+       "soil": "Loam",
+       "aspect": "South\u2013facing; Sheltered; Full sun",
+       "moisture": "Well\u2013drained",
+       "ph": "Neutral or Acid",
+       "size": "0.1-0.5 metres; 0.5-1 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "aristea",
+       "species": "aristea ecklonii"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.021,
+     "scientific": "Luzula sylvatica",
+     "common": "Great wood rush",
+     "genus": "Luzula",
+     "family": "Juncaceae",
+     "gbif": "2700859",
+     "rhs": {
+      "botanical": "Luzula sylvatica",
+      "url": "https://www.rhs.org.uk/plants/10579/luzula-sylvatica/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "luzula sylvatica",
+      "facts": {
+       "common": "Luzula sylvatica",
+       "hardiness": "H7",
+       "soil": "Clay, Loam, Sand",
+       "aspect": "South\u2013facing or North\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Full shade, Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Poorly\u2013drained",
+       "ph": "Acid or Neutral",
+       "size": "1-1.5 metres; 0.5-1 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "luzula",
+       "species": "luzula sylvatica"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.017,
+     "scientific": "Dianella sandwicensis",
+     "common": "'uki'uki",
+     "genus": "Dianella",
+     "family": "Asphodelaceae",
+     "gbif": "5305337",
+     "rhs": null,
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-03",
+   "position": [
+    -1.179,
+    1.391,
+    -2.223
+   ],
+   "proposals": [
+    "p0069",
+    "p0066",
+    "p0078",
+    "p0060",
+    "p0057"
+   ],
+   "photos": [
+    "photos/0069.jpg",
+    "photos/0066.jpg",
+    "photos/0078.jpg",
+    "photos/0060.jpg",
+    "photos/0057.jpg"
+   ],
+   "confidence": "likely",
+   "candidates": [
+    {
+     "score": 0.634,
+     "scientific": "Prunus laurocerasus",
+     "common": "Cherry laurel",
+     "genus": "Prunus",
+     "family": "Rosaceae",
+     "gbif": "3021496",
+     "rhs": {
+      "botanical": "Prunus laurocerasus",
+      "url": "https://www.rhs.org.uk/plants/13977/prunus-laurocerasus/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "prunus laurocerasus",
+      "facts": {
+       "common": "Prunus laurocerasus",
+       "hardiness": "H5",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "North\u2013facing or South\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "wider than 8 metres; 4-8 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "prunus",
+       "species": "prunus laurocerasus"
+      }
+     },
+     "support": 5
+    },
+    {
+     "score": 0.206,
+     "scientific": "Salix pedicellata",
+     "common": "Mediterranean willow",
+     "genus": "Salix",
+     "family": "Salicaceae",
+     "gbif": "5583320",
+     "rhs": {
+      "botanical": "Salix pedicellata",
+      "url": "https://www.rhs.org.uk/plants/264579/salix-pedicellata/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "salix pedicellata",
+      "facts": {
+       "common": "Salix pedicellata",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "salix",
+       "species": "salix pedicellata"
+      }
+     },
+     "support": 2
+    },
+    {
+     "score": 0.173,
+     "scientific": "Pyracantha crenulata",
+     "common": "Himalayan firethorn",
+     "genus": "Pyracantha",
+     "family": "Rosaceae",
+     "gbif": "2988172",
+     "rhs": {
+      "botanical": "Pyracantha crenulata",
+      "url": "https://www.rhs.org.uk/plants/14211/pyracantha-crenulata/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "pyracantha crenulata",
+      "facts": {
+       "common": "Pyracantha crenulata",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "pyracantha",
+       "species": "pyracantha crenulata"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.049,
+     "scientific": "Salix appendiculata",
+     "common": "Large leaved willow",
+     "genus": "Salix",
+     "family": "Salicaceae",
+     "gbif": "5583213",
+     "rhs": {
+      "botanical": "Salix appendiculata",
+      "url": "https://www.rhs.org.uk/plants/264581/salix-appendiculata/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "salix appendiculata",
+      "facts": {
+       "common": "Salix appendiculata",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "salix",
+       "species": "salix appendiculata"
+      }
+     },
+     "support": 3
+    },
+    {
+     "score": 0.047,
+     "scientific": "Pittosporum colensoi",
+     "common": null,
+     "genus": "Pittosporum",
+     "family": "Pittosporaceae",
+     "gbif": "7443499",
+     "rhs": {
+      "botanical": "Pittosporum colensoi",
+      "url": "https://www.rhs.org.uk/plants/13186/pittosporum-colensoi/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "pittosporum colensoi",
+      "facts": {
+       "common": "Pittosporum colensoi",
+       "hardiness": "H3",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "South\u2013facing or West\u2013facing; Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "0.1-0.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "pittosporum",
+       "species": "pittosporum colensoi"
+      }
+     },
+     "support": 2
+    },
+    {
+     "score": 0.016,
+     "scientific": "Gynotroches axillaris",
+     "common": "Fish Eyes",
+     "genus": "Gynotroches",
+     "family": "Rhizophoraceae",
+     "gbif": "3086530",
+     "rhs": null,
+     "support": 2
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-04",
+   "position": [
+    2.645,
+    0.988,
+    5.434
+   ],
+   "proposals": [
+    "p0015",
+    "p0027"
+   ],
+   "photos": [
+    "photos/0015.jpg",
+    "photos/0027.jpg"
+   ],
+   "confidence": "likely",
+   "candidates": [
+    {
+     "score": 0.629,
+     "scientific": "Carex pendula",
+     "common": "Pendulous sedge",
+     "genus": "Carex",
+     "family": "Cyperaceae",
+     "gbif": "2722051",
+     "rhs": {
+      "botanical": "Carex pendula",
+      "url": "https://www.rhs.org.uk/plants/3094/carex-pendula/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "carex pendula",
+      "facts": {
+       "common": "Carex pendula",
+       "hardiness": "H6",
+       "soil": "Clay, Loam, Chalk, Sand",
+       "aspect": "East\u2013facing or North\u2013facing or South\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Poorly\u2013drained or Moist but well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "0.5-1 metres; 1-1.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "carex",
+       "species": "carex pendula"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.319,
+     "scientific": "Phormium tenax",
+     "common": "New Zealand Flax",
+     "genus": "Phormium",
+     "family": "Asphodelaceae",
+     "gbif": "2778511",
+     "rhs": {
+      "botanical": "Phormium tenax",
+      "url": "https://www.rhs.org.uk/plants/12791/phormium-tenax/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "phormium tenax",
+      "facts": {
+       "common": "Phormium tenax",
+       "hardiness": "H5",
+       "soil": "Loam, Sand",
+       "aspect": "South\u2013facing or North\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1.5-2.5 metres; 2.5-4 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "phormium",
+       "species": "phormium tenax"
+      }
+     },
+     "support": 2
+    },
+    {
+     "score": 0.036,
+     "scientific": "Yucca flaccida",
+     "common": "Adam's needle",
+     "genus": "Yucca",
+     "family": "Asparagaceae",
+     "gbif": "2775530",
+     "rhs": {
+      "botanical": "Yucca flaccida",
+      "url": "https://www.rhs.org.uk/plants/101505/yucca-flaccida/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "yucca flaccida",
+      "facts": {
+       "common": "Yucca flaccida",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "yucca",
+       "species": "yucca flaccida"
+      }
+     },
+     "support": 2
+    },
+    {
+     "score": 0.026,
+     "scientific": "Crocosmia \u00d7 crocosmiiflora",
+     "common": "Montbretia",
+     "genus": "Crocosmia",
+     "family": "Iridaceae",
+     "gbif": "2747939",
+     "rhs": {
+      "botanical": "Crocosmia \u00d7 crocosmiiflora",
+      "url": "https://www.rhs.org.uk/plants/92445/crocosmia-x-crocosmiiflora/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "crocosmia crocosmiiflora",
+      "facts": {
+       "common": "Crocosmia \u00d7 crocosmiiflora",
+       "hardiness": "H4",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "South\u2013facing or East\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "0.1-0.5 metres; 0.5-1 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "crocosmia",
+       "species": "crocosmia crocosmiiflora"
+      }
+     },
+     "support": 2
+    },
+    {
+     "score": 0.052,
+     "scientific": "Yucca filamentosa",
+     "common": "Adam's needle",
+     "genus": "Yucca",
+     "family": "Asparagaceae",
+     "gbif": "2775561",
+     "rhs": {
+      "botanical": "Yucca filamentosa",
+      "url": "https://www.rhs.org.uk/plants/19164/yucca-filamentosa/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "yucca filamentosa",
+      "facts": {
+       "common": "Yucca filamentosa",
+       "hardiness": "H5",
+       "soil": "Chalk, Loam, Sand",
+       "aspect": "South\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun",
+       "moisture": "Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1-1.5 metres; 0.5-1 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "yucca",
+       "species": "yucca filamentosa"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.013,
+     "scientific": "Austroderia richardii",
+     "common": "Early Pampas grass",
+     "genus": "Austroderia",
+     "family": "Poaceae",
+     "gbif": "6067827",
+     "rhs": {
+      "botanical": "Cortaderia richardii ambig.",
+      "url": "https://www.rhs.org.uk/plants/223063/cortaderia-richardii-ambig/details",
+      "exact": false,
+      "score": 0.78,
+      "via": "cortaderia richardii",
+      "facts": {
+       "common": "Cortaderia richardii ambig.",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "cortaderia",
+       "species": "cortaderia richardii"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-05",
+   "position": [
+    3.889,
+    0.899,
+    4.325
+   ],
+   "proposals": [
+    "p0000",
+    "p0003",
+    "p0009",
+    "p0006"
+   ],
+   "photos": [
+    "photos/0000.jpg",
+    "photos/0003.jpg",
+    "photos/0009.jpg",
+    "photos/0006.jpg"
+   ],
+   "confidence": "likely",
+   "candidates": [
+    {
+     "score": 0.579,
+     "scientific": "Taxus baccata",
+     "common": "Yew",
+     "genus": "Taxus",
+     "family": "Taxaceae",
+     "gbif": "5284517",
+     "rhs": {
+      "botanical": "Taxus baccata",
+      "url": "https://www.rhs.org.uk/plants/18001/taxus-baccata/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "taxus baccata",
+      "facts": {
+       "common": "Taxus baccata",
+       "hardiness": "H7",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "South\u2013facing or North\u2013facing or East\u2013facing or West\u2013facing; Exposed or Sheltered; Full shade, Full sun, Partial shade",
+       "moisture": "Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "wider than 8 metres; Higher than 12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "taxus",
+       "species": "taxus baccata"
+      }
+     },
+     "support": 3
+    },
+    {
+     "score": 0.23,
+     "scientific": "Taxus canadensis",
+     "common": "Canadian Yew",
+     "genus": "Taxus",
+     "family": "Taxaceae",
+     "gbif": "5284570",
+     "rhs": {
+      "botanical": "Taxus canadensis",
+      "url": "https://www.rhs.org.uk/plants/106015/taxus-canadensis/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "taxus canadensis",
+      "facts": {
+       "common": "Taxus canadensis",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "taxus",
+       "species": "taxus canadensis"
+      }
+     },
+     "support": 4
+    },
+    {
+     "score": 0.079,
+     "scientific": "Taxus \u00d7 media",
+     "common": "Hybrid yew",
+     "genus": "Taxus",
+     "family": "Taxaceae",
+     "gbif": "6420771",
+     "rhs": {
+      "botanical": "Taxus \u00d7 media",
+      "url": "https://www.rhs.org.uk/plants/143063/taxus-x-media/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "taxus media",
+      "facts": {
+       "common": "Taxus \u00d7 media",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "taxus",
+       "species": "taxus media"
+      }
+     },
+     "support": 3
+    },
+    {
+     "score": 0.042,
+     "scientific": "Tsuga canadensis",
+     "common": "Eastern hemlock",
+     "genus": "Tsuga",
+     "family": "Pinaceae",
+     "gbif": "2687182",
+     "rhs": {
+      "botanical": "Tsuga canadensis",
+      "url": "https://www.rhs.org.uk/plants/18463/tsuga-canadensis/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "tsuga canadensis",
+      "facts": {
+       "common": "Tsuga canadensis",
+       "hardiness": "H7",
+       "soil": "Loam, Sand",
+       "aspect": "South\u2013facing or East\u2013facing or West\u2013facing; Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Neutral",
+       "size": "4-8 metres; Higher than 12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "tsuga",
+       "species": "tsuga canadensis"
+      }
+     },
+     "support": 2
+    },
+    {
+     "score": 0.038,
+     "scientific": "Tsuga heterophylla",
+     "common": "Western hemlock",
+     "genus": "Tsuga",
+     "family": "Pinaceae",
+     "gbif": "2687210",
+     "rhs": {
+      "botanical": "Tsuga heterophylla",
+      "url": "https://www.rhs.org.uk/plants/18473/tsuga-heterophylla/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "tsuga heterophylla",
+      "facts": {
+       "common": "Tsuga heterophylla",
+       "hardiness": "H6",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "North\u2013facing or South\u2013facing or West\u2013facing or East\u2013facing; Sheltered; Full shade, Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "wider than 8 metres; Higher than 12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "tsuga",
+       "species": "tsuga heterophylla"
+      }
+     },
+     "support": 2
+    },
+    {
+     "score": 0.062,
+     "scientific": "Araucaria cunninghamii",
+     "common": "Hoop Pine",
+     "genus": "Araucaria",
+     "family": "Araucariaceae",
+     "gbif": "7942204",
+     "rhs": {
+      "botanical": "Araucaria cunninghamii",
+      "url": "https://www.rhs.org.uk/plants/1460/araucaria-cunninghamii/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "araucaria cunninghamii",
+      "facts": {
+       "common": "Araucaria cunninghamii",
+       "hardiness": "H3",
+       "soil": "Loam, Sand",
+       "aspect": "North\u2013facing or South\u2013facing; Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Alkaline",
+       "size": "4-8 metres; Higher than 12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "araucaria",
+       "species": "araucaria cunninghamii"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-06",
+   "position": [
+    -0.893,
+    1.337,
+    1.638
+   ],
+   "proposals": [
+    "p0048",
+    "p0033",
+    "p0039"
+   ],
+   "photos": [
+    "photos/0048.jpg",
+    "photos/0033.jpg",
+    "photos/0039.jpg"
+   ],
+   "confidence": "likely",
+   "candidates": [
+    {
+     "score": 0.563,
+     "scientific": "Pyracantha crenulata",
+     "common": "Himalayan firethorn",
+     "genus": "Pyracantha",
+     "family": "Rosaceae",
+     "gbif": "2988172",
+     "rhs": {
+      "botanical": "Pyracantha crenulata",
+      "url": "https://www.rhs.org.uk/plants/14211/pyracantha-crenulata/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "pyracantha crenulata",
+      "facts": {
+       "common": "Pyracantha crenulata",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "pyracantha",
+       "species": "pyracantha crenulata"
+      }
+     },
+     "support": 3
+    },
+    {
+     "score": 0.2,
+     "scientific": "Spiraea nipponica",
+     "common": "Snowmound\u00a0Spiraea",
+     "genus": "Spiraea",
+     "family": "Rosaceae",
+     "gbif": "3027341",
+     "rhs": {
+      "botanical": "Spiraea nipponica",
+      "url": "https://www.rhs.org.uk/plants/17687/spiraea-nipponica/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "spiraea nipponica",
+      "facts": {
+       "common": "Spiraea nipponica",
+       "hardiness": "H6",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "East\u2013facing or South\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1.5-2.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "spiraea",
+       "species": "spiraea nipponica"
+      }
+     },
+     "support": 3
+    },
+    {
+     "score": 0.159,
+     "scientific": "Pyracantha coccinea",
+     "common": "Firethorn",
+     "genus": "Pyracantha",
+     "family": "Rosaceae",
+     "gbif": "2988188",
+     "rhs": {
+      "botanical": "Pyracantha coccinea",
+      "url": "https://www.rhs.org.uk/plants/14208/pyracantha-coccinea/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "pyracantha coccinea",
+      "facts": {
+       "common": "Pyracantha coccinea",
+       "hardiness": "H6",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "South\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "2.5-4 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "pyracantha",
+       "species": "pyracantha coccinea"
+      }
+     },
+     "support": 2
+    },
+    {
+     "score": 0.067,
+     "scientific": "Berberis julianae",
+     "common": "Chinese Barberry",
+     "genus": "Berberis",
+     "family": "Berberidaceae",
+     "gbif": "3981543",
+     "rhs": {
+      "botanical": "Berberis julianae",
+      "url": "https://www.rhs.org.uk/plants/2133/berberis-julianae/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "berberis julianae",
+      "facts": {
+       "common": "Berberis julianae",
+       "hardiness": "H5",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "South\u2013facing or North\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "2.5-4 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "berberis",
+       "species": "berberis julianae"
+      }
+     },
+     "support": 2
+    },
+    {
+     "score": 0.081,
+     "scientific": "Thujopsis dolabrata",
+     "common": "Hiba",
+     "genus": "Thujopsis",
+     "family": "Cupressaceae",
+     "gbif": "2684102",
+     "rhs": {
+      "botanical": "Thujopsis dolabrata",
+      "url": "https://www.rhs.org.uk/plants/18170/thujopsis-dolabrata/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "thujopsis dolabrata",
+      "facts": {
+       "common": "Thujopsis dolabrata",
+       "hardiness": "H6",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "West\u2013facing or South\u2013facing or East\u2013facing; Sheltered; Full sun",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "4-8 metres; Higher than 12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "thujopsis",
+       "species": "thujopsis dolabrata"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.035,
+     "scientific": "Pyracantha koidzumii",
+     "common": "Formosa firethorn",
+     "genus": "Pyracantha",
+     "family": "Rosaceae",
+     "gbif": "2988162",
+     "rhs": {
+      "botanical": "Pyracantha koidzumii",
+      "url": "https://www.rhs.org.uk/plants/324390/pyracantha-koidzumii/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "pyracantha koidzumii",
+      "facts": {
+       "common": "Pyracantha koidzumii",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "pyracantha",
+       "species": "pyracantha koidzumii"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-07",
+   "position": [
+    -1.03,
+    1.33,
+    -0.529
+   ],
+   "proposals": [
+    "p0063",
+    "p0051"
+   ],
+   "photos": [
+    "photos/0063.jpg",
+    "photos/0051.jpg"
+   ],
+   "confidence": "unsure",
+   "candidates": [
+    {
+     "score": 0.332,
+     "scientific": "Taxus canadensis",
+     "common": "Canadian Yew",
+     "genus": "Taxus",
+     "family": "Taxaceae",
+     "gbif": "5284570",
+     "rhs": {
+      "botanical": "Taxus canadensis",
+      "url": "https://www.rhs.org.uk/plants/106015/taxus-canadensis/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "taxus canadensis",
+      "facts": {
+       "common": "Taxus canadensis",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "taxus",
+       "species": "taxus canadensis"
+      }
+     },
+     "support": 2
+    },
+    {
+     "score": 0.214,
+     "scientific": "Picea omorika",
+     "common": "Serbian spruce",
+     "genus": "Picea",
+     "family": "Pinaceae",
+     "gbif": "5284950",
+     "rhs": {
+      "botanical": "Picea omorika",
+      "url": "https://www.rhs.org.uk/plants/12966/picea-omorika/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "picea omorika",
+      "facts": {
+       "common": "Picea omorika",
+       "hardiness": "H7",
+       "soil": "Clay, Loam, Sand",
+       "aspect": "North\u2013facing or West\u2013facing or South\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "2.5-4 metres; Higher than 12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "picea",
+       "species": "picea omorika"
+      }
+     },
+     "support": 2
+    },
+    {
+     "score": 0.111,
+     "scientific": "Taxus baccata",
+     "common": "Yew",
+     "genus": "Taxus",
+     "family": "Taxaceae",
+     "gbif": "5284517",
+     "rhs": {
+      "botanical": "Taxus baccata",
+      "url": "https://www.rhs.org.uk/plants/18001/taxus-baccata/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "taxus baccata",
+      "facts": {
+       "common": "Taxus baccata",
+       "hardiness": "H7",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "South\u2013facing or North\u2013facing or East\u2013facing or West\u2013facing; Exposed or Sheltered; Full shade, Full sun, Partial shade",
+       "moisture": "Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "wider than 8 metres; Higher than 12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "taxus",
+       "species": "taxus baccata"
+      }
+     },
+     "support": 2
+    },
+    {
+     "score": 0.078,
+     "scientific": "Tsuga heterophylla",
+     "common": "Western hemlock",
+     "genus": "Tsuga",
+     "family": "Pinaceae",
+     "gbif": "2687210",
+     "rhs": {
+      "botanical": "Tsuga heterophylla",
+      "url": "https://www.rhs.org.uk/plants/18473/tsuga-heterophylla/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "tsuga heterophylla",
+      "facts": {
+       "common": "Tsuga heterophylla",
+       "hardiness": "H6",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "North\u2013facing or South\u2013facing or West\u2013facing or East\u2013facing; Sheltered; Full shade, Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "wider than 8 metres; Higher than 12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "tsuga",
+       "species": "tsuga heterophylla"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.048,
+     "scientific": "Picea rubens",
+     "common": "Red spruce",
+     "genus": "Picea",
+     "family": "Pinaceae",
+     "gbif": "5284717",
+     "rhs": {
+      "botanical": "Picea rubens",
+      "url": "https://www.rhs.org.uk/plants/12982/picea-rubens/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "picea rubens",
+      "facts": {
+       "common": "Picea rubens",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "picea",
+       "species": "picea rubens"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.047,
+     "scientific": "Picea abies",
+     "common": "Norway Spruce",
+     "genus": "Picea",
+     "family": "Pinaceae",
+     "gbif": "5284884",
+     "rhs": {
+      "botanical": "Picea abies",
+      "url": "https://www.rhs.org.uk/plants/12899/picea-abies/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "picea abies",
+      "facts": {
+       "common": "Picea abies",
+       "hardiness": "H7",
+       "soil": "Clay, Loam, Sand",
+       "aspect": "South\u2013facing or North\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Neutral",
+       "size": "wider than 8 metres; Higher than 12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "picea",
+       "species": "picea abies"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-08",
+   "position": [
+    0.209,
+    0.62,
+    0.944
+   ],
+   "proposals": [
+    "p0105",
+    "p0045",
+    "p0042",
+    "p0084"
+   ],
+   "photos": [
+    "photos/0105.jpg",
+    "photos/0045.jpg",
+    "photos/0042.jpg",
+    "photos/0084.jpg"
+   ],
+   "confidence": "unsure",
+   "candidates": [
+    {
+     "score": 0.266,
+     "scientific": "Chaenomeles speciosa",
+     "common": "Flowering quince",
+     "genus": "Chaenomeles",
+     "family": "Rosaceae",
+     "gbif": "3000679",
+     "rhs": {
+      "botanical": "Chaenomeles speciosa",
+      "url": "https://www.rhs.org.uk/plants/3463/chaenomeles-speciosa/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "chaenomeles speciosa",
+      "facts": {
+       "common": "Chaenomeles speciosa",
+       "hardiness": "H6",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "South\u2013facing or North\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "2.5-4 metres; 1.5-2.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "chaenomeles",
+       "species": "chaenomeles speciosa"
+      }
+     },
+     "support": 4
+    },
+    {
+     "score": 0.203,
+     "scientific": "Symphoricarpos \u00d7 chenaultii",
+     "common": "Hybrid Coralberry",
+     "genus": "Symphoricarpos",
+     "family": "Caprifoliaceae",
+     "gbif": "3855595",
+     "rhs": {
+      "botanical": "Symphoricarpos \u00d7 chenaultii",
+      "url": "https://www.rhs.org.uk/plants/132496/symphoricarpos-x-chenaultii/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "symphoricarpos chenaultii",
+      "facts": {
+       "common": "Symphoricarpos \u00d7 chenaultii",
+       "hardiness": "H7",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "East\u2013facing or North\u2013facing or South\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1-1.5 metres; 1.5-2.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "symphoricarpos",
+       "species": "symphoricarpos chenaultii"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.132,
+     "scientific": "Lonicera japonica",
+     "common": "Japanese honeysuckle",
+     "genus": "Lonicera",
+     "family": "Caprifoliaceae",
+     "gbif": "5334240",
+     "rhs": {
+      "botanical": "Lonicera japonica",
+      "url": "https://www.rhs.org.uk/plants/10480/lonicera-japonica/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "lonicera japonica",
+      "facts": {
+       "common": "Lonicera japonica",
+       "hardiness": "H5",
+       "soil": "Clay, Loam",
+       "aspect": "East\u2013facing or North\u2013facing or South\u2013facing or West\u2013facing; Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "4-8 metres; 8-12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "lonicera",
+       "species": "lonicera japonica"
+      }
+     },
+     "support": 2
+    },
+    {
+     "score": 0.069,
+     "scientific": "Prunus \u00d7 fruticans",
+     "common": "Blackthorn",
+     "genus": "Prunus",
+     "family": "Rosaceae",
+     "gbif": "3022203",
+     "rhs": {
+      "botanical": "Prunus \u00d7 fruticans",
+      "url": "https://www.rhs.org.uk/plants/133212/prunus-x-fruticans/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "prunus fruticans",
+      "facts": {
+       "common": "Prunus \u00d7 fruticans",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "prunus",
+       "species": "prunus fruticans"
+      }
+     },
+     "support": 3
+    },
+    {
+     "score": 0.069,
+     "scientific": "Chaenomeles japonica",
+     "common": "Japanese quince",
+     "genus": "Chaenomeles",
+     "family": "Rosaceae",
+     "gbif": "3000610",
+     "rhs": {
+      "botanical": "Chaenomeles japonica",
+      "url": "https://www.rhs.org.uk/plants/3461/chaenomeles-japonica/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "chaenomeles japonica",
+      "facts": {
+       "common": "Chaenomeles japonica",
+       "hardiness": "H6",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "South\u2013facing or North\u2013facing or East\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1.5-2.5 metres; 0.5-1 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "chaenomeles",
+       "species": "chaenomeles japonica"
+      }
+     },
+     "support": 2
+    },
+    {
+     "score": 0.087,
+     "scientific": "Cotoneaster dammeri",
+     "common": "Bearberry Cotoneaster",
+     "genus": "Cotoneaster",
+     "family": "Rosaceae",
+     "gbif": "3026049",
+     "rhs": {
+      "botanical": "Cotoneaster dammeri",
+      "url": "https://www.rhs.org.uk/plants/4590/cotoneaster-dammeri/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "cotoneaster dammeri",
+      "facts": {
+       "common": "Cotoneaster dammeri",
+       "hardiness": "H6",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "North\u2013facing or South\u2013facing or West\u2013facing or East\u2013facing; Sheltered; Full sun, Partial shade",
+       "moisture": "Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1.5-2.5 metres; 0.1-0.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "cotoneaster",
+       "species": "cotoneaster dammeri"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-09",
+   "position": [
+    2.947,
+    0.728,
+    4.608
+   ],
+   "proposals": [
+    "p0012"
+   ],
+   "photos": [
+    "photos/0012.jpg"
+   ],
+   "confidence": "guess",
+   "candidates": [
+    {
+     "score": 0.195,
+     "scientific": "Rosa abietina",
+     "common": "Pine Rose",
+     "genus": "Rosa",
+     "family": "Rosaceae",
+     "gbif": "3005999",
+     "rhs": {
+      "botanical": "Rosa \u00d7 waitziana",
+      "url": "https://www.rhs.org.uk/plants/237917/rosa-x-waitziana/details",
+      "exact": false,
+      "score": 0.815,
+      "via": "rosa waitziana",
+      "facts": {
+       "common": "Rosa \u00d7 waitziana",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "rosa",
+       "species": "rosa waitziana"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.046,
+     "scientific": "Cotoneaster divaricatus",
+     "common": "Spreading Cotoneaster",
+     "genus": "Cotoneaster",
+     "family": "Rosaceae",
+     "gbif": "3026334",
+     "rhs": {
+      "botanical": "Cotoneaster divaricatus",
+      "url": "https://www.rhs.org.uk/plants/4596/cotoneaster-divaricatus/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "cotoneaster divaricatus",
+      "facts": {
+       "common": "Cotoneaster divaricatus",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "cotoneaster",
+       "species": "cotoneaster divaricatus"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.025,
+     "scientific": "Rosa lucieae",
+     "common": "Wichura's rose",
+     "genus": "Rosa",
+     "family": "Rosaceae",
+     "gbif": "8667586",
+     "rhs": {
+      "botanical": "Rosa lucieae",
+      "url": "https://www.rhs.org.uk/plants/358863/rosa-lucieae/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "rosa lucieae",
+      "facts": {
+       "common": "Rosa lucieae",
+       "hardiness": "H6",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "East\u2013facing or South\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1.5-2.5 metres; 2.5-4 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "rosa",
+       "species": "rosa lucieae"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.016,
+     "scientific": "Rosa foetida",
+     "common": "Austrian copper rose",
+     "genus": "Rosa",
+     "family": "Rosaceae",
+     "gbif": "3006902",
+     "rhs": {
+      "botanical": "Rosa \u00d7 rugotida",
+      "url": "https://www.rhs.org.uk/plants/291020/rosa-x-rugotida/details",
+      "exact": false,
+      "score": 0.8,
+      "via": "rosa rugotida",
+      "facts": {
+       "common": "Rosa \u00d7 rugotida",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "rosa",
+       "species": "rosa rugotida"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.016,
+     "scientific": "Berberis thunbergii",
+     "common": "Japanese barberry",
+     "genus": "Berberis",
+     "family": "Berberidaceae",
+     "gbif": "3033896",
+     "rhs": {
+      "botanical": "Berberis thunbergii",
+      "url": "https://www.rhs.org.uk/plants/2183/berberis-thunbergii/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "berberis thunbergii",
+      "facts": {
+       "common": "Berberis thunbergii",
+       "hardiness": "H7",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "South\u2013facing or North\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1-1.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "berberis",
+       "species": "berberis thunbergii"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-10",
+   "position": [
+    -1.563,
+    0.131,
+    3.239
+   ],
+   "proposals": [
+    "p0093"
+   ],
+   "photos": [
+    "photos/0093.jpg"
+   ],
+   "confidence": "guess",
+   "candidates": [
+    {
+     "score": 0.191,
+     "scientific": "Juniperus squamata",
+     "common": "Flaky Juniper",
+     "genus": "Juniperus",
+     "family": "Cupressaceae",
+     "gbif": "2684690",
+     "rhs": {
+      "botanical": "Juniperus squamata",
+      "url": "https://www.rhs.org.uk/plants/9625/juniperus-squamata/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "juniperus squamata",
+      "facts": {
+       "common": "Juniperus squamata",
+       "hardiness": "H7",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "East\u2013facing or North\u2013facing or South\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1.5-2.5 metres; 0.1-0.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "juniperus",
+       "species": "juniperus squamata"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.048,
+     "scientific": "Dasiphora fruticosa",
+     "common": "Shrubby cinquefoil",
+     "genus": "Dasiphora",
+     "family": "Rosaceae",
+     "gbif": "5370380",
+     "rhs": {
+      "botanical": "Euphorbia fruticosa",
+      "url": "https://www.rhs.org.uk/plants/517235/euphorbia-fruticosa/details",
+      "exact": false,
+      "score": 0.789,
+      "via": "euphorbia fruticosa",
+      "facts": {
+       "common": "Euphorbia fruticosa",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "euphorbia",
+       "species": "euphorbia fruticosa"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.039,
+     "scientific": "Chamaecyparis pisifera",
+     "common": "Sawara cypress",
+     "genus": "Chamaecyparis",
+     "family": "Cupressaceae",
+     "gbif": "2683880",
+     "rhs": {
+      "botanical": "Chamaecyparis pisifera",
+      "url": "https://www.rhs.org.uk/plants/3669/chamaecyparis-pisifera/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "chamaecyparis pisifera",
+      "facts": {
+       "common": "Chamaecyparis pisifera",
+       "hardiness": "H6",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "East\u2013facing or South\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1.5-2.5 metres; 8-12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "chamaecyparis",
+       "species": "chamaecyparis pisifera"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.036,
+     "scientific": "Taxus \u00d7 media",
+     "common": "Hybrid yew",
+     "genus": "Taxus",
+     "family": "Taxaceae",
+     "gbif": "6420771",
+     "rhs": {
+      "botanical": "Taxus \u00d7 media",
+      "url": "https://www.rhs.org.uk/plants/143063/taxus-x-media/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "taxus media",
+      "facts": {
+       "common": "Taxus \u00d7 media",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "taxus",
+       "species": "taxus media"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.026,
+     "scientific": "Picea omorika",
+     "common": "Serbian spruce",
+     "genus": "Picea",
+     "family": "Pinaceae",
+     "gbif": "5284950",
+     "rhs": {
+      "botanical": "Picea omorika",
+      "url": "https://www.rhs.org.uk/plants/12966/picea-omorika/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "picea omorika",
+      "facts": {
+       "common": "Picea omorika",
+       "hardiness": "H7",
+       "soil": "Clay, Loam, Sand",
+       "aspect": "North\u2013facing or West\u2013facing or South\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "2.5-4 metres; Higher than 12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "picea",
+       "species": "picea omorika"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-11",
+   "position": [
+    -2.513,
+    0.671,
+    -4.916
+   ],
+   "proposals": [
+    "p0075"
+   ],
+   "photos": [
+    "photos/0075.jpg"
+   ],
+   "confidence": "guess",
+   "candidates": [
+    {
+     "score": 0.177,
+     "scientific": "Pieris japonica",
+     "common": "Japanese Pieris",
+     "genus": "Pieris",
+     "family": "Ericaceae",
+     "gbif": "2882631",
+     "rhs": {
+      "botanical": "Pieris japonica",
+      "url": "https://www.rhs.org.uk/plants/13000/pieris-japonica/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "pieris japonica",
+      "facts": {
+       "common": "Pieris japonica",
+       "hardiness": "H5",
+       "soil": "Loam, Sand",
+       "aspect": "East\u2013facing or South\u2013facing or West\u2013facing; Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid",
+       "size": "2.5-4 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "pieris",
+       "species": "pieris japonica"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.076,
+     "scientific": "Berberis julianae",
+     "common": "Chinese Barberry",
+     "genus": "Berberis",
+     "family": "Berberidaceae",
+     "gbif": "3981543",
+     "rhs": {
+      "botanical": "Berberis julianae",
+      "url": "https://www.rhs.org.uk/plants/2133/berberis-julianae/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "berberis julianae",
+      "facts": {
+       "common": "Berberis julianae",
+       "hardiness": "H5",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "South\u2013facing or North\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "2.5-4 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "berberis",
+       "species": "berberis julianae"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.054,
+     "scientific": "Rhododendron ponticum",
+     "common": "Rhododendron",
+     "genus": "Rhododendron",
+     "family": "Ericaceae",
+     "gbif": "7327990",
+     "rhs": {
+      "botanical": "Rhododendron ponticum",
+      "url": "https://www.rhs.org.uk/plants/100610/rhododendron-ponticum/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "rhododendron ponticum",
+      "facts": {
+       "common": "Rhododendron ponticum",
+       "hardiness": "H6",
+       "soil": "Clay, Loam, Sand",
+       "aspect": "South\u2013facing or West\u2013facing or North\u2013facing or East\u2013facing; Exposed or Sheltered; Full shade, Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid",
+       "size": "2.5-4 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "rhododendron",
+       "species": "rhododendron ponticum"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.05,
+     "scientific": "Rhododendron degronianum",
+     "common": null,
+     "genus": "Rhododendron",
+     "family": "Ericaceae",
+     "gbif": "7327646",
+     "rhs": {
+      "botanical": "Rhododendron degronianum",
+      "url": "https://www.rhs.org.uk/plants/98601/rhododendron-degronianum/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "rhododendron degronianum",
+      "facts": {
+       "common": "Rhododendron degronianum",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "rhododendron",
+       "species": "rhododendron degronianum"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.03,
+     "scientific": "Heptapleurum taiwanianum",
+     "common": "Taiwanese schefflera",
+     "genus": "Heptapleurum",
+     "family": "Araliaceae",
+     "gbif": "11066274",
+     "rhs": {
+      "botanical": "Heptapleurum taiwanianum",
+      "url": "https://www.rhs.org.uk/plants/516912/heptapleurum-taiwanianum/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "heptapleurum taiwanianum",
+      "facts": {
+       "common": "Heptapleurum taiwanianum",
+       "hardiness": "H4",
+       "soil": "Chalk, Loam, Sand",
+       "aspect": "West\u2013facing or South\u2013facing; Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1.5-2.5 metres; 2.5-4 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "heptapleurum",
+       "species": "heptapleurum taiwanianum"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-12",
+   "position": [
+    2.671,
+    1.208,
+    4.835
+   ],
+   "proposals": [
+    "p0099"
+   ],
+   "photos": [
+    "photos/0099.jpg"
+   ],
+   "confidence": "guess",
+   "candidates": [
+    {
+     "score": 0.17,
+     "scientific": "Carpinus orientalis",
+     "common": "Eastern Hornbeam",
+     "genus": "Carpinus",
+     "family": "Betulaceae",
+     "gbif": "2875780",
+     "rhs": {
+      "botanical": "Carpinus orientalis",
+      "url": "https://www.rhs.org.uk/plants/3142/carpinus-orientalis/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "carpinus orientalis",
+      "facts": {
+       "common": "Carpinus orientalis",
+       "hardiness": "H5",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "South\u2013facing or East\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "4-8 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "carpinus",
+       "species": "carpinus orientalis"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.15,
+     "scientific": "Carpinus caroliniana",
+     "common": "American hornbeam",
+     "genus": "Carpinus",
+     "family": "Betulaceae",
+     "gbif": "2875842",
+     "rhs": {
+      "botanical": "Carpinus caroliniana",
+      "url": "https://www.rhs.org.uk/plants/3139/carpinus-caroliniana/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "carpinus caroliniana",
+      "facts": {
+       "common": "Carpinus caroliniana",
+       "hardiness": "H7",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "South\u2013facing or North\u2013facing or East\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "wider than 8 metres; 8-12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "carpinus",
+       "species": "carpinus caroliniana"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.088,
+     "scientific": "Ulmus pumila",
+     "common": "Siberian elm",
+     "genus": "Ulmus",
+     "family": "Ulmaceae",
+     "gbif": "5361877",
+     "rhs": {
+      "botanical": "Ulmus pumila",
+      "url": "https://www.rhs.org.uk/plants/94531/ulmus-pumila/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "ulmus pumila",
+      "facts": {
+       "common": "Ulmus pumila",
+       "hardiness": "H6",
+       "soil": "Clay, Loam, Sand",
+       "aspect": "East\u2013facing or South\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "wider than 8 metres; Higher than 12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "ulmus",
+       "species": "ulmus pumila"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.046,
+     "scientific": "Carpinus betulus",
+     "common": "European hornbeam",
+     "genus": "Carpinus",
+     "family": "Betulaceae",
+     "gbif": "2875818",
+     "rhs": {
+      "botanical": "Carpinus betulus",
+      "url": "https://www.rhs.org.uk/plants/3136/carpinus-betulus/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "carpinus betulus",
+      "facts": {
+       "common": "Carpinus betulus",
+       "hardiness": "H7",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "East\u2013facing or South\u2013facing or North\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "wider than 8 metres; Higher than 12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "carpinus",
+       "species": "carpinus betulus"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.043,
+     "scientific": "Ulmus alata",
+     "common": "Winged elm",
+     "genus": "Ulmus",
+     "family": "Ulmaceae",
+     "gbif": "5361878",
+     "rhs": {
+      "botanical": "Ulmus alata",
+      "url": "https://www.rhs.org.uk/plants/161713/ulmus-alata/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "ulmus alata",
+      "facts": {
+       "common": "Ulmus alata",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "ulmus",
+       "species": "ulmus alata"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-13",
+   "position": [
+    -0.47,
+    0.115,
+    2.302
+   ],
+   "proposals": [
+    "p0102"
+   ],
+   "photos": [
+    "photos/0102.jpg"
+   ],
+   "confidence": "guess",
+   "candidates": [
+    {
+     "score": 0.156,
+     "scientific": "Chaenomeles speciosa",
+     "common": "Flowering quince",
+     "genus": "Chaenomeles",
+     "family": "Rosaceae",
+     "gbif": "3000679",
+     "rhs": {
+      "botanical": "Chaenomeles speciosa",
+      "url": "https://www.rhs.org.uk/plants/3463/chaenomeles-speciosa/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "chaenomeles speciosa",
+      "facts": {
+       "common": "Chaenomeles speciosa",
+       "hardiness": "H6",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "South\u2013facing or North\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "2.5-4 metres; 1.5-2.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "chaenomeles",
+       "species": "chaenomeles speciosa"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.06,
+     "scientific": "Abelia \u00d7 grandiflora",
+     "common": "Glossy abelia",
+     "genus": "Abelia",
+     "family": "Caprifoliaceae",
+     "gbif": "5334278",
+     "rhs": {
+      "botanical": "Abelia \u00d7 grandiflora",
+      "url": "https://www.rhs.org.uk/plants/100036/abelia-x-grandiflora/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "abelia grandiflora",
+      "facts": {
+       "common": "Abelia \u00d7 grandiflora",
+       "hardiness": "H5",
+       "soil": "Chalk, Loam, Sand",
+       "aspect": "East\u2013facing or South\u2013facing; Sheltered; Full sun",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "2.5-4 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "abelia",
+       "species": "abelia grandiflora"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.033,
+     "scientific": "Elaeagnus \u00d7 reflexa",
+     "common": "Bent oleaster",
+     "genus": "Elaeagnus",
+     "family": "Elaeagnaceae",
+     "gbif": "4048279",
+     "rhs": {
+      "botanical": "Elaeagnus \u00d7 reflexa",
+      "url": "https://www.rhs.org.uk/plants/94889/elaeagnus-x-reflexa/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "elaeagnus reflexa",
+      "facts": {
+       "common": "Elaeagnus \u00d7 reflexa",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "elaeagnus",
+       "species": "elaeagnus reflexa"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.03,
+     "scientific": "Rubus elegantispinosus",
+     "common": "Slender Spined Bramble",
+     "genus": "Rubus",
+     "family": "Rosaceae",
+     "gbif": "2994335",
+     "rhs": {
+      "botanical": "Rubus elegantispinosus",
+      "url": "https://www.rhs.org.uk/plants/296583/rubus-elegantispinosus/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "rubus elegantispinosus",
+      "facts": {
+       "common": "Rubus elegantispinosus",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "rubus",
+       "species": "rubus elegantispinosus"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.026,
+     "scientific": "Vesalea grandifolia",
+     "common": "Abelia grandifolia",
+     "genus": "Vesalea",
+     "family": "Caprifoliaceae",
+     "gbif": "9817202",
+     "rhs": {
+      "botanical": "Achillea grandifolia Friv.",
+      "url": "https://www.rhs.org.uk/plants/51965/achillea-grandifolia-friv/details",
+      "exact": false,
+      "score": 0.821,
+      "via": "achillea grandifolia",
+      "facts": {
+       "common": "Achillea grandifolia Friv.",
+       "hardiness": "H6",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "West\u2013facing or South\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "0.5-1 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "achillea",
+       "species": "achillea grandifolia"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-14",
+   "position": [
+    1.314,
+    0.066,
+    1.591
+   ],
+   "proposals": [
+    "p0087"
+   ],
+   "photos": [
+    "photos/0087.jpg"
+   ],
+   "confidence": "guess",
+   "candidates": [
+    {
+     "score": 0.145,
+     "scientific": "Ophiopogon japonicus",
+     "common": "Mondo grass",
+     "genus": "Ophiopogon",
+     "family": "Asparagaceae",
+     "gbif": "2774158",
+     "rhs": {
+      "botanical": "Ophiopogon japonicus",
+      "url": "https://www.rhs.org.uk/plants/11837/ophiopogon-japonicus/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "ophiopogon japonicus",
+      "facts": {
+       "common": "Ophiopogon japonicus",
+       "hardiness": "H5",
+       "soil": "Clay, Loam, Sand",
+       "aspect": "South\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Neutral",
+       "size": "0.1-0.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "ophiopogon",
+       "species": "ophiopogon japonicus"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.025,
+     "scientific": "Tulbaghia violacea",
+     "common": "Society garlic",
+     "genus": "Tulbaghia",
+     "family": "Amaryllidaceae",
+     "gbif": "5326622",
+     "rhs": {
+      "botanical": "Tulbaghia violacea",
+      "url": "https://www.rhs.org.uk/plants/18484/tulbaghia-violacea/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "tulbaghia violacea",
+      "facts": {
+       "common": "Tulbaghia violacea",
+       "hardiness": "H3",
+       "soil": "Loam, Sand",
+       "aspect": "East\u2013facing or South\u2013facing or West\u2013facing; Sheltered; Full sun",
+       "moisture": "Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "0.1-0.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "tulbaghia",
+       "species": "tulbaghia violacea"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.019,
+     "scientific": "Poa annua",
+     "common": "Annual meadow grass",
+     "genus": "Poa",
+     "family": "Poaceae",
+     "gbif": "2704179",
+     "rhs": {
+      "botanical": "Poa annua",
+      "url": "https://www.rhs.org.uk/plants/119102/poa-annua/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "poa annua",
+      "facts": {
+       "common": "Poa annua",
+       "hardiness": "H7",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "East\u2013facing or North\u2013facing or South\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Poorly\u2013drained or Well\u2013drained",
+       "ph": "Neutral or Alkaline",
+       "size": "0.1-0.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "poa",
+       "species": "poa annua"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.017,
+     "scientific": "Chamaecyparis pisifera",
+     "common": "Sawara cypress",
+     "genus": "Chamaecyparis",
+     "family": "Cupressaceae",
+     "gbif": "2683880",
+     "rhs": {
+      "botanical": "Chamaecyparis pisifera",
+      "url": "https://www.rhs.org.uk/plants/3669/chamaecyparis-pisifera/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "chamaecyparis pisifera",
+      "facts": {
+       "common": "Chamaecyparis pisifera",
+       "hardiness": "H6",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "East\u2013facing or South\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1.5-2.5 metres; 8-12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "chamaecyparis",
+       "species": "chamaecyparis pisifera"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.013,
+     "scientific": "Galanthus nivalis",
+     "common": "Snowdrop",
+     "genus": "Galanthus",
+     "family": "Amaryllidaceae",
+     "gbif": "2855356",
+     "rhs": {
+      "botanical": "Galanthus nivalis",
+      "url": "https://www.rhs.org.uk/plants/7568/galanthus-nivalis/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "galanthus nivalis",
+      "facts": {
+       "common": "Galanthus nivalis",
+       "hardiness": "H5",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "South\u2013facing or North\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "0-0.1 metre; 0.1-0.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "galanthus",
+       "species": "galanthus nivalis"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-15",
+   "position": [
+    0.937,
+    0.041,
+    5.576
+   ],
+   "proposals": [
+    "p0024"
+   ],
+   "photos": [
+    "photos/0024.jpg"
+   ],
+   "confidence": "guess",
+   "candidates": [
+    {
+     "score": 0.113,
+     "scientific": "Cyperus dives",
+     "common": "Fig Sedge",
+     "genus": "Cyperus",
+     "family": "Cyperaceae",
+     "gbif": "2715374",
+     "rhs": {
+      "botanical": "Cyperus niveus var. leucocephalus",
+      "url": "https://www.rhs.org.uk/plants/281454/cyperus-niveus-var-leucocephalus/details",
+      "exact": false,
+      "score": 0.889,
+      "via": "cyperus niveus",
+      "facts": {
+       "common": "Cyperus niveus var. leucocephalus",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "cyperus",
+       "species": "cyperus niveus"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.099,
+     "scientific": "Sparganium erectum",
+     "common": "Branched bur reed",
+     "genus": "Sparganium",
+     "family": "Typhaceae",
+     "gbif": "7679536",
+     "rhs": {
+      "botanical": "Sparganium erectum",
+      "url": "https://www.rhs.org.uk/plants/63714/sparganium-erectum/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "sparganium erectum",
+      "facts": {
+       "common": "Sparganium erectum",
+       "hardiness": "H7",
+       "soil": "Clay, Loam, Sand",
+       "aspect": "South\u2013facing or East\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Poorly\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "2.5-4 metres; 1-1.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "sparganium",
+       "species": "sparganium erectum"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.063,
+     "scientific": "Iris pseudacorus",
+     "common": "Yellow flag",
+     "genus": "Iris",
+     "family": "Iridaceae",
+     "gbif": "5298231",
+     "rhs": {
+      "botanical": "Iris pseudacorus",
+      "url": "https://www.rhs.org.uk/plants/9334/iris-pseudacorus/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "iris pseudacorus",
+      "facts": {
+       "common": "Iris pseudacorus",
+       "hardiness": "H7",
+       "soil": "Clay, Loam",
+       "aspect": "South\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Poorly\u2013drained",
+       "ph": "Acid",
+       "size": "1-1.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "iris",
+       "species": "iris pseudacorus"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.053,
+     "scientific": "Carex pendula",
+     "common": "Pendulous sedge",
+     "genus": "Carex",
+     "family": "Cyperaceae",
+     "gbif": "2722051",
+     "rhs": {
+      "botanical": "Carex pendula",
+      "url": "https://www.rhs.org.uk/plants/3094/carex-pendula/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "carex pendula",
+      "facts": {
+       "common": "Carex pendula",
+       "hardiness": "H6",
+       "soil": "Clay, Loam, Chalk, Sand",
+       "aspect": "East\u2013facing or North\u2013facing or South\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Poorly\u2013drained or Moist but well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "0.5-1 metres; 1-1.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "carex",
+       "species": "carex pendula"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.042,
+     "scientific": "Acorus calamus",
+     "common": "Sweet flag",
+     "genus": "Acorus",
+     "family": "Acoraceae",
+     "gbif": "2873769",
+     "rhs": {
+      "botanical": "Acorus calamus",
+      "url": "https://www.rhs.org.uk/plants/396/acorus-calamus/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "acorus calamus",
+      "facts": {
+       "common": "Acorus calamus",
+       "hardiness": "H7",
+       "soil": "Clay",
+       "aspect": "South\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun",
+       "moisture": "Moist but well\u2013drained or Poorly\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "0.5-1 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "acorus",
+       "species": "acorus calamus"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-16",
+   "position": [
+    0.165,
+    1.149,
+    6.207
+   ],
+   "proposals": [
+    "p0021"
+   ],
+   "photos": [
+    "photos/0021.jpg"
+   ],
+   "confidence": "guess",
+   "candidates": [
+    {
+     "score": 0.082,
+     "scientific": "Viburnum tinus",
+     "common": "Laurustinus",
+     "genus": "Viburnum",
+     "family": "Viburnaceae",
+     "gbif": "2888585",
+     "rhs": {
+      "botanical": "Viburnum tinus",
+      "url": "https://www.rhs.org.uk/plants/18950/viburnum-tinus/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "viburnum tinus",
+      "facts": {
+       "common": "Viburnum tinus",
+       "hardiness": "H4",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "West\u2013facing or East\u2013facing or South\u2013facing; Sheltered; Full shade, Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "2.5-4 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "viburnum",
+       "species": "viburnum tinus"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.049,
+     "scientific": "Pittosporum tenuifolium",
+     "common": "Kohuhu",
+     "genus": "Pittosporum",
+     "family": "Pittosporaceae",
+     "gbif": "2986293",
+     "rhs": {
+      "botanical": "Pittosporum tenuifolium",
+      "url": "https://www.rhs.org.uk/plants/13202/pittosporum-tenuifolium/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "pittosporum tenuifolium",
+      "facts": {
+       "common": "Pittosporum tenuifolium",
+       "hardiness": "H4",
+       "soil": "Chalk, Loam, Sand",
+       "aspect": "West\u2013facing or South\u2013facing or East\u2013facing; Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "2.5-4 metres; 4-8 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "pittosporum",
+       "species": "pittosporum tenuifolium"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.049,
+     "scientific": "Elaeagnus pungens",
+     "common": "Thorny olive",
+     "genus": "Elaeagnus",
+     "family": "Elaeagnaceae",
+     "gbif": "3039270",
+     "rhs": {
+      "botanical": "Elaeagnus pungens",
+      "url": "https://www.rhs.org.uk/plants/6314/elaeagnus-pungens/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "elaeagnus pungens",
+      "facts": {
+       "common": "Elaeagnus pungens",
+       "hardiness": "H5",
+       "soil": "Sand, Loam, Clay, Chalk",
+       "aspect": "West\u2013facing or South\u2013facing or North\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Neutral or Acid or Alkaline",
+       "size": "4-8 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "elaeagnus",
+       "species": "elaeagnus pungens"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.048,
+     "scientific": "Elaeagnus \u00d7 submacrophylla",
+     "common": "Smallflower Silverberry",
+     "genus": "Elaeagnus",
+     "family": "Elaeagnaceae",
+     "gbif": "4048240",
+     "rhs": {
+      "botanical": "Elaeagnus \u00d7 submacrophylla",
+      "url": "https://www.rhs.org.uk/plants/169093/elaeagnus-x-submacrophylla/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "elaeagnus submacrophylla",
+      "facts": {
+       "common": "Elaeagnus \u00d7 submacrophylla",
+       "hardiness": "H5",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "West\u2013facing or South\u2013facing or North\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "2.5-4 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "elaeagnus",
+       "species": "elaeagnus submacrophylla"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.044,
+     "scientific": "Ludwigia peploides",
+     "common": "Water primrose",
+     "genus": "Ludwigia",
+     "family": "Onagraceae",
+     "gbif": "5420991",
+     "rhs": {
+      "botanical": "Ludwigia peploides",
+      "url": "https://www.rhs.org.uk/plants/297377/ludwigia-peploides/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "ludwigia peploides",
+      "facts": {
+       "common": "Ludwigia peploides",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "ludwigia",
+       "species": "ludwigia peploides"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-17",
+   "position": [
+    0.284,
+    0.171,
+    2.969
+   ],
+   "proposals": [
+    "p0090"
+   ],
+   "photos": [
+    "photos/0090.jpg"
+   ],
+   "confidence": "guess",
+   "candidates": [
+    {
+     "score": 0.074,
+     "scientific": "Rubus elegantispinosus",
+     "common": "Slender Spined Bramble",
+     "genus": "Rubus",
+     "family": "Rosaceae",
+     "gbif": "2994335",
+     "rhs": {
+      "botanical": "Rubus elegantispinosus",
+      "url": "https://www.rhs.org.uk/plants/296583/rubus-elegantispinosus/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "rubus elegantispinosus",
+      "facts": {
+       "common": "Rubus elegantispinosus",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "rubus",
+       "species": "rubus elegantispinosus"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.036,
+     "scientific": "Symphoricarpos albus",
+     "common": "Snowberry",
+     "genus": "Symphoricarpos",
+     "family": "Caprifoliaceae",
+     "gbif": "2888634",
+     "rhs": {
+      "botanical": "Symphoricarpos albus",
+      "url": "https://www.rhs.org.uk/plants/90622/symphoricarpos-albus/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "symphoricarpos albus",
+      "facts": {
+       "common": "Symphoricarpos albus",
+       "hardiness": "H7",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "East\u2013facing or North\u2013facing or South\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1.5-2.5 metres; 1-1.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "symphoricarpos",
+       "species": "symphoricarpos albus"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.024,
+     "scientific": "Symphoricarpos \u00d7 chenaultii",
+     "common": "Hybrid Coralberry",
+     "genus": "Symphoricarpos",
+     "family": "Caprifoliaceae",
+     "gbif": "3855595",
+     "rhs": {
+      "botanical": "Symphoricarpos \u00d7 chenaultii",
+      "url": "https://www.rhs.org.uk/plants/132496/symphoricarpos-x-chenaultii/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "symphoricarpos chenaultii",
+      "facts": {
+       "common": "Symphoricarpos \u00d7 chenaultii",
+       "hardiness": "H7",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "East\u2013facing or North\u2013facing or South\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1-1.5 metres; 1.5-2.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "symphoricarpos",
+       "species": "symphoricarpos chenaultii"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.013,
+     "scientific": "Mitchella repens",
+     "common": "Partridgeberry",
+     "genus": "Mitchella",
+     "family": "Rubiaceae",
+     "gbif": "5338762",
+     "rhs": {
+      "botanical": "Mitchella repens",
+      "url": "https://www.rhs.org.uk/plants/11160/mitchella-repens/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "mitchella repens",
+      "facts": {
+       "common": "Mitchella repens",
+       "hardiness": "H6",
+       "soil": "Clay, Loam, Sand",
+       "aspect": "North\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Partial shade",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid",
+       "size": "0.1-0.5 metres; Up to 10 cm",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "mitchella",
+       "species": "mitchella repens"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.013,
+     "scientific": "Soleirolia soleirolii",
+     "common": "Mind your-own-business",
+     "genus": "Soleirolia",
+     "family": "Urticaceae",
+     "gbif": "2984366",
+     "rhs": {
+      "botanical": "Soleirolia soleirolii",
+      "url": "https://www.rhs.org.uk/plants/17471/soleirolia-soleirolii/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "soleirolia soleirolii",
+      "facts": {
+       "common": "Soleirolia soleirolii",
+       "hardiness": "H4",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "North\u2013facing or West\u2013facing or East\u2013facing or South\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "0.5-1 metres; Up to 10 cm",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "soleirolia",
+       "species": "soleirolia soleirolii"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-18",
+   "position": [
+    -0.758,
+    1.589,
+    4.809
+   ],
+   "proposals": [
+    "p0036",
+    "p0096"
+   ],
+   "photos": [
+    "photos/0036.jpg",
+    "photos/0096.jpg"
+   ],
+   "confidence": "guess",
+   "candidates": [
+    {
+     "score": 0.073,
+     "scientific": "Pomaderris racemosa",
+     "common": null,
+     "genus": "Pomaderris",
+     "family": "Rhamnaceae",
+     "gbif": "3876061",
+     "rhs": null,
+     "support": 1
+    },
+    {
+     "score": 0.071,
+     "scientific": "Viburnum tinus",
+     "common": "Laurustinus",
+     "genus": "Viburnum",
+     "family": "Viburnaceae",
+     "gbif": "2888585",
+     "rhs": {
+      "botanical": "Viburnum tinus",
+      "url": "https://www.rhs.org.uk/plants/18950/viburnum-tinus/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "viburnum tinus",
+      "facts": {
+       "common": "Viburnum tinus",
+       "hardiness": "H4",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "West\u2013facing or East\u2013facing or South\u2013facing; Sheltered; Full shade, Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "2.5-4 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "viburnum",
+       "species": "viburnum tinus"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.058,
+     "scientific": "Rhododendron oldhamii",
+     "common": "Taiwan azalea",
+     "genus": "Rhododendron",
+     "family": "Ericaceae",
+     "gbif": "4936879",
+     "rhs": {
+      "botanical": "Rhododendron 'Goldsaum'",
+      "url": "https://www.rhs.org.uk/plants/257663/rhododendron-goldsaum/details",
+      "exact": false,
+      "score": 0.857,
+      "via": "rhododendron goldsaum",
+      "facts": {
+       "common": "Rhododendron 'Goldsaum'",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "rhododendron",
+       "species": "rhododendron"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.043,
+     "scientific": "Pomaderris apetala",
+     "common": "Dogwood",
+     "genus": "Pomaderris",
+     "family": "Rhamnaceae",
+     "gbif": "7274029",
+     "rhs": {
+      "botanical": "Pomaderris apetala",
+      "url": "https://www.rhs.org.uk/plants/13495/pomaderris-apetala/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "pomaderris apetala",
+      "facts": {
+       "common": "Pomaderris apetala",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "pomaderris",
+       "species": "pomaderris apetala"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.03,
+     "scientific": "Elaeagnus \u00d7 reflexa",
+     "common": "Bent oleaster",
+     "genus": "Elaeagnus",
+     "family": "Elaeagnaceae",
+     "gbif": "4048279",
+     "rhs": {
+      "botanical": "Elaeagnus \u00d7 reflexa",
+      "url": "https://www.rhs.org.uk/plants/94889/elaeagnus-x-reflexa/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "elaeagnus reflexa",
+      "facts": {
+       "common": "Elaeagnus \u00d7 reflexa",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "elaeagnus",
+       "species": "elaeagnus reflexa"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.026,
+     "scientific": "Pouzolzia sanguinea",
+     "common": null,
+     "genus": "Pouzolzia",
+     "family": "Urticaceae",
+     "gbif": "7300542",
+     "rhs": null,
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-19",
+   "position": [
+    -2.116,
+    0.749,
+    -3.395
+   ],
+   "proposals": [
+    "p0072"
+   ],
+   "photos": [
+    "photos/0072.jpg"
+   ],
+   "confidence": "guess",
+   "candidates": [
+    {
+     "score": 0.069,
+     "scientific": "Chrysolepis chrysophylla",
+     "common": "Giant chinquapin",
+     "genus": "Chrysolepis",
+     "family": "Fagaceae",
+     "gbif": "5333315",
+     "rhs": {
+      "botanical": "Chrysolepis chrysophylla",
+      "url": "https://www.rhs.org.uk/plants/29320/chrysolepis-chrysophylla/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "chrysolepis chrysophylla",
+      "facts": {
+       "common": "Chrysolepis chrysophylla",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "chrysolepis",
+       "species": "chrysolepis chrysophylla"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.058,
+     "scientific": "Pieris formosa",
+     "common": "Mountain Pieris",
+     "genus": "Pieris",
+     "family": "Ericaceae",
+     "gbif": "5333350",
+     "rhs": {
+      "botanical": "Pieris formosa",
+      "url": "https://www.rhs.org.uk/plants/12996/pieris-formosa/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "pieris formosa",
+      "facts": {
+       "common": "Pieris formosa",
+       "hardiness": "H5",
+       "soil": "Loam, Sand",
+       "aspect": "West\u2013facing or East\u2013facing or South\u2013facing; Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid",
+       "size": "2.5-4 metres; 4-8 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "pieris",
+       "species": "pieris formosa"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.052,
+     "scientific": "Berberis julianae",
+     "common": "Chinese Barberry",
+     "genus": "Berberis",
+     "family": "Berberidaceae",
+     "gbif": "3981543",
+     "rhs": {
+      "botanical": "Berberis julianae",
+      "url": "https://www.rhs.org.uk/plants/2133/berberis-julianae/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "berberis julianae",
+      "facts": {
+       "common": "Berberis julianae",
+       "hardiness": "H5",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "South\u2013facing or North\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "2.5-4 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "berberis",
+       "species": "berberis julianae"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.03,
+     "scientific": "Pieris japonica",
+     "common": "Japanese Pieris",
+     "genus": "Pieris",
+     "family": "Ericaceae",
+     "gbif": "2882631",
+     "rhs": {
+      "botanical": "Pieris japonica",
+      "url": "https://www.rhs.org.uk/plants/13000/pieris-japonica/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "pieris japonica",
+      "facts": {
+       "common": "Pieris japonica",
+       "hardiness": "H5",
+       "soil": "Loam, Sand",
+       "aspect": "East\u2013facing or South\u2013facing or West\u2013facing; Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid",
+       "size": "2.5-4 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "pieris",
+       "species": "pieris japonica"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.027,
+     "scientific": "Quercus phellos",
+     "common": "Willow oak",
+     "genus": "Quercus",
+     "family": "Fagaceae",
+     "gbif": "2880652",
+     "rhs": {
+      "botanical": "Quercus phellos",
+      "url": "https://www.rhs.org.uk/plants/28189/quercus-phellos/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "quercus phellos",
+      "facts": {
+       "common": "Quercus phellos",
+       "hardiness": "H6",
+       "soil": "Clay, Loam, Sand",
+       "aspect": "East\u2013facing or North\u2013facing or South\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Neutral",
+       "size": "wider than 8 metres; Higher than 12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "quercus",
+       "species": "quercus phellos"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-20",
+   "position": [
+    -2.355,
+    0.986,
+    5.022
+   ],
+   "proposals": [
+    "p0030"
+   ],
+   "photos": [
+    "photos/0030.jpg"
+   ],
+   "confidence": "guess",
+   "candidates": [
+    {
+     "score": 0.059,
+     "scientific": "Hemerocallis lilioasphodelus",
+     "common": "Yellow daylily",
+     "genus": "Hemerocallis",
+     "family": "Asphodelaceae",
+     "gbif": "2781103",
+     "rhs": {
+      "botanical": "Hemerocallis lilioasphodelus",
+      "url": "https://www.rhs.org.uk/plants/39183/hemerocallis-lilioasphodelus/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "hemerocallis lilioasphodelus",
+      "facts": {
+       "common": "Hemerocallis lilioasphodelus",
+       "hardiness": "H6",
+       "soil": "Chalk, Clay, Loam",
+       "aspect": "West\u2013facing or South\u2013facing; Exposed or Sheltered; Full sun",
+       "moisture": "Moist but well\u2013drained or Poorly\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "0.5-1 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "hemerocallis",
+       "species": "hemerocallis lilioasphodelus"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.032,
+     "scientific": "Actaea racemosa",
+     "common": "Black cohosh",
+     "genus": "Actaea",
+     "family": "Ranunculaceae",
+     "gbif": "6376106",
+     "rhs": {
+      "botanical": "Actaea racemosa",
+      "url": "https://www.rhs.org.uk/plants/156095/actaea-racemosa/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "actaea racemosa",
+      "facts": {
+       "common": "Actaea racemosa",
+       "hardiness": "H7",
+       "soil": "Clay, Loam",
+       "aspect": "West\u2013facing or North\u2013facing or East\u2013facing; Sheltered; Partial shade",
+       "moisture": "Moist but well\u2013drained or Poorly\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "0.1-0.5 metres; 1-1.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "actaea",
+       "species": "actaea racemosa"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.023,
+     "scientific": "Taxus \u00d7 media",
+     "common": "Hybrid yew",
+     "genus": "Taxus",
+     "family": "Taxaceae",
+     "gbif": "6420771",
+     "rhs": {
+      "botanical": "Taxus \u00d7 media",
+      "url": "https://www.rhs.org.uk/plants/143063/taxus-x-media/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "taxus media",
+      "facts": {
+       "common": "Taxus \u00d7 media",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "taxus",
+       "species": "taxus media"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.021,
+     "scientific": "Astilbe japonica",
+     "common": "Japanese astilbe",
+     "genus": "Astilbe",
+     "family": "Saxifragaceae",
+     "gbif": "3032696",
+     "rhs": {
+      "botanical": "Astilbe japonica",
+      "url": "https://www.rhs.org.uk/plants/1831/astilbe-japonica/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "astilbe japonica",
+      "facts": {
+       "common": "Astilbe japonica",
+       "hardiness": "H7",
+       "soil": "Clay, Loam",
+       "aspect": "East\u2013facing or West\u2013facing or North\u2013facing; Sheltered; Partial shade",
+       "moisture": "Moist but well\u2013drained or Poorly\u2013drained",
+       "ph": "Acid or Neutral or Alkaline",
+       "size": "0.5-1 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "astilbe",
+       "species": "astilbe japonica"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.018,
+     "scientific": "Cordyline indivisa",
+     "common": "Mountain Cabbage Tree",
+     "genus": "Cordyline",
+     "family": "Asparagaceae",
+     "gbif": "2766221",
+     "rhs": {
+      "botanical": "Cordyline indivisa",
+      "url": "https://www.rhs.org.uk/plants/4364/cordyline-indivisa/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "cordyline indivisa",
+      "facts": {
+       "common": "Cordyline indivisa",
+       "hardiness": "H3",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "South\u2013facing or East\u2013facing; Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "1-1.5 metres; 2.5-4 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "cordyline",
+       "species": "cordyline indivisa"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  },
+  {
+   "id": "plant-21",
+   "position": [
+    -0.316,
+    -0.067,
+    -2.023
+   ],
+   "proposals": [
+    "p0081"
+   ],
+   "photos": [
+    "photos/0081.jpg"
+   ],
+   "confidence": "guess",
+   "candidates": [
+    {
+     "score": 0.041,
+     "scientific": "Zoysia matrella",
+     "common": "Manila grass",
+     "genus": "Zoysia",
+     "family": "Poaceae",
+     "gbif": "2704740",
+     "rhs": {
+      "botanical": "Zoysia matrella",
+      "url": "https://www.rhs.org.uk/plants/162086/zoysia-matrella/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "zoysia matrella",
+      "facts": {
+       "common": "Zoysia matrella",
+       "hardiness": null,
+       "soil": null,
+       "aspect": null,
+       "moisture": null,
+       "ph": null,
+       "size": null,
+       "pruning_group": null,
+       "problems": null,
+       "genus": "zoysia",
+       "species": "zoysia matrella"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.039,
+     "scientific": "Ophiopogon japonicus",
+     "common": "Mondo grass",
+     "genus": "Ophiopogon",
+     "family": "Asparagaceae",
+     "gbif": "2774158",
+     "rhs": {
+      "botanical": "Ophiopogon japonicus",
+      "url": "https://www.rhs.org.uk/plants/11837/ophiopogon-japonicus/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "ophiopogon japonicus",
+      "facts": {
+       "common": "Ophiopogon japonicus",
+       "hardiness": "H5",
+       "soil": "Clay, Loam, Sand",
+       "aspect": "South\u2013facing or West\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Neutral",
+       "size": "0.1-0.5 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "ophiopogon",
+       "species": "ophiopogon japonicus"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.029,
+     "scientific": "Crocus kotschyanus",
+     "common": "Kotschy's Crocus",
+     "genus": "Crocus",
+     "family": "Iridaceae",
+     "gbif": "2747313",
+     "rhs": {
+      "botanical": "Crocus kotschyanus",
+      "url": "https://www.rhs.org.uk/plants/20145/crocus-kotschyanus/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "crocus kotschyanus",
+      "facts": {
+       "common": "Crocus kotschyanus",
+       "hardiness": "H6",
+       "soil": "Chalk, Clay, Loam, Sand",
+       "aspect": "North\u2013facing or West\u2013facing or South\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun",
+       "moisture": "Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "0-0.1 metre; Up to 10 cm",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "crocus",
+       "species": "crocus kotschyanus"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.026,
+     "scientific": "Quercus humboldtii",
+     "common": "Andean oak",
+     "genus": "Quercus",
+     "family": "Fagaceae",
+     "gbif": "2880642",
+     "rhs": {
+      "botanical": "Quercus shumardii",
+      "url": "https://www.rhs.org.uk/plants/23744/quercus-shumardii/details",
+      "exact": false,
+      "score": 0.8,
+      "via": "quercus shumardii",
+      "facts": {
+       "common": "Quercus shumardii",
+       "hardiness": "H6",
+       "soil": "Clay, Loam, Sand",
+       "aspect": "North\u2013facing or West\u2013facing or South\u2013facing or East\u2013facing; Exposed or Sheltered; Full sun",
+       "moisture": "Moist but well\u2013drained or Well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "wider than 8 metres; Higher than 12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "quercus",
+       "species": "quercus shumardii"
+      }
+     },
+     "support": 1
+    },
+    {
+     "score": 0.01,
+     "scientific": "Quercus imbricaria",
+     "common": "Shingle oak",
+     "genus": "Quercus",
+     "family": "Fagaceae",
+     "gbif": "2881106",
+     "rhs": {
+      "botanical": "Quercus imbricaria",
+      "url": "https://www.rhs.org.uk/plants/83321/quercus-imbricaria/details",
+      "exact": true,
+      "score": 1.0,
+      "via": "quercus imbricaria",
+      "facts": {
+       "common": "Quercus imbricaria",
+       "hardiness": "H6",
+       "soil": "Clay, Chalk, Loam, Sand",
+       "aspect": "East\u2013facing or North\u2013facing or South\u2013facing or West\u2013facing; Exposed or Sheltered; Full sun, Partial shade",
+       "moisture": "Moist but well\u2013drained",
+       "ph": "Acid or Alkaline or Neutral",
+       "size": "wider than 8 metres; Higher than 12 metres",
+       "pruning_group": null,
+       "problems": null,
+       "genus": "quercus",
+       "species": "quercus imbricaria"
+      }
+     },
+     "support": 1
+    }
+   ],
+   "status": "proposed",
+   "concerns": []
+  }
+ ],
  "proposals": [
   {
    "id": "p0000",
@@ -172,7 +3775,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-05"
   },
   {
    "id": "p0003",
@@ -337,7 +3941,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-05"
   },
   {
    "id": "p0006",
@@ -502,7 +4107,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-05"
   },
   {
    "id": "p0009",
@@ -667,7 +4273,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-05"
   },
   {
    "id": "p0012",
@@ -832,7 +4439,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-09"
   },
   {
    "id": "p0015",
@@ -997,7 +4605,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-04"
   },
   {
    "id": "p0018",
@@ -1162,7 +4771,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-01"
   },
   {
    "id": "p0021",
@@ -1327,7 +4937,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-16"
   },
   {
    "id": "p0024",
@@ -1492,7 +5103,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-15"
   },
   {
    "id": "p0027",
@@ -1657,7 +5269,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-04"
   },
   {
    "id": "p0030",
@@ -1822,7 +5435,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-20"
   },
   {
    "id": "p0033",
@@ -1987,7 +5601,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-06"
   },
   {
    "id": "p0036",
@@ -2095,7 +5710,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-18"
   },
   {
    "id": "p0039",
@@ -2260,7 +5876,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-06"
   },
   {
    "id": "p0042",
@@ -2425,7 +6042,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-08"
   },
   {
    "id": "p0045",
@@ -2590,7 +6208,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-08"
   },
   {
    "id": "p0048",
@@ -2755,7 +6374,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-06"
   },
   {
    "id": "p0051",
@@ -2920,7 +6540,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-07"
   },
   {
    "id": "p0054",
@@ -3066,7 +6687,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-02"
   },
   {
    "id": "p0057",
@@ -3231,7 +6853,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-03"
   },
   {
    "id": "p0060",
@@ -3396,7 +7019,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-03"
   },
   {
    "id": "p0063",
@@ -3561,7 +7185,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-07"
   },
   {
    "id": "p0066",
@@ -3707,7 +7332,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-03"
   },
   {
    "id": "p0069",
@@ -3834,7 +7460,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-03"
   },
   {
    "id": "p0072",
@@ -3999,7 +7626,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-19"
   },
   {
    "id": "p0075",
@@ -4164,7 +7792,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-11"
   },
   {
    "id": "p0078",
@@ -4329,7 +7958,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-03"
   },
   {
    "id": "p0081",
@@ -4494,7 +8124,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-21"
   },
   {
    "id": "p0084",
@@ -4659,7 +8290,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-08"
   },
   {
    "id": "p0087",
@@ -4824,7 +8456,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-14"
   },
   {
    "id": "p0090",
@@ -4989,7 +8622,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-17"
   },
   {
    "id": "p0093",
@@ -5154,7 +8788,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-10"
   },
   {
    "id": "p0096",
@@ -5319,7 +8954,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-18"
   },
   {
    "id": "p0099",
@@ -5484,7 +9120,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-12"
   },
   {
    "id": "p0102",
@@ -5649,7 +9286,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-13"
   },
   {
    "id": "p0105",
@@ -5814,7 +9452,8 @@
     }
    ],
    "status": "proposed",
-   "concerns": []
+   "concerns": [],
+   "plant": "plant-08"
   }
  ]
 }

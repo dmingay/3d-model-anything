@@ -49,12 +49,13 @@
         </section>
         <section class="control-section plants-section" id="plants-section" hidden aria-label="Plants">
           <h2>Plants <span class="section-note" id="plants-count"></span></h2>
+          <button id="plants-review" class="review-button">Review plants</button>
           <div class="plants-row">
-            <button id="plants-toggle" aria-pressed="true" title="Show numbered pins where each photo was taken">Pins on</button>
-            <button id="plants-export" title="Download the proposals with your decisions as JSON">Export</button>
+            <button id="plants-toggle" aria-pressed="true" title="Show numbered pins on the plants">Pins on</button>
+            <button id="photos-toggle" aria-pressed="false" title="Show every scan photo where it was taken">Photos in 3D</button>
+            <button id="plants-export" title="Download the plant list with your decisions as JSON">Export</button>
           </div>
-          <p class="help plants-note">Each card is a proposal from one photo, not a verdict. Tap a name to confirm it, type your own, or mark it as not a plant.</p>
-          <div id="plants-list" class="plants-list"></div>
+          <p class="help">Every identity is a proposal from the scan photos. Review walks you through them one plant at a time.</p>
         </section>
         <section class="control-section" id="navigation" aria-label="Camera views">
           <h2>Camera</h2>
@@ -92,6 +93,15 @@
       <section id="layout" hidden aria-label="Overhead room layout"></section>
       <section id="knolling" hidden aria-label="Knolling arrangement"></section>
 
+      <section id="plant-review" hidden aria-label="Plant review">
+        <header class="review-bar">
+          <button id="review-close" title="Back to the garden (Esc)">‹ Garden</button>
+          <span id="review-progress"></span>
+          <button id="review-sun" aria-pressed="false" title="Sun hours as the base layer">Sun map</button>
+        </header>
+        <article id="plant-sheet" class="plant-sheet"></article>
+      </section>
+      <div id="photo-lightbox" hidden><img alt="Scan photo"><p></p></div>
       <div id="loader"><div class="bar"><div class="fill"></div></div><p>Loading… <span class="pct"></span></p></div>
     </main>
     <script type="module" src="/src/main.ts"></script>

@@ -77,6 +77,48 @@ def band(score):
     return 'likely' if score >= 0.5 else 'unsure' if score >= 0.2 else 'guess'
 
 
+def group_plants(proposals, radius=1.5):
+    """Merge proposals into plants: pins within `radius` m whose top candidates share a genus.
+
+    One shrub photographed three times should be confirmed once. Greedy by score: the strongest
+    proposal seeds a plant, later ones join the nearest plant that agrees on genus (any of the
+    proposal's top 3 against the plant's top 3), otherwise start their own.
+    """
+    plants = []
+    for pr in sorted(proposals, key=lambda x: -x['candidates'][0]['score']):
+        genera = {c['genus'] for c in pr['candidates'][:3]}
+        pos = np.array(pr['position'])
+        best = None
+        for pl in plants:
+            d = float(np.linalg.norm(np.array(pl['_pos']) - pos))
+            if d <= radius and genera & pl['_genera'] and (best is None or d < best[0]):
+                best = (d, pl)
+        if best:
+            pl = best[1]
+            pl['proposals'].append(pr['id'])
+            pl['_genera'] |= genera
+            n = len(pl['proposals'])
+            pl['_pos'] = ((np.array(pl['_pos']) * (n - 1) + pos) / n).tolist()
+        else:
+            plants.append({'proposals': [pr['id']], '_pos': pos.tolist(), '_genera': set(genera)})
+    by_id = {pr['id']: pr for pr in proposals}
+    out = []
+    for i, pl in enumerate(plants):
+        merged = {}
+        for pid in pl['proposals']:
+            for c in by_id[pid]['candidates']:
+                m = merged.setdefault(c['scientific'], {**c, 'score': 0.0, 'support': 0})
+                m['score'] = max(m['score'], c['score'])
+                m['support'] += 1
+        cands = sorted(merged.values(), key=lambda c: -(c['score'] + 0.05 * (c['support'] - 1)))[:6]
+        for pid in pl['proposals']:
+            by_id[pid]['plant'] = f'plant-{i + 1:02d}'
+        out.append({'id': f'plant-{i + 1:02d}', 'position': [round(x, 3) for x in pl['_pos']],
+                    'proposals': pl['proposals'], 'photos': [by_id[pid]['photo'] for pid in pl['proposals']],
+                    'confidence': band(cands[0]['score']), 'candidates': cands, 'status': 'proposed', 'concerns': []})
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('garden_id')
@@ -137,16 +179,17 @@ def main():
     for pr in proposals:
         for c in pr['candidates']:
             c['rhs'] = rhs.get(c['scientific'])
+    plants = group_plants(proposals)
     out = {'garden': a.garden_id, 'format': 'garden-plants/1', 'generatedAt': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
            'source': {'identifier': 'Pl@ntNet v2 (project all, organs auto)', 'facts': 'RHS plant DB via GardenLens resolver'},
            'note': 'Proposals only. Confirm, override or reject in the viewer; concerns are flags to look at, never a diagnosis.',
-           'remainingIdentificationRequests': remaining, 'proposals': proposals}
+           'remainingIdentificationRequests': remaining, 'plants': plants, 'proposals': proposals}
     path = os.path.join(REPO, 'data', 'demos', a.garden_id, 'plants.json')
     json.dump(out, open(path, 'w'), indent=1)
     by = {}
     for pr in proposals:
         by.setdefault(pr['candidates'][0]['scientific'], []).append(pr['candidates'][0]['score'])
-    print(f"\n{len(proposals)} proposals → {path}; RHS matched {sum(1 for v in rhs.values() if v)}/{len(rhs)} names")
+    print(f"\n{len(proposals)} proposals grouped into {len(plants)} plants → {path}; RHS matched {sum(1 for v in rhs.values() if v)}/{len(rhs)} names")
     for k, v in sorted(by.items(), key=lambda kv: -max(kv[1])):
         print(f'  {max(v):.2f} ×{len(v)}  {k}' + (f"  → RHS {rhs[k]['botanical']} {rhs[k]['facts'].get('hardiness') or ''}" if rhs.get(k) else '  (no RHS page)'))
 

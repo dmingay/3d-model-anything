@@ -49,6 +49,8 @@ export interface BuiltRoom {
   photos?: PhotoPose[];
   /** gardens: where on Earth and which way is north, so the viewer can map sun hours */
   sun?: SunSite;
+  /** the capture's posed photos, shown in the scene as cards at their camera poses (garden scans) */
+  scanPhotos?: { base: string; photos: { file: string; position: number[]; forward: number[]; index: number }[] };
   /** plant-ID proposals for the gardener to confirm (garden scans) */
   plants?: PlantSet;
 }
@@ -66,7 +68,13 @@ export interface PlantProposal {
   confidence: 'likely' | 'unsure' | 'guess';
   candidates: PlantCandidate[]; status: string; concerns: string[];
 }
-export interface PlantSet { garden: string; photoBase: string; note?: string; proposals: PlantProposal[] }
+/** Proposals merged by pin proximity and shared genus: the unit the gardener confirms. */
+export interface Plant {
+  id: string; position: number[]; proposals: string[]; photos: string[];
+  confidence: 'likely' | 'unsure' | 'guess';
+  candidates: (PlantCandidate & { support?: number })[]; status: string; concerns: string[];
+}
+export interface PlantSet { garden: string; photoBase: string; note?: string; plants: Plant[]; proposals: PlantProposal[] }
 
 export interface SunSite {
   latitude: number;

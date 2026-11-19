@@ -25,8 +25,11 @@
 > - `tools/garden/plant_id.py` — Pl@ntNet (key in the git-ignored `.env` as `PLANTNET_API_KEY`)
 >   on the scan's posed photos, each candidate resolved against the GardenLens RHS plant DB,
 >   pinned in 3D where the photo's central ray meets the mesh → `data/demos/<id>/plants.json`.
->   The viewer's **Plants** panel shows every ID as a proposal to confirm, override or reject;
->   decisions persist in the browser and export as JSON. Raw API answers are cached under
+>   Proposals are merged into **plants** (pins within 1.5 m that agree on genus). The viewer's
+>   **Plants** panel opens a review mode: top-down view, one plant at a time, big photo, merged
+>   candidates with RHS facts, confirm / type your own / not a plant, arrow keys to move on
+>   (`?room=front-garden&review=1`). Decisions persist in the browser and export as JSON.
+>   **Photos in 3D** hangs every scan photo at its camera pose (`&photos=1`); click one to view it. Raw API answers are cached under
 >   `data/captures-in/<id>/plantnet/` so re-runs cost no quota.
 > - `demos/front-garden/` — the first real garden (Stony Ridge front garden, scanned 19 Nov 2026).
 >   The mesh and photos are local only (git-ignored); regenerate with the two tools above.
